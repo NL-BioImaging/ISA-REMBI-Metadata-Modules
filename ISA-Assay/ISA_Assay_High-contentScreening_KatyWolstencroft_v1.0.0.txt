@@ -1,4 +1,4 @@
-#ModuleTemplate Info
+#$ModuleTemplate Info
 #ModuleModel: ISA
 #ModuleName: ISA_Assay
 #ModuleDescription: This module is used to describe the assay.
@@ -9,7 +9,7 @@
 #CreatedByAffiliation: Leiden University
 #CreatedBy: Rohola Hosseini
 #CreatedByAffiliation: Leiden University
-#ModuleAttributeList
+##ModuleAttributeList
 Assay Title	#Screen name
 Assay internal ID		#Experimental ID, e.g. aMV-010, linked to ELN or labjournal
 Assay Description		#Description of screen plus additional unstructured information about screen not covered elsewhere. Stages of HCS: either primary screen, secondary screen or validation screen. EFO terms   
