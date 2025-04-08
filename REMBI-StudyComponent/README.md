@@ -1,1 +1,1 @@
-# REMBI-StudyComponent Modules
+# REMBI-StudyComponent Metadata Modules

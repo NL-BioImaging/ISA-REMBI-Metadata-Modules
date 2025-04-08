@@ -1,1 +1,1 @@
-# ISA-BiologicalMaterial Metdata Modules
+# ISA-BiologicalMaterial Metadata Modules

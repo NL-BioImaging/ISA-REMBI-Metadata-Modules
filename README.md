@@ -1,2 +1,4 @@
 # ISA-REMBI-Metadata-Modules
-Repository to organize REMBI and ISA metadata modules
+Repository with REMBI and ISA metadata modules
+
+

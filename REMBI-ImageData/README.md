@@ -1,1 +1,1 @@
-# REMBI-ImageData Modules
+# REMBI-ImageData Metadata Modules

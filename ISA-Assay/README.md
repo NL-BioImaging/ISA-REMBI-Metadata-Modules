@@ -1,1 +1,1 @@
-# ISA-Assay Metdata Modules
+# ISA-Assay Metadata Modules
