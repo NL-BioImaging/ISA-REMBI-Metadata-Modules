@@ -1,4 +1,4 @@
-#ModuleTemplate Info
+##ModuleTemplate Info
 #ModuleModel: #Whether this metadata module belongs to the ISA specifications or the REMBI guidelines. Example: REMBI
 #ModuleName: #One of the allowed ISA or REMBI metadata module names. Example: REMBI_Specimen
 #ModuleDescription: #A description of what this module is used for. Example: This module is used to describe the characteristics of an Immuno Fluorescence Specimen.
@@ -7,6 +7,6 @@
 #DateTemplateGenerated: [YYYY-MM-DD]
 #CreatedBy: 
 #CreatedByAffiliation:
-#ModuleAttributeList:
+##ModuleAttributeList
 [INSERT HERE THE SET OF KEYS and KEYS DESCRIPTIONS]
 Key Value   #Description
