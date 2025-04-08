@@ -1,1 +1,1 @@
-# ISA-Study Metdata Modules
+# ISA-Study Metadata Modules

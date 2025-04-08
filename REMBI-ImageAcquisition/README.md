@@ -1,1 +1,1 @@
-# REMBI-ImageAcquisition Modules
+# REMBI-ImageAcquisition Metadata Modules

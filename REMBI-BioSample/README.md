@@ -1,1 +1,1 @@
-# REMBI-Assay BioSample Modules
+# REMBI-Biosample Metadata Modules
