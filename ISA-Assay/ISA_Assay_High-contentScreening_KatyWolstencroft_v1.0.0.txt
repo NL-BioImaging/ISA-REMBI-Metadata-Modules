@@ -1,0 +1,21 @@
+#ModuleTemplate Info
+#ModuleModel: ISA
+#ModuleName: ISA_Assay
+#ModuleDescription: This module is used to describe the assay.
+#ModuleTemplateVersion: v1.0.0
+#ModuleScope: High-content screening #The scope of the module.  Use EDAMBioImaging as the initial suggested Ontology
+#DateTemplateGenerated: 2022-10-10
+#CreatedBy:  Katy Wolstencroft
+#CreatedByAffiliation: Leiden University
+#CreatedBy: Rohola Hosseini
+#CreatedByAffiliation: Leiden University
+#ModuleAttributeList
+Assay Title	#Screen name
+Assay internal ID		#Experimental ID, e.g. aMV-010, linked to ELN or labjournal
+Assay Description		#Description of screen plus additional unstructured information about screen not covered elsewhere. Stages of HCS: either primary screen, secondary screen or validation screen. EFO terms   
+Assay number of biological replicates		#Total number of biol. Repl.
+Number of plates		#Total number of plates, n-plates
+Assay Technology Type		#Imaging method, Fbbi terms.
+Assay Type		#List of options: sub types of HCS e.g. Gene Knock down, RNAi, compount,  EFO terms
+Assay External URL		#ELN or any other external url link to this screen. 
+Assay data URL		#OMERO url link to this screen. 
