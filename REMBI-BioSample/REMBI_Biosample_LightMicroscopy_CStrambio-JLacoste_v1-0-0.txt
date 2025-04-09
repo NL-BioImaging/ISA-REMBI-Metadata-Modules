@@ -1,7 +1,7 @@
 ##ModuleTemplate Info		
-#ModuleModel: 	REMBI	Weather this metadata module belongs to the ISA specifications or the REMBI guidelines. 
+#ModuleModel: 	REMBI	Weather this metadata template module belongs to the ISA specifications or the REMBI guidelines. 
 #ModuleName: 	Biosample	One of the allowed ISA or REMBI metadata module names. 
-#ModuleDescription: 	This REMBI_Biosample module was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
+#ModuleDescription: 	This REMBI_Biosample template module was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
 #ModuleTemplateVersion	v1.0.0	
 #ModuleScope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
 #ModuleScopeTermAccession:	http://edamontology.org/topic_3385	The term accession for the ModuleScope
