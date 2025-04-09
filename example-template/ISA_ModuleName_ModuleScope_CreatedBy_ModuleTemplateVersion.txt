@@ -9,5 +9,5 @@
 #CreatedBy: 
 #CreatedByAffiliation:
 ##ModuleAttributeList
-[INSERT HERE THE SET OF KEYS and KEYS DESCRIPTIONS]
+[INSERT HERE THE SET OF KEYS, KEYS DESCRIPTIONS AND EXAMPLES]
 #Key #Description  #Example
