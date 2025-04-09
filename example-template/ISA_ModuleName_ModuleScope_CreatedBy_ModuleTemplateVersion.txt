@@ -10,4 +10,4 @@
 #CreatedByAffiliation:
 ##ModuleAttributeList
 [INSERT HERE THE SET OF KEYS and KEYS DESCRIPTIONS]
-Key Value   #Description
+#Key #Description  #Example
