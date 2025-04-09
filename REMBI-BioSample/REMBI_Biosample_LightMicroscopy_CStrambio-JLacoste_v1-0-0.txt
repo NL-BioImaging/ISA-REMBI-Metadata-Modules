@@ -1,24 +1,23 @@
-##ModuleTemplate Info			
-#ModuleModel: 	REMBI	Weather this metadata module belongs to the ISA specifications or the REMBI guidelines. 	Example: REMBI
-#ModuleName: 	Biosample	One of the allowed ISA or REMBI metadata module names. 	Example: Biosample
-#ModuleDescription: 	This REMBI_Biosample module was created by Caterina Strambio De Castillia and Judith Lacoste in the context of a BioImaging North America-Canada BIoImaging collaboration to describe the characteristics of a Biosample used for microscopy observation	A description of what this module is used for. 	Example: This module is used to describe the characteristics of a Biosample used for microscopy obervation.
-#ModuleTemplateVersion	v1.0.0		
-#ModuleScope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology	
-#ModuleScopeTermAccession:	http://edamontology.org/topic_3385	The term accession for the ModuleScope	
-#DateTemplateGenerated	2025-04-08		
-#CreatedBy	C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)		
-#CreatedByAffiliation	"UMass Chan Medical School, MIACellavie"		
-##ModuleAttributeList			
-#Key	#Description	#Example	
-Organism	The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon (https://bioportal.bioontology.org/ontologies/NCBITAXON).	Mus musculus	
-Organism_term_accession	The term accession for the biological Organism.	http://purl.bioontology.org/ontology/NCBITAXON/10090	
-Biological_Material_Type	"The Type of this Biological Material used for this dataset. Initial suggested ontologies are: MI (https://bioportal.bioontology.org/ontologies/MI), NCIT (https://bioportal.bioontology.org/ontologies/NCIT) and BAO (https://bioportal.bioontology.org/ontologies/BAO)."	fixed tissue section	
-Biological_Material_Type_term_accession	The term accession for this Biological Material Type.	http://purl.obolibrary.org/obo/NCIT_C158415	
-Biological_Material_Tissue_Origin	The Tissue Origin for this Biological Material. Initial suggested ontologies are: UBERON (https://bioportal.bioontology.org/ontologies/UBERON) and EFO (https://bioportal.bioontology.org/ontologies/EFO).	kidney	
-Biological_Material_Tissue_Origin_term_accession	The term accession for this Biological Material Tissue Origin.	http://purl.obolibrary.org/obo/UBERON_0002113	
-Biological_Material_Cell_Type	"If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are: CLO (https://bioportal.bioontology.org/ontologies/CLO), CL (https://bioportal.bioontology.org/ontologies/CL) or EFO (https://bioportal.bioontology.org/ontologies/EFO)."		
-Biological_Material_Cell_Type_term_accession	The term accession for this Biological Material Cell Type.		
-Biosample_Intrinsic_Variable	"If applicable enter one or more terms describing innate  aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."		
-Biosample_Extrinsic_Variable	"If applicable enter one or more terms describing the way in which the Biosample was  treated as part of  this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."	Drug_XYZ	
-Biosample_Experimental_Variable	"If applicable enter one or more terms describing what is intentionally being changed as part of  this Experiment (a.k.a., REMBI Study Component). Examples inlcude Time, Temperature, Cocentration, Illumination Dose. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."	"Time, Temperature"	
-			
+##ModuleTemplate Info		
+#ModuleModel: 	REMBI	Weather this metadata module belongs to the ISA specifications or the REMBI guidelines. 
+#ModuleName: 	Biosample	One of the allowed ISA or REMBI metadata module names. 
+#ModuleDescription: 	This REMBI_Biosample module was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
+#ModuleTemplateVersion	v1.0.0	
+#ModuleScope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
+#ModuleScopeTermAccession:	http://edamontology.org/topic_3385	The term accession for the ModuleScope
+#DateTemplateGenerated	4/8/25	
+#CreatedBy	C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)	
+#CreatedByAffiliation	"UMass Chan Medical School, MIACellavie"	
+##ModuleAttributeList		
+#Key	#Description	#Example
+Organism	The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon (https://bioportal.bioontology.org/ontologies/NCBITAXON).	Mus musculus
+Organism_term_accession	The term accession for the biological Organism.	http://purl.bioontology.org/ontology/NCBITAXON/10090
+Biological_Material_Type	"The Type of this Biological Material used for this dataset. Initial suggested ontologies are: MI (https://bioportal.bioontology.org/ontologies/MI), NCIT (https://bioportal.bioontology.org/ontologies/NCIT) and BAO (https://bioportal.bioontology.org/ontologies/BAO)."	fixed tissue section
+Biological_Material_Type_term_accession	The term accession for this Biological Material Type.	http://purl.obolibrary.org/obo/NCIT_C158415
+Biological_Material_Tissue_Origin	The Tissue Origin for this Biological Material. Initial suggested ontologies are: UBERON (https://bioportal.bioontology.org/ontologies/UBERON) and EFO (https://bioportal.bioontology.org/ontologies/EFO).	kidney
+Biological_Material_Tissue_Origin_term_accession	The term accession for this Biological Material Tissue Origin.	http://purl.obolibrary.org/obo/UBERON_0002113
+Biological_Material_Cell_Type	"If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are: CLO (https://bioportal.bioontology.org/ontologies/CLO), CL (https://bioportal.bioontology.org/ontologies/CL) or EFO (https://bioportal.bioontology.org/ontologies/EFO)."	
+Biological_Material_Cell_Type_term_accession	The term accession for this Biological Material Cell Type.	
+Biosample_Intrinsic_Variable	"If applicable enter one or more terms describing innate  aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."	GeneXYZ_mutationXYZ
+Biosample_Extrinsic_Variable	"If applicable enter one or more terms describing the way in which the Biosample was  treated as part of  this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."	Drug_XYZ
+Biosample_Experimental_Variable	"If applicable enter one or more terms describing what is intentionally being changed as part of  this Experiment (a.k.a., REMBI Study Component). Examples inlcude Time, Temperature, Cocentration, Illumination Dose. If you enter a list of terms use a comma to separate individual  terms. If not applicable leave blank."	"Time, Temperature"
