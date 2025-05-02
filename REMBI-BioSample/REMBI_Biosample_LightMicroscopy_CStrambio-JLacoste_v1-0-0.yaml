@@ -1,0 +1,194 @@
+id: https://example.org/schemas/rembi_biosample
+name: REMBI_Biosample
+description: Schema for REMBI Biosample metadata template
+version: v1.0.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  ModuleTemplateInfo:
+    description: Metadata about the template itself
+    slot_usage:
+      ModuleModel:
+        fixed_value: REMBI
+      ModuleName:
+        fixed_value: REMBI_Biosample
+      ModuleDescription:
+        fixed_value: This REMBI_Biosample template module was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation
+      ModuleTemplateVersion:
+        fixed_value: v1.0.0
+      ModuleScope:
+        fixed_value: Light Microscopy
+      ModuleScopeTermAccession:
+        fixed_value: http://edamontology.org/topic_3385
+      DateTemplateGenerated:
+        fixed_value: 4/8/25
+      CreatedBy:
+        fixed_value: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
+      CreatedByAffiliation:
+        fixed_value: UMass Chan Medical School, MIACellavie
+    slots:
+      - ModuleModel
+      - ModuleName
+      - ModuleDescription
+      - ModuleTemplateVersion
+      - ModuleScope
+      - ModuleScopeTermAccession
+      - DateTemplateGenerated
+      - CreatedBy
+      - CreatedByAffiliation
+
+  BiosampleModule:
+    description: The actual schema for the metadata collection form
+    slots:
+      - Organism
+      - Organism_term_accession
+      - Biological_Material_Type
+      - Biological_Material_Type_term_accession
+      - Biological_Material_Tissue_Origin
+      - Biological_Material_Tissue_Origin_term_accession
+      - Biological_Material_Cell_Type
+      - Biological_Material_Cell_Type_term_accession
+      - Biosample_Intrinsic_Variable
+      - Biosample_Extrinsic_Variable
+      - Biosample_Experimental_Variable
+
+  REMBI_Biosample:
+    description: Complete template including both template info and attribute list
+    slots:
+      - template_info
+      - attribute_list
+
+slots:
+  # Template Info Slots (with descriptions but no fixed values - those are in class definition)
+  ModuleModel:
+    description: Whether this metadata module template belongs to the ISA specifications or the REMBI guidelines.
+    range: ModuleModelEnum
+
+  ModuleName:
+    description: One of the allowed ISA or REMBI metadata module names.
+    range: ModuleNameEnum
+
+  ModuleDescription:
+    description: A description of what this module is used for.
+
+  ModuleTemplateVersion:
+    description: Version of the module template
+
+  ModuleScope:
+    description: The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
+
+  ModuleScopeTermAccession:
+    description: The term accession for the ModuleScope
+
+  DateTemplateGenerated:
+    description: Date when the template was generated
+
+  CreatedBy:
+    description: Creator of the template
+
+  CreatedByAffiliation:
+    description: Affiliation of the creator
+
+  # Module Attribute List Slots (remain unchanged from previous)
+  Organism:
+    description: The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon.
+    examples:
+      - value: Mus musculus
+
+  Organism_term_accession:
+    description: The term accession for the biological Organism.
+    examples:
+      - value: http://purl.bioontology.org/ontology/NCBITAXON/10090
+
+  Biological_Material_Type:
+    description: The Type of this Biological Material used for this dataset. Initial suggested ontologies are: MI, NCIT and BAO.
+    examples:
+      - value: fixed tissue section
+
+  Biological_Material_Type_term_accession:
+    description: The term accession for this Biological Material Type.
+    examples:
+      - value: http://purl.obolibrary.org/obo/NCIT_C158415
+
+  Biological_Material_Tissue_Origin:
+    description: The Tissue Origin for this Biological Material. Initial suggested ontologies are: UBERON and EFO.
+    examples:
+      - value: kidney
+
+  Biological_Material_Tissue_Origin_term_accession:
+    description: The term accession for this Biological Material Tissue Origin.
+    examples:
+      - value: http://purl.obolibrary.org/obo/UBERON_0002113
+
+  Biological_Material_Cell_Type:
+    description: If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are: CLO, CL or EFO.
+
+  Biological_Material_Cell_Type_term_accession:
+    description: The term accession for this Biological Material Cell Type.
+
+  Biosample_Intrinsic_Variable:
+    description: If applicable enter one or more terms describing innate aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    examples:
+      - value: GeneXYZ_mutationXYZ
+
+  Biosample_Extrinsic_Variable:
+    description: If applicable enter one or more terms describing the way in which the Biosample was treated as part of this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    examples:
+      - value: Drug_XYZ
+
+  Biosample_Experimental_Variable:
+    description: If applicable enter one or more terms describing what is intentionally being changed as part of this Experiment (a.k.a., REMBI Study Component). Examples include Time, Temperature, Concentration, Illumination Dose. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    examples:
+      - value: Time, Temperature
+
+  # Structural slots
+  template_info:
+    description: Information about the template itself
+    range: ModuleTemplateInfo
+    required: true
+    identifier: true  # Ensures this is treated as a unique instance
+
+  attribute_list:
+    description: The actual schema for the metadata collection form
+    range: BiosampleModule
+    required: true
+
+enums:
+  ModuleModelEnum:
+    permissible_values:
+      REMBI:
+        description: REMBI guidelines
+      ISA:
+        description: ISA specifications
+
+  ModuleNameEnum:
+    permissible_values:
+      ISA_Investigation:
+        description: ISA Investigation module
+      ISA_Study:
+        description: ISA Study module
+      ISA_Assay:
+        description: ISA Assay module
+      ISA_BiologicalMaterial:
+        description: ISA Biological Material module
+      ISA_Sample:
+        description: ISA Sample module
+      REMBI_Study:
+        description: REMBI Study module
+      REMBI_StudyComponent:
+        description: REMBI Study Component module
+      REMBI_Biosample:
+        description: REMBI Biosample module
+      REMBI_Specimen:
+        description: REMBI Specimen module
+      REMBI_ImageAcquisition:
+        description: REMBI Image Acquisition module
+      REMBI_ImageData:
+        description: REMBI Image Data module
+      REMBI_ImageCorrelation:
+        description: REMBI Image Correlation module
+      REMBI_AnalyzedData:
+        description: REMBI Analyzed Data module
