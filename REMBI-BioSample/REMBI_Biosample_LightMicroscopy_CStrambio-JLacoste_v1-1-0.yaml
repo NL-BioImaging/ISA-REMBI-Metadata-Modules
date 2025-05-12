@@ -1,7 +1,7 @@
 id: https://example.org/schemas/rembi_biosample
 name: REMBI_Biosample
 description: Schema for REMBI Biosample metadata template
-version: v1.0.0
+version: v1.1.0
 license: https://creativecommons.org/publicdomain/zero/1.0/
 imports:
   - linkml:types
@@ -10,7 +10,7 @@ default_range: string
 annotations:    
       ModuleScope: Light Microscopy
       ModuleScopeTermAccession: http://edamontology.org/topic_3385
-      DateTemplateGenerated: 4/8/25
+      DateGenerated: 4/8/25
       CreatedBy: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
       CreatedByAffiliation: UMass Chan Medical School, MIACellavie
 
