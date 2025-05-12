@@ -16,8 +16,8 @@ annotations:
 
 classes:
 
-  BiosampleModule:
-    description: The actual schema for the metadata collection form
+  REMBI_BiosampleModule:
+    description: The actual schema for this REMBI_Biosample metadata collection form
     slots:
       - Organism
       - Organism_term_accession
@@ -86,17 +86,6 @@ slots:
     examples:
       - value: Time, Temperature
 
-  # Structural slots
-  template_info:
-    description: Information about the template itself
-    range: ModuleTemplateInfo
-    required: true
-    identifier: true  # Ensures this is treated as a unique instance
-
-  attribute_list:
-    description: The actual schema for the metadata collection form
-    range: BiosampleModule
-    required: true
 
 enums:
 
