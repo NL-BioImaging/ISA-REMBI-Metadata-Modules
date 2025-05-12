@@ -1,5 +1,5 @@
 ##ModuleTemplate Info		
-#ModuleName: 	Biosample	One of the allowed ISA or REMBI metadata module names. 
+#ModuleName: 	REMBI_Biosample	One of the allowed ISA or REMBI metadata module names. 
 #ModuleDescription: 	This REMBI_Biosample metadata-collection module template was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
 #ModuleTemplateVersion	v1.1.0	
 #ModuleScope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology

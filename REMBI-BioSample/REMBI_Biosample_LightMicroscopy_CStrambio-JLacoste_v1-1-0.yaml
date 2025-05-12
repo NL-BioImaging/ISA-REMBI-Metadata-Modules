@@ -99,12 +99,6 @@ slots:
     required: true
 
 enums:
-  ModuleModelEnum:
-    permissible_values:
-      REMBI:
-        description: REMBI guidelines
-      ISA:
-        description: ISA specifications
 
   ModuleNameEnum:
     permissible_values:
