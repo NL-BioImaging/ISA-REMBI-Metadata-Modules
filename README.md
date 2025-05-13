@@ -15,5 +15,5 @@ This project aims to enable community-driven standardization by establishing con
 
 As a first step, this repository provides a **collaborative platform for sharing modular metadata schemas** built upon the ISA and REMBI frameworks, and making them available in user-friendly formats, including CSV, TAB, and [**LinkML (YAML)**](https://linkml.io/linkml/intro/overview.html). 
 
-![REMBI modular community schemas](NL-BioImaging/ISA-REMBI-Metadata-Modules/blob/main/images/REMBI-compatible%20modular%20schemas.png "REMBI modular community schemas")
+![REMBI modular community schemas](NL-BioImaging/ISA-REMBI-Metadata-Modules/blob/strambc-READMEedit/images/REMBI-compatible%20modular%20schemas.png "REMBI modular community schemas")
 
