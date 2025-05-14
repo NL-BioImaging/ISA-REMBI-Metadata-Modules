@@ -1,5 +1,5 @@
 id: https://example.org/schemas/Module
-name: ModuleSchema
+name: module_schema
 description: Model-level metadata for generic REMBI or ISA module schema
 version: v1.0.0
 license: https://creativecommons.org/publicdomain/zero/1.0/
@@ -9,28 +9,22 @@ default_range: string
 
 classes:
 
-    ModelLevelMetadata:
+    model_level_metadata:
       slots:
-        - ModuleScope
-        - ModuleScopeTermAccession
-        - DateGenerated
-        - CreatedBy
-        - CreatedByAffiliation
+        - module_scope
+        - module_scope_term_accession
+        - created_by_affiliation
         
 slots:
     
-  ModuleScope:
+  module_scope:
     description: The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
-
-  ModuleScopeTermAccession:
+    required: true
+    
+  module_scope_term_accession:
     description: The term accession for the ModuleScope
+    required: true
 
-  DateGenerated:
-    description: Date when the module template was generated
-
-  CreatedBy:
-    description: Creator of the template
-
-  CreatedByAffiliation:
+  created_by_affiliation:
     description: Affiliation of the creator      
       

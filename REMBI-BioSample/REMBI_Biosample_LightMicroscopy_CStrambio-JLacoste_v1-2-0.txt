@@ -1,12 +1,15 @@
-##ModuleTemplate Info		
-#ModuleName: 	REMBI_Biosample	One of the allowed ISA or REMBI metadata module names. 
-#ModuleDescription: 	This REMBI_Biosample metadata-collection module template was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
-#ModuleTemplateVersion	v1.2.0	
-#ModuleScope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
-#ModuleScopeTermAccession:	http://edamontology.org/topic_3385	The term accession for the ModuleScope
-#DateGenerated	4/8/25	
-#CreatedBy	C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)	
-#CreatedByAffiliation	"UMass Chan Medical School, MIACellavie"	
+##ModuleTemplateInfo		
+#module_name: 	REMBI_Biosample	One of the allowed ISA or REMBI metadata module names. 
+#module_description: 	This REMBI_Biosample metadata-collection module template was created in the context of a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe the characteristics of a Biosample used for Light Microscopy observation	A description of what this module is used for. 
+#conforms_to: 	REMBI	
+#module_scope:	Light Microscopy	The scope of the module. Use EDAMBioImaging as the initial suggested Ontology
+#module_scope_term_accession:	http://edamontology.org/topic_3385	The term accession for the ModuleScope
+#created_on:	2025-04-25	
+#last_updated_on:	2025-05-13	
+#created_by:	C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)	
+#created_by_affiliation	"UMass Chan Medical School, MIACellavie"	
+#module_schema_version:	v1.2.0	
+#metamodel_version:	v1.0.0	
 ##ModuleAttributeList		
 #Key	#Description	#Example
 Organism	The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon (https://bioportal.bioontology.org/ontologies/NCBITAXON).	Mus musculus

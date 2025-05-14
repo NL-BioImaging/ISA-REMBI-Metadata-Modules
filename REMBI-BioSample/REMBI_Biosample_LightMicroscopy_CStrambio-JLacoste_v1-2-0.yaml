@@ -1,21 +1,26 @@
+# Document Start
+---
 id: https://example.org/schemas/rembi_biosample
 name: REMBI_Biosample
 description: Schema for REMBI Biosample metadata template
+conforms_to: REMBI
+created_on: 2025-04-25
+last_updated_on: 2025-05-13
+created_by: C. Strambio-De-Castillia -BINA & J. Lacoste -CBI
 version: v1.2.0
+metamodel_version: v1.0.0
 license: https://creativecommons.org/publicdomain/zero/1.0/
 imports:
   - linkml:types
 default_range: string
 
 instantiates: 
-    - ModuleSchema:ModelLevelMetadata
+    - module_schema:model_level_metadata
     
 annotations:    
-      ModuleScope: Light Microscopy
-      ModuleScopeTermAccession: http://edamontology.org/topic_3385
-      DateGenerated: 4/8/25
-      CreatedBy: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
-      CreatedByAffiliation: UMass Chan Medical School, MIACellavie
+      module_scope: Light Microscopy
+      module_scope_term_accession: http://edamontology.org/topic_3385
+      created_by_affiliation: UMass Chan Medical School, MIACellavie
 
 classes:
 
@@ -49,7 +54,7 @@ slots:
       - value: http://purl.bioontology.org/ontology/NCBITAXON/10090
 
   Biological_Material_Type:
-    description: The Type of this Biological Material used for this dataset. Initial suggested ontologies are: MI, NCIT and BAO.
+    description: The Type of this Biological Material used for this dataset. Initial suggested ontologies are MI, NCIT and BAO.
     examples:
       - value: fixed tissue section
 
@@ -59,7 +64,7 @@ slots:
       - value: http://purl.obolibrary.org/obo/NCIT_C158415
 
   Biological_Material_Tissue_Origin:
-    description: The Tissue Origin for this Biological Material. Initial suggested ontologies are: UBERON and EFO.
+    description: The Tissue Origin for this Biological Material. Initial suggested ontologies are UBERON and EFO.
     examples:
       - value: kidney
 
@@ -69,7 +74,7 @@ slots:
       - value: http://purl.obolibrary.org/obo/UBERON_0002113
 
   Biological_Material_Cell_Type:
-    description: If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are: CLO, CL or EFO.
+    description: If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are CLO, CL or EFO.
 
   Biological_Material_Cell_Type_term_accession:
     description: The term accession for this Biological Material Cell Type.
@@ -120,3 +125,5 @@ enums:
         description: REMBI Image Correlation module
       REMBI_AnalyzedData:
         description: REMBI Analyzed Data module
+        
+# Document End
