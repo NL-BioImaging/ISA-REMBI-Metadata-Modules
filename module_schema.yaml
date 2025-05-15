@@ -1,4 +1,4 @@
-# module_schema.yaml - Corrected version
+# module_schema.yaml
 id: https://example.org/schemas/module-schema
 name: module-schema
 description: Schema that defines how bioimage metadata modules should be structured
@@ -19,40 +19,37 @@ prefixes:
 default_range: string
 
 classes:
-  # This is your metamodel extension - defines what annotations a module can have
+  # Metamodel extension class for module-level metadata
   ModuleLevelMetadata:
     class_uri: module_schema:ModuleLevelMetadata
     description: >-
-      Defines the metadata that should be associated with each module definition.
+      Defines the metadata that should be associated with each module definition
+      through top-level annotations.
     slots:
+      - module_model
       - module_name
       - module_description
-      - conforms_to
+      - module_template_version
       - module_scope
       - module_scope_term_accession
-      - created_on
-      - last_updated_on
+      - date_template_generated
       - created_by
       - created_by_affiliation
-      - module_schema_version
-      - metamodel_version
-      
-  # This is the base class for all modules
+  
+  # Minimal marker class for module definitions
   MetadataModule:
     description: >-
-      Base class for all metadata modules. Specific modules like REMBI_Biosample 
-      will extend this class.
-    slots:
-      - id
-      - name
-      - description
-      - version
-      - license
-      - imports
-      - required_modules
-      - recommended_modules
+      Base marker class for module definitions.
   
-  # Define ModuleReference as a proper class  
+  # Base content class
+  MetadataContent:
+    description: >-
+      Base class for module content. Each module should define a content class
+      that extends this class.
+    slots:
+      - content_id  # Identifier for this content instance
+  
+  # Module reference class
   ModuleReference:
     description: Reference to another module with version constraints
     slots:
@@ -61,107 +58,72 @@ classes:
       - maximum_version
       
 slots:
-  # ModuleLevelMetadata slots - these will be used in annotations
+  # Module metadata slots - these will be used in annotations
+  module_model:
+    description: Whether this metadata template module belongs to the ISA specifications or the REMBI guidelines
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: REMBI
+      - value: ISA
+  
   module_name:
     description: One of the allowed ISA or REMBI metadata module names
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: Biosample
+      - value: Specimen
   
   module_description:
     description: A description of what this module is used for
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
   
-  conforms_to:
-    description: The metadata standard this module conforms to (e.g., REMBI, ISA)
+  module_template_version:
+    description: The version of this module template
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+    examples:
+      - value: v1.0.0
   
   module_scope:
     description: The scope of the module (use EDAMBioImaging as suggested ontology)
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: Light Microscopy
   
   module_scope_term_accession:
     description: The term accession for the module scope
     range: uri
-    required: true
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: http://edamontology.org/topic_3385
   
-  created_on:
-    description: Date when the module was created
+  date_template_generated:
+    description: Date when the template was generated
     range: date
-    required: true
-  
-  last_updated_on:
-    description: Date when the module was last updated
-    range: date
-    required: true
+    required: true  # Required in ModuleLevelMetadata
   
   created_by:
     description: Person(s) who created the module
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
   
   created_by_affiliation:
     description: Affiliation of the creator(s)
     range: string
-    required: true
+    required: true  # Required in ModuleLevelMetadata
   
-  module_schema_version:
-    description: Version of the module schema
+  # Content-related slots
+  content_id:
+    description: Identifier for content instances
     range: string
-    required: true
-    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+    identifier: true
   
-  metamodel_version:
-    description: Version of the metamodel
-    range: string
-    required: true
-    pattern: "^v\\d+\\.\\d+\\.\\d+$"
-  
-  # MetadataModule slots - these will be direct slots in the module classes
-  id:
-    description: Unique identifier for the module
-    range: uri
-    required: true
-  
-  name:
-    description: Name of the module
-    range: string
-    required: true
-  
-  description:
-    description: Description of the module
-    range: string
-    required: true
-  
-  version:
-    description: Version of the module
-    range: string
-    required: true
-    pattern: "^v\\d+\\.\\d+\\.\\d+$"
-  
-  license:
-    description: License for the module
-    range: uri
-    required: true
-  
-  imports:
-    description: Other schemas imported by this module
-    range: uriorcurie
-    multivalued: true
-  
-  required_modules:
-    description: Other modules that must be used with this one
-    range: string  # Simplified to just use module names
-    multivalued: true
-  
-  recommended_modules:
-    description: Other modules that are recommended to use with this one
-    range: string  # Simplified to just use module names
-    multivalued: true
-  
-  # ModuleReference slots
+  # Module reference slots
   module_id:
     description: Identifier for the referenced module
     range: string
@@ -176,3 +138,36 @@ slots:
     description: Maximum version supported for compatibility
     range: string
     pattern: "^v\\d+\\.\\d+\\.\\d+$"
+    
+  # Optional annotation group slot for ISA modules
+  annotation_group:
+    description: >-
+      Specifies which annotation group a field belongs to. Used to organize
+      fields in forms and for validation in ISA modules.
+    range: string
+    required: false
+    examples:
+      - value: Assay
+      - value: AssayComponent
+      - value: Biosample
+      - value: ImageData
+
+enums:
+  # Define the standard annotation groups for ISA modules
+  AnnotationGroupEnum:
+    description: Standard annotation groups for organizing metadata fields in ISA modules
+    permissible_values:
+      assay:
+        description: Basic assay information
+      assay_component:
+        description: Components of the assay
+      biosample:
+        description: Biological sample information
+      image_data:
+        description: Image data properties
+      image_acquisition:
+        description: Image acquisition parameters
+      specimen:
+        description: Specimen information
+      protocols:
+        description: Experimental protocols
