@@ -1,129 +1,123 @@
-# Document Start
----
 id: https://example.org/schemas/rembi_biosample
 name: REMBI_Biosample
-description: Schema for REMBI Biosample metadata template
-conforms_to: REMBI
-created_on: 2025-04-25
-last_updated_on: 2025-05-13
-created_by: C. Strambio-De-Castillia -BINA & J. Lacoste -CBI
-version: v1.2.0
 metamodel_version: v1.0.0
 license: https://creativecommons.org/publicdomain/zero/1.0/
+
 imports:
   - linkml:types
+  - ../module_schema  # Import the module schema
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  module_schema: https://example.org/schemas/module-schema/
+
 default_range: string
 
-instantiates: 
-    - module_schema:model_level_metadata
-    
+# Explicitly instantiate the ModuleLevelMetadata class
+instantiates:
+  - module_schema:ModuleLevelMetadata
+
+# Module metadata as top-level annotations
 annotations:    
-      module_scope: Light Microscopy
-      module_scope_term_accession: http://edamontology.org/topic_3385
-      created_by_affiliation: UMass Chan Medical School, MIACellavie
+  module_model: REMBI
+  module_name: Biosample
+  module_description: >-
+    This REMBI_Biosample metadata-collection module template was created in the context of 
+    a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe 
+    the characteristics of a Biosample used for Light Microscopy observation
+  module_template_version: v1.2.0
+  module_scope: Light Microscopy
+  module_scope_term_accession: edam:topic_3385
+  date_template_generated: "2025-04-25"
+  created_by: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
+  created_by_affiliation: UMass Chan Medical School, MIACellavie
 
 classes:
-
-  REMBI_BiosampleModule:
-    description: The actual schema for this REMBI_Biosample metadata collection form
+  # Simple marker class for module definition
+  BiosampleModule:
+    is_a: MetadataModule
+    description: REMBI Biosample module definition
+    
+  # Content class for this module
+  BiosampleContent:
+    is_a: MetadataContent
+    description: Content schema for REMBI Biosample
     slots:
-      - Organism
-      - Organism_term_accession
-      - Biological_Material_Type
-      - Biological_Material_Type_term_accession
-      - Biological_Material_Tissue_Origin
-      - Biological_Material_Tissue_Origin_term_accession
-      - Biological_Material_Cell_Type
-      - Biological_Material_Cell_Type_term_accession
-      - Biosample_Intrinsic_Variable
-      - Biosample_Extrinsic_Variable
-      - Biosample_Experimental_Variable
-
+      - organism
+      - organism_term_accession
+      - biological_material_type
+      - biological_material_type_term_accession
+      - biological_material_tissue_origin
+      - biological_material_tissue_origin_term_accession
+      - biological_material_cell_type
+      - biological_material_cell_type_term_accession
+      - biosample_intrinsic_variable
+      - biosample_extrinsic_variable
+      - biosample_experimental_variable
 
 slots:
-  # Module SchemaDefinition Slots 
-
-  Organism:
+  # Content slots
+  organism:
     description: The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon.
+    required: true
     examples:
       - value: Mus musculus
 
-  Organism_term_accession:
+  organism_term_accession:
     description: The term accession for the biological Organism.
+    required: true
     examples:
       - value: http://purl.bioontology.org/ontology/NCBITAXON/10090
 
-  Biological_Material_Type:
+  biological_material_type:
     description: The Type of this Biological Material used for this dataset. Initial suggested ontologies are MI, NCIT and BAO.
+    required: true
     examples:
       - value: fixed tissue section
 
-  Biological_Material_Type_term_accession:
+  biological_material_type_term_accession:
     description: The term accession for this Biological Material Type.
+    required: true
     examples:
       - value: http://purl.obolibrary.org/obo/NCIT_C158415
 
-  Biological_Material_Tissue_Origin:
+  biological_material_tissue_origin:
     description: The Tissue Origin for this Biological Material. Initial suggested ontologies are UBERON and EFO.
+    required: true
     examples:
       - value: kidney
 
-  Biological_Material_Tissue_Origin_term_accession:
+  biological_material_tissue_origin_term_accession:
     description: The term accession for this Biological Material Tissue Origin.
+    required: true
     examples:
       - value: http://purl.obolibrary.org/obo/UBERON_0002113
 
-  Biological_Material_Cell_Type:
+  biological_material_cell_type:
     description: If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are CLO, CL or EFO.
+    examples:
+      - value: kidney cell
 
-  Biological_Material_Cell_Type_term_accession:
+  biological_material_cell_type_term_accession:
     description: The term accession for this Biological Material Cell Type.
+    examples:
+      - value: http://purl.obolibrary.org/obo/CL_0000210
 
-  Biosample_Intrinsic_Variable:
-    description: If applicable enter one or more terms describing innate aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+  biosample_intrinsic_variable:
+    description: If applicable enter one or more terms describing innate aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If not applicable leave blank.
+    multivalued: true
     examples:
       - value: GeneXYZ_mutationXYZ
 
-  Biosample_Extrinsic_Variable:
-    description: If applicable enter one or more terms describing the way in which the Biosample was treated as part of this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+  biosample_extrinsic_variable:
+    description: If applicable enter one or more terms describing the way in which the Biosample was treated as part of this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If not applicable leave blank.
+    multivalued: true
     examples:
       - value: Drug_XYZ
 
-  Biosample_Experimental_Variable:
-    description: If applicable enter one or more terms describing what is intentionally being changed as part of this Experiment (a.k.a., REMBI Study Component). Examples include Time, Temperature, Concentration, Illumination Dose. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+  biosample_experimental_variable:
+    description: If applicable enter one or more terms describing what is intentionally being changed as part of this Experiment (a.k.a., REMBI Study Component). Examples include Time, Temperature, Concentration, Illumination Dose. If not applicable leave blank.
+    multivalued: true
     examples:
-      - value: Time, Temperature
-
-
-enums:
-
-  nameEnum:
-    permissible_values:
-      ISA_Investigation:
-        description: ISA Investigation module
-      ISA_Study:
-        description: ISA Study module
-      ISA_Assay:
-        description: ISA Assay module
-      ISA_BiologicalMaterial:
-        description: ISA Biological Material module
-      ISA_Sample:
-        description: ISA Sample module
-      REMBI_Study:
-        description: REMBI Study module
-      REMBI_StudyComponent:
-        description: REMBI Study Component module
-      REMBI_Biosample:
-        description: REMBI Biosample module
-      REMBI_Specimen:
-        description: REMBI Specimen module
-      REMBI_ImageAcquisition:
-        description: REMBI Image Acquisition module
-      REMBI_ImageData:
-        description: REMBI Image Data module
-      REMBI_ImageCorrelation:
-        description: REMBI Image Correlation module
-      REMBI_AnalyzedData:
-        description: REMBI Analyzed Data module
-        
-# Document End
+      - value: Time
+      - value: Temperature

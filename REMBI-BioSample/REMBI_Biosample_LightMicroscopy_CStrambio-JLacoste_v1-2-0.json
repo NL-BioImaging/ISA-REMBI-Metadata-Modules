@@ -1,0 +1,232 @@
+{
+    "$defs": {
+        "AnnotationGroupEnum": {
+            "description": "Standard annotation groups for organizing metadata fields in ISA modules",
+            "enum": [
+                "assay",
+                "assay_component",
+                "biosample",
+                "image_data",
+                "image_acquisition",
+                "specimen",
+                "protocols"
+            ],
+            "title": "AnnotationGroupEnum",
+            "type": "string"
+        },
+        "BiosampleContent": {
+            "additionalProperties": false,
+            "description": "Content schema for REMBI Biosample",
+            "properties": {
+                "biological_material_cell_type": {
+                    "description": "If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are CLO, CL or EFO.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "biological_material_cell_type_term_accession": {
+                    "description": "The term accession for this Biological Material Cell Type.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "biological_material_tissue_origin": {
+                    "description": "The Tissue Origin for this Biological Material. Initial suggested ontologies are UBERON and EFO.",
+                    "type": "string"
+                },
+                "biological_material_tissue_origin_term_accession": {
+                    "description": "The term accession for this Biological Material Tissue Origin.",
+                    "type": "string"
+                },
+                "biological_material_type": {
+                    "description": "The Type of this Biological Material used for this dataset. Initial suggested ontologies are MI, NCIT and BAO.",
+                    "type": "string"
+                },
+                "biological_material_type_term_accession": {
+                    "description": "The term accession for this Biological Material Type.",
+                    "type": "string"
+                },
+                "biosample_experimental_variable": {
+                    "description": "If applicable enter one or more terms describing what is intentionally being changed as part of this Experiment (a.k.a., REMBI Study Component). Examples include Time, Temperature, Concentration, Illumination Dose. If not applicable leave blank.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "biosample_extrinsic_variable": {
+                    "description": "If applicable enter one or more terms describing the way in which the Biosample was treated as part of this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If not applicable leave blank.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "biosample_intrinsic_variable": {
+                    "description": "If applicable enter one or more terms describing innate aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If not applicable leave blank.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "content_id": {
+                    "description": "Identifier for content instances",
+                    "type": "string"
+                },
+                "organism": {
+                    "description": "The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon.",
+                    "type": "string"
+                },
+                "organism_term_accession": {
+                    "description": "The term accession for the biological Organism.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "organism",
+                "organism_term_accession",
+                "biological_material_type",
+                "biological_material_type_term_accession",
+                "biological_material_tissue_origin",
+                "biological_material_tissue_origin_term_accession",
+                "content_id"
+            ],
+            "title": "BiosampleContent",
+            "type": "object"
+        },
+        "BiosampleModule": {
+            "additionalProperties": false,
+            "description": "REMBI Biosample module definition",
+            "title": "BiosampleModule",
+            "type": "object"
+        },
+        "MetadataContent": {
+            "additionalProperties": false,
+            "description": "Base class for module content. Each module should define a content class that extends this class.",
+            "properties": {
+                "content_id": {
+                    "description": "Identifier for content instances",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "content_id"
+            ],
+            "title": "MetadataContent",
+            "type": "object"
+        },
+        "MetadataModule": {
+            "additionalProperties": false,
+            "description": "Base marker class for module definitions.",
+            "title": "MetadataModule",
+            "type": "object"
+        },
+        "ModuleLevelMetadata": {
+            "additionalProperties": false,
+            "description": "Defines the metadata that should be associated with each module definition through top-level annotations.",
+            "properties": {
+                "created_by": {
+                    "description": "Person(s) who created the module",
+                    "type": "string"
+                },
+                "created_by_affiliation": {
+                    "description": "Affiliation of the creator(s)",
+                    "type": "string"
+                },
+                "date_template_generated": {
+                    "description": "Date when the template was generated",
+                    "format": "date",
+                    "type": "string"
+                },
+                "module_description": {
+                    "description": "A description of what this module is used for",
+                    "type": "string"
+                },
+                "module_model": {
+                    "description": "Whether this metadata template module belongs to the ISA specifications or the REMBI guidelines",
+                    "type": "string"
+                },
+                "module_name": {
+                    "description": "One of the allowed ISA or REMBI metadata module names",
+                    "type": "string"
+                },
+                "module_scope": {
+                    "description": "The scope of the module (use EDAMBioImaging as suggested ontology)",
+                    "type": "string"
+                },
+                "module_scope_term_accession": {
+                    "description": "The term accession for the module scope",
+                    "type": "string"
+                },
+                "module_template_version": {
+                    "description": "The version of this module template",
+                    "pattern": "^v\\d+\\.\\d+\\.\\d+$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "module_model",
+                "module_name",
+                "module_description",
+                "module_template_version",
+                "module_scope",
+                "module_scope_term_accession",
+                "date_template_generated",
+                "created_by",
+                "created_by_affiliation"
+            ],
+            "title": "ModuleLevelMetadata",
+            "type": "object"
+        },
+        "ModuleReference": {
+            "additionalProperties": false,
+            "description": "Reference to another module with version constraints",
+            "properties": {
+                "maximum_version": {
+                    "description": "Maximum version supported for compatibility",
+                    "pattern": "^v\\d+\\.\\d+\\.\\d+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "minimum_version": {
+                    "description": "Minimum version required for compatibility",
+                    "pattern": "^v\\d+\\.\\d+\\.\\d+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "module_id": {
+                    "description": "Identifier for the referenced module",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "module_id"
+            ],
+            "title": "ModuleReference",
+            "type": "object"
+        }
+    },
+    "$id": "https://example.org/schemas/rembi_biosample",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "REMBI_Biosample",
+    "type": "object",
+    "version": null
+}
