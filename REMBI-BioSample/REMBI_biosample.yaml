@@ -1,0 +1,120 @@
+# rembi_biosample.yaml - Revised schema using annotations and instantiates
+id: https://example.org/schemas/rembi_biosample
+name: REMBI_Biosample
+description: Schema for REMBI Biosample metadata template
+version: v1.2.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+imports:
+  - linkml:types
+  - ../module_schema  # Import the module schema
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+default_range: string
+
+# Use instantiates to indicate this schema follows the ModuleLevelMetadata structure
+instantiates: 
+  - module_schema:ModuleLevelMetadata
+    
+# Put module metadata in annotations as per the ModuleLevelMetadata class
+annotations:    
+  module_name: REMBI_Biosample
+  module_description: >-
+    This REMBI_Biosample metadata-collection module template was created in the context of 
+    a BioImaging North America (BINA)-Canada BIoImaging (CBI) collaboration to describe 
+    the characteristics of a Biosample used for Light Microscopy observation
+  conforms_to: REMBI
+  module_scope: Light Microscopy
+  module_scope_term_accession: http://edamontology.org/topic_3385
+  created_on: "2025-04-25"
+  last_updated_on: "2025-05-13"
+  created_by: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
+  created_by_affiliation: UMass Chan Medical School, MIACellavie
+  module_schema_version: v1.2.0
+  metamodel_version: v1.0.0
+
+classes:
+  # The main module class extends MetadataModule from the module schema
+  BiosampleModule:
+  #  is_a: MetadataModule  # Extend the base MetadataModule class
+    description: The actual schema for this REMBI_Biosample metadata collection form
+    slots:
+      - organism
+      - organism_term_accession
+      - biological_material_type
+      - biological_material_type_term_accession
+      - biological_material_tissue_origin
+      - biological_material_tissue_origin_term_accession
+      - biological_material_cell_type
+      - biological_material_cell_type_term_accession
+      - biosample_intrinsic_variable
+      - biosample_extrinsic_variable
+      - biosample_experimental_variable
+
+slots:
+  organism:
+    description: The biological Organism this Biosample is derived from. Choose a term from NCSBITaxon.
+    required: true
+    examples:
+      - value: Mus musculus
+
+  organism_term_accession:
+    description: The term accession for the biological Organism.
+    required: true
+    examples:
+      - value: http://purl.bioontology.org/ontology/NCBITAXON/10090
+
+  biological_material_type:
+    description: The Type of this Biological Material used for this dataset. Initial suggested ontologies are MI, NCIT and BAO.
+    required: true
+    examples:
+      - value: fixed tissue section
+
+  biological_material_type_term_accession:
+    description: The term accession for this Biological Material Type.
+    required: true
+    examples:
+      - value: http://purl.obolibrary.org/obo/NCIT_C158415
+
+  biological_material_tissue_origin:
+    description: The Tissue Origin for this Biological Material. Initial suggested ontologies are UBERON and EFO.
+    required: true
+    examples:
+      - value: kidney
+
+  biological_material_tissue_origin_term_accession:
+    description: The term accession for this Biological Material Tissue Origin.
+    required: true
+    examples:
+      - value: http://purl.obolibrary.org/obo/UBERON_0002113
+
+  biological_material_cell_type:
+    description: If applicable, the Cell Type of this Biological Material. In not applicable leave blank. Initial suggested ontologies are CLO, CL or EFO.
+    examples:
+      - value: kidney cell
+
+  biological_material_cell_type_term_accession:
+    description: The term accession for this Biological Material Cell Type.
+    examples:
+      - value: http://purl.obolibrary.org/obo/CL_0000210
+
+  biosample_intrinsic_variable:
+    description: If applicable enter one or more terms describing innate aspects of the Biosample that are relevant to this Experiment (a.k.a., REMBI Study Component), such as Species, Gentype, Trait. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    multivalued: true  # Properly mark as multivalued instead of comma-separated string
+    examples:
+      - value: GeneXYZ_mutationXYZ
+
+  biosample_extrinsic_variable:
+    description: If applicable enter one or more terms describing the way in which the Biosample was treated as part of this Experiment (a.k.a., REMBI Study Component). For example list the name of the Drug, Inhibitor, Suppressor, Viral Infection, used in this case. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    multivalued: true
+    examples:
+      - value: Drug_XYZ
+
+  biosample_experimental_variable:
+    description: If applicable enter one or more terms describing what is intentionally being changed as part of this Experiment (a.k.a., REMBI Study Component). Examples include Time, Temperature, Concentration, Illumination Dose. If you enter a list of terms use a comma to separate individual terms. If not applicable leave blank.
+    multivalued: true
+    examples:
+      - value: Time
+      - value: Temperature

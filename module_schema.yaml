@@ -1,0 +1,178 @@
+# module_schema.yaml - Corrected version
+id: https://example.org/schemas/module-schema
+name: module-schema
+description: Schema that defines how bioimage metadata modules should be structured
+version: v1.0.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+imports:
+  - linkml:types
+
+# Prefixes for referencing external ontologies and vocabularies
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  edam: http://edamontology.org/
+  module_schema: https://example.org/schemas/module-schema/
+  
+default_range: string
+
+classes:
+  # This is your metamodel extension - defines what annotations a module can have
+  ModuleLevelMetadata:
+    class_uri: module_schema:ModuleLevelMetadata
+    description: >-
+      Defines the metadata that should be associated with each module definition.
+    slots:
+      - module_name
+      - module_description
+      - conforms_to
+      - module_scope
+      - module_scope_term_accession
+      - created_on
+      - last_updated_on
+      - created_by
+      - created_by_affiliation
+      - module_schema_version
+      - metamodel_version
+      
+  # This is the base class for all modules
+  MetadataModule:
+    description: >-
+      Base class for all metadata modules. Specific modules like REMBI_Biosample 
+      will extend this class.
+    slots:
+      - id
+      - name
+      - description
+      - version
+      - license
+      - imports
+      - required_modules
+      - recommended_modules
+  
+  # Define ModuleReference as a proper class  
+  ModuleReference:
+    description: Reference to another module with version constraints
+    slots:
+      - module_id
+      - minimum_version
+      - maximum_version
+      
+slots:
+  # ModuleLevelMetadata slots - these will be used in annotations
+  module_name:
+    description: One of the allowed ISA or REMBI metadata module names
+    range: string
+    required: true
+  
+  module_description:
+    description: A description of what this module is used for
+    range: string
+    required: true
+  
+  conforms_to:
+    description: The metadata standard this module conforms to (e.g., REMBI, ISA)
+    range: string
+    required: true
+  
+  module_scope:
+    description: The scope of the module (use EDAMBioImaging as suggested ontology)
+    range: string
+    required: true
+  
+  module_scope_term_accession:
+    description: The term accession for the module scope
+    range: uri
+    required: true
+  
+  created_on:
+    description: Date when the module was created
+    range: date
+    required: true
+  
+  last_updated_on:
+    description: Date when the module was last updated
+    range: date
+    required: true
+  
+  created_by:
+    description: Person(s) who created the module
+    range: string
+    required: true
+  
+  created_by_affiliation:
+    description: Affiliation of the creator(s)
+    range: string
+    required: true
+  
+  module_schema_version:
+    description: Version of the module schema
+    range: string
+    required: true
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+  
+  metamodel_version:
+    description: Version of the metamodel
+    range: string
+    required: true
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+  
+  # MetadataModule slots - these will be direct slots in the module classes
+  id:
+    description: Unique identifier for the module
+    range: uri
+    required: true
+  
+  name:
+    description: Name of the module
+    range: string
+    required: true
+  
+  description:
+    description: Description of the module
+    range: string
+    required: true
+  
+  version:
+    description: Version of the module
+    range: string
+    required: true
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+  
+  license:
+    description: License for the module
+    range: uri
+    required: true
+  
+  imports:
+    description: Other schemas imported by this module
+    range: uriorcurie
+    multivalued: true
+  
+  required_modules:
+    description: Other modules that must be used with this one
+    range: string  # Simplified to just use module names
+    multivalued: true
+  
+  recommended_modules:
+    description: Other modules that are recommended to use with this one
+    range: string  # Simplified to just use module names
+    multivalued: true
+  
+  # ModuleReference slots
+  module_id:
+    description: Identifier for the referenced module
+    range: string
+    required: true
+  
+  minimum_version:
+    description: Minimum version required for compatibility
+    range: string
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+  
+  maximum_version:
+    description: Maximum version supported for compatibility
+    range: string
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
