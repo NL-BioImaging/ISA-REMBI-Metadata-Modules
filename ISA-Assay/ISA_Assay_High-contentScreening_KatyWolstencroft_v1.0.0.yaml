@@ -224,7 +224,7 @@ slots:
   
   image_number_of_pixels_y:
     description: Indicate number of pixels in y in images
-    range: int
+    range: integer
     annotations:
       annotation_group: ImageData
     examples:
