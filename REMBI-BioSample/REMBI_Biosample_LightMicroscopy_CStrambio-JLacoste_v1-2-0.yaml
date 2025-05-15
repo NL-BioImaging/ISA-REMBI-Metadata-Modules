@@ -1,4 +1,3 @@
-# rembi_biosample.yaml
 id: https://example.org/schemas/rembi_biosample
 name: REMBI_Biosample
 metamodel_version: v1.0.0
@@ -28,7 +27,7 @@ annotations:
     the characteristics of a Biosample used for Light Microscopy observation
   module_template_version: v1.2.0
   module_scope: Light Microscopy
-  module_scope_term_accession: http://edamontology.org/topic_3385
+  module_scope_term_accession: edam:topic_3385
   date_template_generated: "2025-04-25"
   created_by: C. Strambio-De-Castillia (BINA) & J. Lacoste (CBI)
   created_by_affiliation: UMass Chan Medical School, MIACellavie
