@@ -1,6 +1,6 @@
 id: https://example.org/schemas/Module
 name: module_schema
-description: Model-level metadata for generic REMBI or ISA module schema
+description: REMBI or ISA module schema
 version: v1.0.0
 license: https://creativecommons.org/publicdomain/zero/1.0/
 imports:
@@ -10,6 +10,7 @@ default_range: string
 classes:
 
     model_level_metadata:
+      description: Model-level metadata for generic REMBI or ISA module schema
       slots:
         - module_scope
         - module_scope_term_accession
@@ -26,5 +27,6 @@ slots:
     required: true
 
   created_by_affiliation:
-    description: Affiliation of the creator      
+    description: Affiliation of the creator
+    required: false
       
