@@ -1,0 +1,397 @@
+# isa_assay.yaml
+id: https://example.org/schemas/isa_assay
+name: ISA_Assay
+description: Schema for ISA Assay metadata template for high-content screening
+version: v1.0.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+imports:
+  - linkml:types
+  - ../module_schema  # Import the module schema
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  module_schema: https://example.org/schemas/module-schema/
+
+default_range: string
+
+# Explicitly instantiate the ModuleLevelMetadata class
+instantiates:
+  - module_schema:ModuleLevelMetadata
+
+# Module metadata as top-level annotations
+annotations:    
+  module_model: ISA
+  module_name: Assay
+  module_description: >-
+    This ISA Assay metadata-collection module template is designed for high-content screening experiments,
+    capturing information about the assay, cell lines, imaging parameters, and channel information.
+  module_template_version: v1.0.0
+  module_scope: High Content Screening
+  module_scope_term_accession: edam:topic_High_content_screening
+  date_template_generated: "2025-04-25"
+  created_by: Katy Wolstencroft
+  created_by_affiliation: Leiden University
+
+classes:
+  # Simple marker class for module definition
+  AssayModule:
+    is_a: MetadataModule
+    description: ISA Assay module definition for high-content screening
+    
+  # Content class for this module
+  AssayContent:
+    is_a: MetadataContent
+    description: Content schema for ISA Assay
+    slots:
+      # Assay group
+      - assay_title
+      - assay_internal_id
+      - assay_description
+      - assay_number_of_biological_replicates
+      - number_of_plates
+      - assay_technology_type
+      - assay_type
+      - assay_external_url
+      - assay_data_url
+      
+      # AssayComponent group
+      - imaging_protocol
+      - sample_preparation_protocol
+      
+      # Biosample group
+      - cell_lines_storage_location
+      - cell_lines_clone_number
+      - cell_lines_passage_number
+      
+      # ImageData group
+      - image_number_of_pixels_x
+      - image_number_of_pixels_y
+      - image_number_of_z_stacks
+      - image_number_of_channels
+      - image_number_of_timepoints
+      - image_sites_per_well
+      
+      # ImageAcquisition group
+      - microscope_id
+      
+      # Specimen group
+      - channel_transmission_id
+      - channel1_visualization_method
+      - channel1_entity
+      - channel1_label
+      - channel1_id
+      - channel2_visualization_method
+      - channel2_entity
+      - channel2_label
+      - channel2_id
+      - channel3_visualization_method
+      - channel3_entity
+      - channel3_label
+      - channel3_id
+      - channel4_visualization_method
+      - channel4_entity
+      - channel4_label
+      - channel4_id
+
+slots:
+  # Assay group slots
+  assay_title:
+    description: Screen name
+    required: true
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "Kinase Inhibitor Screen 2023"
+  
+  assay_internal_id:
+    description: Experimental ID, e.g. aMV-010, linked to ELN or labjournal
+    required: true
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "aMV-010"
+  
+  assay_description:
+    description: >-
+      Description of screen plus additional unstructured information about screen not covered elsewhere.
+      Stages of HCS: either primary screen, secondary screen or validation screen. EFO terms
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "Primary screen for kinase inhibitors affecting mitochondrial dynamics"
+  
+  assay_number_of_biological_replicates:
+    description: Total number of biological replicates
+    range: integer
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "3"
+  
+  number_of_plates:
+    description: Total number of plates, n-plates
+    range: integer
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "10"
+  
+  assay_technology_type:
+    description: Imaging method, FBbi terms
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "Confocal microscopy"
+  
+  assay_type:
+    description: >-
+      List of options: sub types of HCS e.g. Gene Knock down, RNAi, compound, EFO terms
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "high content analysis of cells"
+  
+  assay_external_url:
+    description: ELN or any other external url link to this screen
+    range: uri
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "https://eln.example.org/projects/KIS-2023"
+  
+  assay_data_url:
+    description: OMERO url link to this screen
+    range: uri
+    annotations:
+      annotation_group: Assay
+    examples:
+      - value: "https://omero.example.org/webclient/?show=project-123"
+  
+  # AssayComponent group slots
+  imaging_protocol:
+    description: >-
+      URL to protocols.io or protocols in ELN, at least protocol file name 
+      or free text description of imaging protocol
+    annotations:
+      annotation_group: AssayComponent
+    examples:
+      - value: "https://protocols.io/view/hcs-imaging-protocol-v2-bqe5mtg6"
+  
+  sample_preparation_protocol:
+    description: >-
+      Sample preparation method (Formaldehyde (PFA) fixed tissue, Live cells, unfixed tissue). FBbi terms
+    annotations:
+      annotation_group: AssayComponent
+    examples:
+      - value: "4% PFA fixation for 15 minutes at room temperature"
+  
+  # Biosample group slots
+  cell_lines_storage_location:
+    description: >-
+      Storage location according to Database used or at least location
+      e.g. Example -150 liquid N2 tank 4th floor GE4.xx
+    annotations:
+      annotation_group: Biosample
+    examples:
+      - value: "-150 liquid N2 tank 4th floor GE4.12"
+  
+  cell_lines_clone_number:
+    description: Storage location DB info
+    annotations:
+      annotation_group: Biosample
+    examples:
+      - value: "CLN-3322"
+  
+  cell_lines_passage_number:
+    description: >-
+      Passage number of your cells. In case different passage number is used for the 
+      replicates, please indicate it in Comment_users
+    range: integer
+    annotations:
+      annotation_group: Biosample
+    examples:
+      - value: "8"
+  
+  # ImageData group slots
+  image_number_of_pixels_x:
+    description: Indicate number of pixels in x in images
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "1024"
+  
+  image_number_of_pixels_y:
+    description: Indicate number of pixels in y in images
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "1024"
+  
+  image_number_of_z_stacks:
+    description: Indicate number z stacks in image, single image is z=1
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "1"
+  
+  image_number_of_channels:
+    description: Indicate number of channels in your image, single channel image c=1, including your TD channel
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "4"
+  
+  image_number_of_timepoints:
+    description: Indicate number of time point(s) in your image
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "1"
+  
+  image_sites_per_well:
+    description: Number of fields, numeric value
+    range: integer
+    annotations:
+      annotation_group: ImageData
+    examples:
+      - value: "9"
+  
+  # ImageAcquisition group slots
+  microscope_id:
+    description: >-
+      URL to micrometa app file link or other url describing your microscope. At least Microscope name.
+    annotations:
+      annotation_group: ImageAcquisition
+    examples:
+      - value: "Zeiss LSM 880"
+  
+  # Specimen group slots
+  channel_transmission_id:
+    description: >-
+      Channel id is dependent on different machines, first or last. If No transmission is acquired state NA
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "TD"
+  
+  channel1_visualization_method:
+    description: Visualization method 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Hoechst staining"
+  
+  channel1_entity:
+    description: Entity visualized
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "DNA"
+  
+  channel1_label:
+    description: >-
+      Label used for entity (example: Nuclei) Best practice to use similar label as your CP-pipeline
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Nuclei"
+  
+  channel1_id:
+    description: Sequential id of channel order in your image
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "CH1"
+  
+  channel2_visualization_method:
+    description: Visualization method 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "GFP"
+  
+  channel2_entity:
+    description: Entity visualized 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "MAP1LC3B"
+  
+  channel2_label:
+    description: >-
+      Label used for entity (example: GFP-LC3) Best practice to use similar label as your CP-pipeline
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "GFP-LC3"
+  
+  channel2_id:
+    description: Sequential id of channel order in your image
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "CH2"
+  
+  channel3_visualization_method:
+    description: Visualization method 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "PI staining"
+  
+  channel3_entity:
+    description: Entity visualized 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Death cell DNA"
+  
+  channel3_label:
+    description: >-
+      Label used for entity (example: PI) Best practice to use similar label as your CP-pipeline
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "PI"
+  
+  channel3_id:
+    description: Sequential id of channel order in your image
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "CH3"
+  
+  channel4_visualization_method:
+    description: Visualization method 
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Apoptotic marker Annexin V staining"
+  
+  channel4_entity:
+    description: Entity visualized
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Apoptotic cells"
+  
+  channel4_label:
+    description: >-
+      Label used for entity (example: Annexin-V) Best practice to use similar label as your CP-pipeline
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "Annexin-V"
+  
+  channel4_id:
+    description: Sequential id of channel order in your image
+    annotations:
+      annotation_group: Specimen
+    examples:
+      - value: "CH4"

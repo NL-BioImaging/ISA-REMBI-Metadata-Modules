@@ -1,0 +1,173 @@
+# module_schema.yaml
+id: https://example.org/schemas/module-schema
+name: module-schema
+description: Schema that defines how bioimage metadata modules should be structured
+version: v1.0.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+imports:
+  - linkml:types
+
+# Prefixes for referencing external ontologies and vocabularies
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  edam: http://edamontology.org/
+  module_schema: https://example.org/schemas/module-schema/
+  
+default_range: string
+
+classes:
+  # Metamodel extension class for module-level metadata
+  ModuleLevelMetadata:
+    class_uri: module_schema:ModuleLevelMetadata
+    description: >-
+      Defines the metadata that should be associated with each module definition
+      through top-level annotations.
+    slots:
+      - module_model
+      - module_name
+      - module_description
+      - module_template_version
+      - module_scope
+      - module_scope_term_accession
+      - date_template_generated
+      - created_by
+      - created_by_affiliation
+  
+  # Minimal marker class for module definitions
+  MetadataModule:
+    description: >-
+      Base marker class for module definitions.
+  
+  # Base content class
+  MetadataContent:
+    description: >-
+      Base class for module content. Each module should define a content class
+      that extends this class.
+    slots:
+      - content_id  # Identifier for this content instance
+  
+  # Module reference class
+  ModuleReference:
+    description: Reference to another module with version constraints
+    slots:
+      - module_id
+      - minimum_version
+      - maximum_version
+      
+slots:
+  # Module metadata slots - these will be used in annotations
+  module_model:
+    description: Whether this metadata template module belongs to the ISA specifications or the REMBI guidelines
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: REMBI
+      - value: ISA
+  
+  module_name:
+    description: One of the allowed ISA or REMBI metadata module names
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: Biosample
+      - value: Specimen
+  
+  module_description:
+    description: A description of what this module is used for
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+  
+  module_template_version:
+    description: The version of this module template
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+    examples:
+      - value: v1.0.0
+  
+  module_scope:
+    description: The scope of the module (use EDAMBioImaging as suggested ontology)
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: Light Microscopy
+  
+  module_scope_term_accession:
+    description: The term accession for the module scope
+    range: uri
+    required: true  # Required in ModuleLevelMetadata
+    examples:
+      - value: http://edamontology.org/topic_3385
+  
+  date_template_generated:
+    description: Date when the template was generated
+    range: date
+    required: true  # Required in ModuleLevelMetadata
+  
+  created_by:
+    description: Person(s) who created the module
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+  
+  created_by_affiliation:
+    description: Affiliation of the creator(s)
+    range: string
+    required: true  # Required in ModuleLevelMetadata
+  
+  # Content-related slots
+  content_id:
+    description: Identifier for content instances
+    range: string
+    identifier: true
+  
+  # Module reference slots
+  module_id:
+    description: Identifier for the referenced module
+    range: string
+    required: true
+  
+  minimum_version:
+    description: Minimum version required for compatibility
+    range: string
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+  
+  maximum_version:
+    description: Maximum version supported for compatibility
+    range: string
+    pattern: "^v\\d+\\.\\d+\\.\\d+$"
+    
+  # Optional annotation group slot for ISA modules
+  annotation_group:
+    description: >-
+      Specifies which annotation group a field belongs to. Used to organize
+      fields in forms and for validation in ISA modules.
+    range: string
+    required: false
+    examples:
+      - value: Assay
+      - value: AssayComponent
+      - value: Biosample
+      - value: ImageData
+
+enums:
+  # Define the standard annotation groups for ISA modules
+  AnnotationGroupEnum:
+    description: Standard annotation groups for organizing metadata fields in ISA modules
+    permissible_values:
+      assay:
+        description: Basic assay information
+      assay_component:
+        description: Components of the assay
+      biosample:
+        description: Biological sample information
+      image_data:
+        description: Image data properties
+      image_acquisition:
+        description: Image acquisition parameters
+      specimen:
+        description: Specimen information
+      protocols:
+        description: Experimental protocols
