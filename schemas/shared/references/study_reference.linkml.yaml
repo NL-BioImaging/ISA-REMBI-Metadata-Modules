@@ -1,0 +1,68 @@
+id: https://example.org/schemas/shared/references/study_reference
+name: study_reference_schema
+description: Reusable study reference metadata class aligned with JERM Study fields
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: JERM Study reference
+  annotation_group: shared
+  module_name: study_reference
+  metadata_profile_source: JERM/SEEK
+  maintainer_note: Reusable study reference for investigation modules
+
+classes:
+  StudyReference:
+    description: Reference to a study
+    slots:
+      - study_identifier
+      - study_title
+      - study_description
+      - study_seek_id
+      - study_web_page
+
+slots:
+  study_identifier:
+    description: Identifier of the study
+    required: true
+    identifier: true
+    aliases:
+      - identifier
+      - study_id
+
+  study_title:
+    description: Title of the study
+    required: false
+    aliases:
+      - title
+
+  study_description:
+    description: Description of the study
+    required: false
+    multiline: true
+    aliases:
+      - description
+
+  study_seek_id:
+    description: SEEK identifier URL for the study
+    required: false
+    range: uri
+    aliases:
+      - seek_id
+
+  study_web_page:
+    description: Web page associated with the study
+    required: false
+    range: uri
+    aliases:
+      - web_page

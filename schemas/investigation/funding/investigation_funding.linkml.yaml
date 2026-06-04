@@ -1,0 +1,39 @@
+id: https://example.org/schemas/investigation/investigation_funding
+name: investigation_funding_schema
+description: Investigation funding metadata attachment module
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+  - ../../shared/references/funding.linkml.yaml
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  annotation_group: Investigation
+  module_name: funding
+  semantic_scope: Investigation funding attachment module
+  profile_origin: MIHCSME
+  metadata_profile_source: ISA/BIA support fields
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  maintainer_note: Funding attachment module referencing shared Funding class
+
+classes:
+  InvestigationFunding:
+    description: Funding attachment metadata for the Investigation annotation group
+    slots:
+      - funding_items
+
+slots:
+  funding_items:
+    description: Funding items associated with the investigation
+    required: false
+    multivalued: true
+    range: Funding
+    aliases:
+      - funding

@@ -1,0 +1,62 @@
+id: https://example.org/schemas/shared/references/license_reference
+name: license_reference_schema
+description: Reusable license reference metadata class
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: License support class
+  annotation_group: shared
+  module_name: license_reference
+  metadata_profile_source: ISA/BIA support fields
+  maintainer_note: Reusable license class for shared use
+
+classes:
+  LicenseReference:
+    description: Reusable license reference
+    slots:
+      - license_identifier
+      - license_name
+      - license_url
+      - license_description
+
+slots:
+  license_identifier:
+    description: Identifier for the license
+    required: false
+    identifier: true
+    aliases:
+      - identifier
+
+  license_name:
+    description: Name of the license
+    required: true
+    aliases:
+      - name
+      - license_name
+
+  license_url:
+    description: URL of the license
+    required: false
+    range: uri
+    aliases:
+      - url
+      - license_url
+
+  license_description:
+    description: Description of the license
+    required: false
+    multiline: true
+    aliases:
+      - description
+      - license_description

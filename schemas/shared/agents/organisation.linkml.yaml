@@ -1,0 +1,68 @@
+id: https://example.org/schemas/shared/agents/organisation
+name: organisation_schema
+description: Reusable organisation metadata class for shared use across annotation groups
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: ISA Organisation / BIA organisation info
+  annotation_group: shared
+  module_name: organisation
+  metadata_profile_source: ISA + BIA/REMBI-style support class
+  maintainer_note: Reusable organisation class for contacts and authors
+
+classes:
+  Organisation:
+    description: Reusable organisation metadata entity
+    slots:
+      - organisation_identifier
+      - organisation_name
+      - address
+      - web_page
+      - ror_id
+
+slots:
+  organisation_identifier:
+    description: Unique identifier for the organisation
+    required: false
+    identifier: true
+    aliases:
+      - identifier
+
+  organisation_name:
+    description: Name of the organisation
+    required: true
+    aliases:
+      - name
+      - organisation_name
+
+  address:
+    description: Address of the organisation
+    required: false
+    multiline: true
+    aliases:
+      - address
+
+  web_page:
+    description: Web page associated with the organisation
+    required: false
+    range: uri
+    aliases:
+      - url
+      - web_page
+
+  ror_id:
+    description: ROR identifier of the organisation
+    required: false
+    aliases:
+      - ror_id

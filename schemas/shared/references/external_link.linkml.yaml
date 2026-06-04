@@ -1,0 +1,60 @@
+id: https://example.org/schemas/shared/references/external_link
+name: external_link_schema
+description: Reusable external link metadata class
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: Link/reference support class
+  annotation_group: shared
+  module_name: external_link
+  metadata_profile_source: ISA/BIA support fields
+  maintainer_note: Reusable external link class for investigation and study modules
+
+classes:
+  ExternalLink:
+    description: Reusable external link entity
+    slots:
+      - link_identifier
+      - link_url
+      - link_type
+      - link_description
+
+slots:
+  link_identifier:
+    description: Identifier for the external link
+    required: false
+    identifier: true
+    aliases:
+      - identifier
+
+  link_url:
+    description: URL of the external link
+    required: true
+    range: uri
+    aliases:
+      - url
+      - link_url
+
+  link_type:
+    description: Type/category of the external link
+    required: false
+    aliases:
+      - link_type
+
+  link_description:
+    description: Description of the external link
+    required: false
+    multiline: true
+    aliases:
+      - link_description
