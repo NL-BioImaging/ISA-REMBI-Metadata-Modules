@@ -22,42 +22,39 @@ annotations:
   maintainer_note: Reusable organisation class for contacts and authors
 
 classes:
+
   Organisation:
     description: Reusable organisation metadata entity
-    slots:
-      - organisation_name
-      - ror_id
-      - address
-      - web_page
+    attributes:
 
-slots:
+      organisation_name:
+        description: Name of the organisation
+        required: true
+        range: string
+        aliases:
+          - name
+          - organisation_name
 
-  organisation_name:
-    description: Name of the organisation
-    required: true
-    aliases:
-      - name
-      - organisation_name
+      ror_id:
+        description: Research Organization Registry (ROR) identifier for the organisation, if available
+        required: false
+        range: uriorcurie
+        aliases:
+          - ror_id
+          - organisation_identifier
+          - institution_identifier
 
-  ror_id:
-    description: Research Organization Registry (ROR) identifier for the organisation, if available
-    required: false
-    range: uriorcurie
-    aliases:
-      - ror_id
-      - organisation_identifier
+      address:
+        description: Address of the organisation
+        required: false
+        range: string
+        aliases:
+          - address
 
-  address:
-    description: Address of the organisation
-    required: false
-    range: string
-    aliases:
-      - address
-
-  web_page:
-    description: Web page associated with the organisation
-    required: false
-    range: uri
-    aliases:
-      - url
-      - web_page
+      web_page:
+        description: Web page associated with the organisation
+        required: false
+        range: uri
+        aliases:
+          - url
+          - web_page

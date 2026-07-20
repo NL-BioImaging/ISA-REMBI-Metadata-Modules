@@ -3,8 +3,12 @@ name: person_schema
 description: Reusable person metadata class for shared use across annotation groups
 version: v1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
+
 imports:
   - linkml:types
+  - ../ontology/ontology_annotation
+  - ./organisation
+
 default_range: string
 
 prefixes:
@@ -20,106 +24,79 @@ annotations:
   annotation_group: shared
   module_name: person
   metadata_profile_source: JERM/SEEK + ISA
-imports:
-  - linkml:types
-  - ../ontology/ontology_annotation.linkml.yaml
-  - ./organisation.linkml.yaml
-default_range: string
-
-prefixes:
-  orcid: https://orcid.org/
-
-created_by: orcid:0000-0002-4904-3269
-
-annotations:
-  created_by_name: Tooba Abbassi-Daloii
-  created_by_affiliation: Amsterdam UMC ; ACDC
-  semantic_scope: JERM Person + ISA Contact
-  annotation_group: shared
-  module_name: person
-  metadata_profile_source: JERM/SEEK + ISA
   maintainer_note: Reusable person class for investigation, study, and assay modules
 
 classes:
+
   Person:
     description: Reusable person metadata entity
-    slots:
-      - person_identifier
-      - first_name
-      - last_name
-      - email
-      - orcid
-      - phone
-      - affiliation
-      - institution_identifier
-      - organisation_references
-      - web_page
-      - roles
+    attributes:
 
-slots:
-  person_identifier:
-    description: Unique identifier for the person
-    required: true
-    identifier: true
-    aliases:
-      - identifier
+      orcid:
+        description: ORCID of the person, if available
+        required: false
+        range: uriorcurie
+        aliases:
+          - orcid
+          - identifier
+          - person_identifier
 
-  first_name:
-    description: First name of the person
-    required: true
-    aliases:
-      - first_name
+      first_name:
+        description: First name of the person
+        required: true
+        range: string
+        aliases:
+          - first_name
 
-  last_name:
-    description: Last name of the person
-    required: true
-    aliases:
-      - last_name
+      last_name:
+        description: Last name of the person
+        required: true
+        range: string
+        aliases:
+          - last_name
 
-  email:
-    description: Email address of the person
-    required: false
-    range: string
-    aliases:
-      - email
+      email:
+        description: Email address of the person
+        required: false
+        range: string
+        aliases:
+          - email
 
-  orcid:
-    description: ORCID of the person
-    required: false
-    range: string
-    aliases:
-      - orcid
+      phone:
+        description: Phone number of the person
+        required: false
+        range: string
+        aliases:
+          - phone
 
-  phone:
-    description: Phone number of the person
-    required: false
-    aliases:
-      - phone
+      affiliation:
+        description: Organisations or institutions with which the person is affiliated
+        required: false
+        multivalued: true
+        range: Organisation
+        inlined: true
+        inlined_as_list: true
+        aliases:
+          - affiliation
+          - affiliations
+          - organisation_references
 
-  affiliation:
-    description: Free-text affiliation of the person
-    required: false
-    aliases:
-      - affiliation
+      web_page:
+        description: Web page associated with the person
+        required: false
+        range: uri
+        aliases:
+          - web_page
 
-  institution_identifier:
-    description: Institution identifier associated with the person
-    required: false
-    aliases:
-      - institution_id
+      roles:
+        description: Roles of the person, preferably expressed as ontology annotations
+        required: false
+        multivalued: true
+        range: OntologyAnnotation
+        inlined_as_list: true
+        aliases:
+          - roles
 
-  organisation_references:
-    description: References to organisations associated with the person
-    required: false
-    multivalued: true
-    range: Organisation
-
-  web_page:
-    description: Web page associated with the person
-    required: false
-    range: uri
-    aliases:
-      - web_page
 
   roles:
     description: Roles of the person, preferably expressed as ontology annotations
