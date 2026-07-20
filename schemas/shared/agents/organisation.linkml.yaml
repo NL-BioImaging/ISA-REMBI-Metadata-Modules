@@ -25,19 +25,12 @@ classes:
   Organisation:
     description: Reusable organisation metadata entity
     slots:
-      - organisation_identifier
       - organisation_name
+      - ror_id
       - address
       - web_page
-      - ror_id
 
 slots:
-  organisation_identifier:
-    description: Unique identifier for the organisation
-    required: false
-    identifier: true
-    aliases:
-      - identifier
 
   organisation_name:
     description: Name of the organisation
@@ -46,10 +39,18 @@ slots:
       - name
       - organisation_name
 
+  ror_id:
+    description: Research Organization Registry (ROR) identifier for the organisation, if available
+    required: false
+    range: uriorcurie
+    aliases:
+      - ror_id
+      - organisation_identifier
+
   address:
     description: Address of the organisation
     required: false
-    multiline: true
+    range: string
     aliases:
       - address
 
@@ -60,9 +61,3 @@ slots:
     aliases:
       - url
       - web_page
-
-  ror_id:
-    description: ROR identifier of the organisation
-    required: false
-    aliases:
-      - ror_id
