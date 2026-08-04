@@ -55,6 +55,15 @@ classes:
         aliases:
           - last_name
 
+      mid_initials:
+        description: Middle initials of the person
+        required: false
+        range: string
+        aliases:
+          - mid_initials
+          - middle_initials
+          - initials
+
       email:
         description: Email address of the person
         required: false
@@ -96,12 +105,3 @@ classes:
         inlined_as_list: true
         aliases:
           - roles
-
-
-  roles:
-    description: Roles of the person, preferably expressed as ontology annotations
-    required: false
-    multivalued: true
-    range: OntologyAnnotation
-    aliases:
-      - roles
