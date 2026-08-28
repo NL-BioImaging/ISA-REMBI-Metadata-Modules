@@ -1,0 +1,39 @@
+id: https://example.org/schemas/investigation/investigation_links
+name: investigation_links_schema
+description: Investigation external links metadata attachment module
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+  - ../../shared/references/external_link.linkml.yaml
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  annotation_group: Investigation
+  module_name: links
+  semantic_scope: Investigation link attachment module
+  profile_origin: MIHCSME
+  metadata_profile_source: ISA/BIA support fields
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  maintainer_note: Link attachment module referencing shared ExternalLink class
+
+classes:
+  InvestigationLinks:
+    description: External link attachment metadata for the Investigation annotation group
+    slots:
+      - external_links
+
+slots:
+  external_links:
+    description: External links associated with the investigation
+    required: false
+    multivalued: true
+    range: ExternalLink
+    aliases:
+      - links

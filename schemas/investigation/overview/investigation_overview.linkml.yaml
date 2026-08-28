@@ -1,0 +1,165 @@
+id: https://example.org/schemas/investigation/investigation_overview
+name: investigation_overview_schema
+description: Investigation overview metadata module
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+  - ../../shared/references/project_reference.linkml.yaml
+  - ../../shared/references/study_reference.linkml.yaml
+  - ../../shared/agents/person.linkml.yaml
+  - ../../shared/references/publication.linkml.yaml
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  annotation_group: Investigation
+  module_name: overview
+  semantic_scope: ISA Investigation
+  profile_origin: MIHCSME
+  metadata_profile_source: JERM/SEEK + ISA
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  maintainer_note: Initial draft for modular bioimaging metadata schema
+
+classes:
+  InvestigationOverview:
+    description: Overview metadata for the Investigation annotation group
+    slots:
+      - investigation_identifier
+      - project_references
+      - investigation_title
+      - investigation_description
+      - investigation_seek_id
+      - investigation_web_page
+      - creator_references
+      - sharing_policy
+      - investigation_submission_date
+      - investigation_public_release_date
+      - investigation_created_at
+      - investigation_updated_at
+      - contact_references
+      - publication_references
+      - study_references
+
+slots:
+  investigation_identifier:
+    description: Identifier of the investigation
+    required: false
+    identifier: true
+    aliases:
+      - Investigation Identifier
+      - Investigation internal ID
+      - identifier
+
+  project_references:
+    description: References to projects associated with the investigation
+    required: false
+    multivalued: true
+    range: ProjectReference
+    aliases:
+      - project_id
+      - projects
+
+  investigation_title:
+    description: Title of the investigation
+    required: true
+    aliases:
+      - Investigation Title
+      - title
+
+  investigation_description:
+    description: Free-text description of the investigation
+    required: false
+    multiline: true
+    aliases:
+      - Investigation description
+      - description
+
+  investigation_seek_id:
+    description: SEEK identifier URL for the investigation
+    required: false
+    range: uri
+    aliases:
+      - seek_id
+
+  investigation_web_page:
+    description: Web page associated with the investigation
+    required: false
+    range: uri
+    aliases:
+      - web_page
+
+  creator_references:
+    description: References to creators associated with the investigation
+    required: false
+    multivalued: true
+    range: Person
+    aliases:
+      - creators
+      - other_creators
+
+  sharing_policy:
+    description: Sharing policy associated with the investigation
+    required: false
+    aliases:
+      - sharing_policy
+      - default_policy
+
+  investigation_submission_date:
+    description: Date on which the investigation was reported or submitted
+    required: false
+    range: date
+    aliases:
+      - Investigation Submission Date
+      - submission_date
+
+  investigation_public_release_date:
+    description: Date on which the investigation was publicly released
+    required: false
+    range: date
+    aliases:
+      - Investigation Public Release Date
+      - public_release_date
+
+  investigation_created_at:
+    description: Date on which the investigation record was created
+    required: false
+    range: date
+    aliases:
+      - created_at
+
+  investigation_updated_at:
+    description: Date on which the investigation record was last updated
+    required: false
+    range: date
+    aliases:
+      - updated_at
+
+  contact_references:
+    description: References to contacts associated with the investigation
+    required: false
+    multivalued: true
+    range: Person
+    aliases:
+      - contacts
+
+  publication_references:
+    description: References to publications associated with the investigation
+    required: false
+    multivalued: true
+    range: Publication
+    aliases:
+      - publications
+
+  study_references:
+    description: References to studies associated with the investigation
+    required: false
+    multivalued: true
+    range: StudyReference
+    aliases:
+      - studies

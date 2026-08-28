@@ -1,0 +1,98 @@
+id: https://example.org/schemas/shared/references/project_reference
+name: project_reference_schema
+description: Reusable project reference metadata class aligned with JERM Project fields
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: JERM Project reference
+  annotation_group: shared
+  module_name: project_reference
+  metadata_profile_source: JERM/SEEK
+  maintainer_note: Reusable project reference for investigation modules
+
+classes:
+  ProjectReference:
+    description: Reference to a project
+    slots:
+      - project_identifier
+      - project_title
+      - project_description
+      - project_seek_id
+      - project_web_page
+      - project_start_date
+      - project_end_date
+      - default_license
+      - default_policy
+
+slots:
+  project_identifier:
+    description: Identifier of the project
+    required: true
+    identifier: true
+    aliases:
+      - identifier
+      - project_id
+
+  project_title:
+    description: Title of the project
+    required: false
+    aliases:
+      - title
+
+  project_description:
+    description: Description of the project
+    required: false
+    multiline: true
+    aliases:
+      - description
+
+  project_seek_id:
+    description: SEEK identifier URL for the project
+    required: false
+    range: uri
+    aliases:
+      - seek_id
+
+  project_web_page:
+    description: Project web page
+    required: false
+    range: uri
+    aliases:
+      - web_page
+
+  project_start_date:
+    description: Start date of the project
+    required: false
+    range: date
+    aliases:
+      - start_date
+
+  project_end_date:
+    description: End date of the project
+    required: false
+    range: date
+    aliases:
+      - end_date
+
+  default_license:
+    description: Default license associated with the project
+    required: false
+    aliases:
+      - default_license
+
+  default_policy:
+    description: Default sharing policy associated with the project
+    required: false
+    aliases:
+      - default_policy

@@ -1,0 +1,45 @@
+id: https://example.org/schemas/shared/references/grant_reference
+name: grant_reference_schema
+description: Reusable grant reference class
+version: v1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+default_range: string
+
+prefixes:
+  orcid: https://orcid.org/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC ; ACDC
+  semantic_scope: Grant reference support class
+  annotation_group: shared
+  module_name: grant_reference
+  metadata_profile_source: BIA/REMBI support fields
+  maintainer_note: Reusable grant reference class for funding modules
+
+classes:
+  GrantReference:
+    description: Reusable grant reference
+    slots:
+      - grant_identifier
+      - funder
+
+slots:
+  grant_identifier:
+    description: Identifier of the grant
+    required: true
+    identifier: true
+    aliases:
+      - identifier
+      - grant_identifier
+
+  funder:
+    description: Name of the funder
+    required: false
+    aliases:
+      - funder
+      - funder_name
