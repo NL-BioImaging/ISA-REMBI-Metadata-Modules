@@ -33,7 +33,6 @@ classes:
 slots:
   link_identifier:
     description: Identifier for the external link
-    required: false
     identifier: true
     aliases:
       - identifier
