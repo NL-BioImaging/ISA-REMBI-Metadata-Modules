@@ -1,13 +1,16 @@
-id: https://example.org/schemas/references/external_link
-name: external_link
-title: Shared external link
-description: Reusable external link object for identifiers, web pages and persistent records.
+id: https://example.org/schemas/shared/agents/role
+name: role
+description: JERM-aligned role component for person-organisation-role relationships.
 version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
+
 imports:
 - linkml:types
-- ../mixins/common
+- ../../shared/mixins/common
+- ../../shared/ontology/ontology_annotation
+
 default_range: string
+
 prefixes:
   linkml: https://w3id.org/linkml/
   schema: https://schema.org/
@@ -17,31 +20,34 @@ prefixes:
   orcid: https://orcid.org/
   prov: http://www.w3.org/ns/prov#
   obo: http://purl.obolibrary.org/obo/
+
 created_by: orcid:0000-0002-4904-3269
+
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
-  schema_status: draft
   design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+
 classes:
-  SharedExternalReference:
-    description: A reference to an external resource or identifier.
-    mixins:
-    - SharedDescriptionMixin
-    - SharedIdentifierMixin
-    - SharedNamedMixin
+  Role:
+    description: Role held by a person or organisation in an investigation, study, assay or dataset.
     extra_slots:
       allowed: true
     attributes:
-      reference_label:
-        description: Human-readable label for the external reference.
+      role_id:
+        description: URI or CURIE identifier for the role, if available.
         required: false
+        range: uriorcurie
+        identifier: true
+      role_name:
+        description: Human-readable role name.
+        required: true
         range: string
-      reference_type:
-        description: Type of external reference, e.g. DOI, ORCID, accession, repository URL.
+        aliases:
+        - Author/role
+        - role
+      role_term:
+        description: Ontology term describing the role.
         required: false
-        range: string
-      reference_url:
-        description: URL where the external reference can be resolved.
-        required: false
-        range: uri
+        range: SharedOntologyAnnotation
+        inlined: true

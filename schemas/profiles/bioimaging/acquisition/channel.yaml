@@ -1,0 +1,84 @@
+id: https://example.org/schemas/profiles/bioimaging/acquisition/channel
+name: imaging_channel
+description: Imaging channel or specimen-channel metadata aligned with MIHCSME channel fields.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../../shared/ontology/ontology_annotation
+- ../../shared/enums/mihcsme_enums
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  ImagingChannel:
+    description: Imaging channel, label, probe or signal visualisation entity.
+    class_uri: rembi:Specimen
+    extra_slots:
+      allowed: true
+    attributes:
+      channel_id:
+        description: URI, CURIE or local identifier for the channel.
+        required: false
+        range: uriorcurie
+        identifier: true
+        aliases:
+        - Channel 1 id
+        - Channel 2 id
+        - Channel 3 id
+        - Channel 4 id
+      channel_index:
+        description: Index of the channel in the image or specimen.
+        required: false
+        range: integer
+      channel_label:
+        description: Human-readable channel label.
+        required: false
+        range: string
+        aliases:
+        - Channel 1 label
+        - Channel 2 label
+        - Channel 3 label
+        - Channel 4 label
+      channel_entity:
+        description: Entity visualised in the channel.
+        required: false
+        range: string
+        aliases:
+        - Channel 1 entity
+        - Channel 2 entity
+        - Channel 3 entity
+        - Channel 4 entity
+      channel_visualization_method:
+        description: Visualization method used for the channel.
+        required: false
+        range: MIHCSMEVisualizationMethodEnum
+        aliases:
+        - Channel 1 visualization method
+        - Channel 2 visualization method
+        - Channel 3 visualization method
+        - Channel 4 visualization method
+      channel_visualization_term:
+        description: Ontology annotation for the visualization method.
+        required: false
+        range: SharedOntologyAnnotation
+        inlined: true
+      channel_transmission_id:
+        description: Transmission or channel transmission identifier.
+        required: false
+        range: string
+        aliases:
+        - Channel Transmission id

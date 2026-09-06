@@ -1,12 +1,13 @@
-id: https://example.org/schemas/references/external_link
-name: external_link
-title: Shared external link
-description: Reusable external link object for identifiers, web pages and persistent records.
+id: https://example.org/schemas/assay/material
+name: material
+title: JERM material
+description: Generic material component for physical inputs and outputs in processes.
 version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- ../mixins/common
+- ../shared/mixins/common
+- ../shared/ontology/ontology_annotation
 default_range: string
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -24,24 +25,27 @@ annotations:
   schema_status: draft
   design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
 classes:
-  SharedExternalReference:
-    description: A reference to an external resource or identifier.
-    mixins:
-    - SharedDescriptionMixin
-    - SharedIdentifierMixin
-    - SharedNamedMixin
+  Material:
+    description: Generic physical material used as input or output of a process.
+    class_uri: isa:material
     extra_slots:
       allowed: true
     attributes:
-      reference_label:
-        description: Human-readable label for the external reference.
+      material_id:
+        description: URI or CURIE identifier for the material.
+        required: false
+        range: uriorcurie
+        identifier: true
+      material_name:
+        description: Name of the material.
         required: false
         range: string
-      reference_type:
-        description: Type of external reference, e.g. DOI, ORCID, accession, repository URL.
+      material_description:
+        description: Description of the material.
         required: false
         range: string
-      reference_url:
-        description: URL where the external reference can be resolved.
+      material_type:
+        description: Ontology annotation describing the material type.
         required: false
-        range: uri
+        range: SharedOntologyAnnotation
+        inlined: true

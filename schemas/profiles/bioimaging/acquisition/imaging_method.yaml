@@ -1,0 +1,56 @@
+id: https://example.org/schemas/profiles/bioimaging/acquisition/imaging_method
+name: imaging_method
+title: Imaging method
+description: Imaging method component aligned with MIHCSME imaging method fields.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../../shared/ontology/ontology_annotation
+- ../../shared/enums/mihcsme_enums
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  ImagingMethod:
+    description: Imaging method used to acquire images.
+    class_uri: rembi:ImageAcquisition
+    extra_slots:
+      allowed: true
+    attributes:
+      imaging_method_id:
+        description: URI or CURIE identifier for the imaging method.
+        required: false
+        range: uriorcurie
+        identifier: true
+        aliases:
+        - ImagingMethod/ontology_id
+      imaging_method_name:
+        description: Name of the imaging method.
+        required: false
+        range: string
+        aliases:
+        - ImagingMethod/name
+        - ImageAcquisition/imaging_method
+      imaging_method_vocabulary_value:
+        description: Controlled vocabulary value for the imaging method.
+        required: false
+        range: MIHCSMEImagingMethodEnum
+      imaging_method_term:
+        description: Ontology annotation for the imaging method.
+        required: false
+        range: SharedOntologyAnnotation
+        inlined: true

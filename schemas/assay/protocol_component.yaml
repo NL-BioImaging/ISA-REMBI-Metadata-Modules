@@ -1,0 +1,62 @@
+id: https://example.org/schemas/assay/protocol_component
+name: protocol_component
+title: JERM protocol component
+description: Protocol component for hardware, software, reagents, parameters or other components used in a protocol.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../shared/mixins/common
+- parameter
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  ProtocolComponent:
+    description: A component used in a protocol, with an explicit component type designator.
+    extra_slots:
+      allowed: true
+    attributes:
+      component_id:
+        description: URI or CURIE identifier for the component.
+        required: false
+        range: uriorcurie
+        identifier: true
+      component_type:
+        description: Type designator for the protocol component.
+        required: true
+        range: string
+        aliases:
+        - hardware
+        - software
+        - reagent
+        - parameter
+        designates_types: true
+      component_name:
+        description: Component name.
+        required: false
+        range: string
+      component_description:
+        description: Component description.
+        required: false
+        range: string
+      parameters:
+        description: Parameters associated with the component.
+        required: false
+        range: Parameter
+        multivalued: true
+        inlined: true
+        inlined_as_list: true

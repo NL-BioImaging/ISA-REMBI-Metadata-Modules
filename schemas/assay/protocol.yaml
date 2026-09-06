@@ -1,0 +1,76 @@
+id: https://example.org/schemas/assay/protocol
+name: protocol
+description: Generic protocol component aligned with JERM protocol, ISA protocol and BIA protocol plans.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../shared/mixins/common
+- protocol_component
+- parameter
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  Protocol:
+    description: Description of a plan followed during a scientific study or process.
+    extra_slots:
+      allowed: true
+    attributes:
+      protocol_id:
+        description: URI or CURIE identifier for the protocol.
+        required: false
+        range: uriorcurie
+        identifier: true
+      protocol_name:
+        description: Protocol name.
+        required: false
+        range: string
+        aliases:
+        - Protocol/name
+        - HCS library protocol
+        - growth protocol
+        - treatment protocol
+        - HCS data analysis protocol
+      protocol_description:
+        description: Protocol description.
+        required: false
+        range: string
+        aliases:
+        - Protocol/description
+      protocol_type:
+        description: Protocol type.
+        required: false
+        range: string
+        aliases:
+        - Protocol/type
+      protocol_components:
+        description: Components used in the protocol.
+        required: false
+        range: ProtocolComponent
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      parameters:
+        description: Parameters defined by or used in the protocol.
+        required: false
+        range: Parameter
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      protocol_url:
+        description: URL or persistent identifier for the protocol.
+        required: false
+        range: uri

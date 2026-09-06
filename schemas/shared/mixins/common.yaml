@@ -1,0 +1,101 @@
+id: https://example.org/schemas/shared/mixins/common
+name: common
+title: Shared common mixins
+description: Mixin classes used to avoid repeating common identifier, name, description, and provenance attributes.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../ontology/ontology_annotation
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  SharedIdentifierMixin:
+    description: Mixin for entities with a URI or CURIE identifier.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      id:
+        description: URI or CURIE identifier for the entity.
+        required: false
+        range: uriorcurie
+        identifier: true
+  SharedNamedMixin:
+    description: Mixin for entities with a human-readable name.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      name:
+        description: Human-readable name.
+        required: false
+        range: string
+        aliases:
+        - title
+        - label
+  SharedDescriptionMixin:
+    description: Mixin for entities with a text description.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      description:
+        description: Human-readable description.
+        required: false
+        range: string
+  SharedVersionedMixin:
+    description: Mixin for entities with version information.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      version:
+        description: Version of the entity, if applicable.
+        required: false
+        range: string
+  SharedAnnotatedMixin:
+    description: Mixin for ontology annotations.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      annotations:
+        description: Ontology annotations associated with the entity.
+        required: false
+        range: SharedOntologyAnnotation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+  SharedAttributionMixin:
+    description: Mixin for attribution and responsibility information.
+    mixin: true
+    extra_slots:
+      allowed: true
+    attributes:
+      created_by:
+        description: Person or agent responsible for creating the entity.
+        required: false
+        range: uriorcurie
+      created_on:
+        description: Date when the entity was created.
+        required: false
+        range: date
+      modified_on:
+        description: Date when the entity was last modified.
+        required: false
+        range: date

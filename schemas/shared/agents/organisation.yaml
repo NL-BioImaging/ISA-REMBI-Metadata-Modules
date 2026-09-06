@@ -1,31 +1,38 @@
 id: https://example.org/schemas/shared/agents/organisation
-name: organisation_schema
-description: Reusable organisation metadata class for shared use across annotation groups
-version: v1.0.0
+name: organisation
+description: Organisation component aligned with JERM/ISA contacts and MIHCSME/BIA affiliation fields.
+version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 
 imports:
-  - linkml:types
+- linkml:types
+- ../../shared/mixins/common
+- role
 
 default_range: string
 
 prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
   orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
 
 created_by: orcid:0000-0002-4904-3269
 
 annotations:
   created_by_name: Tooba Abbassi-Daloii
-  created_by_affiliation: Amsterdam UMC ; ACDC
-  semantic_scope: ISA / JERM / BIA organisation info
-  annotation_group: shared
-  module_name: organisation
-  metadata_profile_source: ISA/JERM + BIA/REMBI-style support class
-  maintainer_note: Reusable organisation class for contacts and authors
+  created_by_affiliation: Amsterdam UMC; ACDC
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
 
 classes:
   Organisation:
-    description: Reusable organisation metadata entity
+    description: Organisation or institution associated with a person, study, investigation or submission.
+    extra_slots:
+      allowed: true
     attributes:
       ror_id:
         description: Research Organization Registry (ROR) identifier for the organisation, if available
@@ -33,34 +40,33 @@ classes:
         range: uriorcurie
         aliases:
           - ror_id
-          - organisation_identifier
-          - institution_identifier
-          - institution_id
+          - organisation identifier
+          - institution identifier
+          - institution id
           - identifier
       organisation_name:
-        description: Name of the organisation
+        description: Name of the organisation or institute.
         required: true
         range: string
         aliases:
-          - name
-          - organisation_name
-      department:
-        description: Specific department or lab within the organisation
+        - Institute
+        - Organisation Name
+        - OrganisationInfo/name
+      organisation_role:
+        description: Role of the organisation.
+        required: false
+        range: Role
+        inlined: true
+        aliases:
+        - OrganisationInfo/role
+      organisation_address:
+        description: Address of the organisation.
         required: false
         range: string
         aliases:
-          - department
-          - lab
-      address:
-        description: Address of the organisation
-        required: false
-        range: string
-        aliases:
-          - address
-      web_page:
-        description: Web page associated with the organisation
+        - OrganisationInfo/address
+        - Institute Address
+      organisation_web_page:
+        description: Web page of the organisation.
         required: false
         range: uri
-        aliases:
-          - url
-          - web_page

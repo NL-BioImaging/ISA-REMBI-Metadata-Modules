@@ -1,0 +1,76 @@
+id: https://example.org/schemas/profiles/bioimaging/acquisition/image_acquisition
+name: image_acquisition
+title: Image acquisition
+description: Image acquisition component combining BIA protocol, imaging method and instrument metadata.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../../bia/protocols/image_acquisition_protocol
+- imaging_method
+- imaging_instrument
+- ../../jerm/parameter
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  ImagingAcquisition:
+    description: Image acquisition event or acquisition metadata for an image or assay.
+    class_uri: rembi:ImageAcquisition
+    extra_slots:
+      allowed: true
+    attributes:
+      image_acquisition_id:
+        description: URI or CURIE identifier for image acquisition metadata.
+        required: false
+        range: uriorcurie
+        identifier: true
+      microscope_id:
+        description: Microscope identifier.
+        required: false
+        range: string
+        aliases:
+        - Microscope id
+      imaging_method:
+        description: Imaging method.
+        required: false
+        range: ImagingMethod
+        inlined: true
+        aliases:
+        - ImageAcquisition/imaging_method
+      imaging_instrument:
+        description: Imaging instrument.
+        required: false
+        range: ImagingInstrument
+        inlined: true
+        aliases:
+        - ImageAcquisition/imaging_instrument
+      image_acquisition_protocol:
+        description: Image acquisition protocol.
+        required: false
+        range: BIAImageAcquisitionProtocol
+        inlined: true
+        aliases:
+        - Imaging protocol
+      image_acquisition_parameters:
+        description: Image acquisition parameters.
+        required: false
+        range: Parameter
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        aliases:
+        - ImageAcquisition/image_acquisition_parameters

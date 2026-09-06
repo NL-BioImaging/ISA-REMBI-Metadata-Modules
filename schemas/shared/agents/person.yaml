@@ -1,107 +1,117 @@
 id: https://example.org/schemas/shared/agents/person
-name: person_schema
-description: Reusable person metadata class for shared use across annotation groups
-version: v1.0.0
+name: person
+description: Reusable person metadata class aligned with JERM Person, ISA Contact, BIA Person and MIHCSME contact fields.
+version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 
 imports:
-  - linkml:types
-  - ../ontology/ontology_annotation
-  - ./organisation
+- linkml:types
+- ../../shared/mixins/common
+- ../../shared/ontology/ontology_annotation
+- organisation
+- role
 
 default_range: string
 
 prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
   orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
 
 created_by: orcid:0000-0002-4904-3269
 
 annotations:
   created_by_name: Tooba Abbassi-Daloii
-  created_by_affiliation: Amsterdam UMC ; ACDC
-  maintainer_note: Initial draft for modular bioimaging metadata schema
-  semantic_scope: JERM Person + ISA Contact
-  annotation_group: shared
-  module_name: person
-  metadata_profile_source: JERM/SEEK + ISA
-  maintainer_note: Reusable person class for investigation, study, and assay modules
-
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
 classes:
-
   Person:
-    description: Reusable person metadata entity
+    description: Person or scientist associated with an investigation, study, assay, dataset or protocol.
+    extra_slots:
+      allowed: true
     attributes:
-
       orcid:
-        description: ORCID of the person, if available
+        description: ORCID of the person, if available.
         required: false
         range: uriorcurie
+        identifier: true
         aliases:
-          - orcid
-          - identifier
-          - person_identifier
-
+        - ORCID investigator
+        - ORCID Data Collaborator
+        - orcid
       first_name:
-        description: First name of the person
+        description: First name of the person.
         required: true
         range: string
         aliases:
-          - first_name
-
+        - First Name
+        - Author/first_name
+        - first_name
+      middle_name:
+        description: Middle name(s) or initials.
+        required: false
+        range: string
+        aliases:
+        - Middle Name(s)
+        - Middle Name
+        - Author/mid_initials
+        - mid_initials
       last_name:
-        description: Last name of the person
+        description: Last name of the person.
         required: true
         range: string
         aliases:
-          - last_name
-
-      mid_initials:
-        description: Middle initials of the person
+        - Last Name
+        - Author/last_name
+        - last_name
+      username:
+        description: Institutional username or user name.
         required: false
         range: string
         aliases:
-          - mid_initials
-          - middle_initials
-          - initials
-
+        - User name
       email:
-        description: Email address of the person
+        description: Email address.
         required: false
         range: string
         aliases:
-          - email
-
+        - E-Mail Address
+        - email
       phone:
-        description: Phone number of the person
+        description: Phone number.
         required: false
         range: string
         aliases:
-          - phone
-
-      affiliation:
-        description: Organisations or institutions with which the person is affiliated
+        - phone
+      affiliations:
+        description: Organisations with which the person is affiliated.
         required: false
-        multivalued: true
         range: Organisation
+        multivalued: true
         inlined: true
         inlined_as_list: true
         aliases:
-          - affiliation
-          - affiliations
-          - organisation_references
-
+        - Author/affiliation
+        - affiliation
+      roles:
+        description: Roles of the person in a submission, study, assay or publication.
+        required: false
+        range: Role
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        aliases:
+        - Author/role
+        - roles
       web_page:
-        description: Web page associated with the person
+        description: Web page associated with the person.
         required: false
         range: uri
         aliases:
-          - web_page
-
-      roles:
-        description: Roles of the person, preferably expressed as ontology annotations
-        required: false
-        multivalued: true
-        range: OntologyAnnotation
-        inlined_as_list: true
-        aliases:
-          - roles
+        - web_page
