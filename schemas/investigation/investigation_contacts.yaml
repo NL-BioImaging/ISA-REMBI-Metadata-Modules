@@ -5,8 +5,8 @@ version: v1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
   - linkml:types
-  - ../../shared/agents/person.linkml.yaml
-  - ../../shared/agents/organisation.linkml.yaml
+  - ../../shared/agents/person
+  - ../../shared/agents/organisation
 default_range: string
 
 prefixes:

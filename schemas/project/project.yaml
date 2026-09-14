@@ -7,8 +7,8 @@ license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
 - ../shared/mixins/common
-- agents/person
-- agents/organisation
+- ../shared/agents/person
+- ../shared/agents/organisation
 default_range: string
 prefixes:
   linkml: https://w3id.org/linkml/

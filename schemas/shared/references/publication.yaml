@@ -66,8 +66,9 @@ classes:
       publication_journal:
         description: Journal or venue of the publication
         required: false
+        range: string
         aliases:
-        - journal 
+        - journal
       publication_pubmed_id:
         description: PubMed identifier for the publication.
         required: false
