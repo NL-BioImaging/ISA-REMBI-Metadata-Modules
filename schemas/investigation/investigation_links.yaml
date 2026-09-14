@@ -5,7 +5,7 @@ version: v1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
   - linkml:types
-  - ../../shared/references/external_link.linkml.yaml
+  - ../../shared/references/external_link
 default_range: string
 
 prefixes:
