@@ -1,0 +1,76 @@
+ISA-REMBI-Metadata-Modules
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── !example-template
+│   ├── ISA_ModuleName_ModuleScope_CreatedBy_ModuleTemplateVersion.txt
+│   └── ModuleSchema_v1-0-0.yml
+├── !images
+│   ├── REMBI-compatible_modular-schemas.png
+│   └── readme.md
+└── schemas
+    ├── assay
+    │   ├── assay.yaml
+    │   ├── data.yaml
+    │   ├── material.yaml
+    │   ├── measurement.yaml
+    │   ├── parameter.yaml
+    │   ├── process.yaml
+    │   ├── protocol.yaml
+    │   ├── protocol_component.yaml
+    │   ├── sample.yaml
+    │   └── source.yaml
+    ├── investigation
+    │   ├── investigation_publications.yaml
+    │   ├── investigation_links.yaml
+    │   ├── investigation_funding.yaml
+    │   ├── investigation_contacts.yaml
+    │   └── investigation.yaml
+    ├── profiles
+    │   └── bioimaging
+    │       ├── acquisition
+    │       │   ├── channel.yaml
+    │       │   ├── image_acquisition.yaml
+    │       │   ├── imaging_instrument.yaml
+    │       │   └── imaging_method.yaml
+    │       └──  
+    │           ├── image_analysis.yaml
+    │           └── segmentation.yaml
+    ├── project
+    │   └── project.yaml
+    ├── !sample
+    │   ├── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-2-0.yaml
+    │   ├── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-2-0.txt
+    │   └── older_versions
+    │       ├── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-1-0.yaml
+    │       ├── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-1-0.txt
+    │       ├── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-0-0.yaml
+    │       └── REMBI_Biosample_LightMicroscopy_CStrambio-JLacoste_v1-0-0.txt
+    ├── shared
+    │   ├── agents
+    │   │   ├── role.yaml
+    │   │   ├── person.yaml
+    │   │   └── organisation.yaml
+    │   ├── files
+    │   │   ├── file_format.yaml
+    │   │   ├── file_reference.yaml
+    │   │   └── url_reference.yaml
+    │   ├── references
+    │   │   ├── publication.yaml
+    │   │   ├── license.yaml
+    │   │   ├── funding.yaml
+    │   │   └── external_link.yaml
+    │   ├── mixins
+    │   │   └── common.yaml
+    │   ├── enums
+    │   │   └── mihcsme_enums.yaml
+    │   ├── ontology
+    │   │   ├── ontology_annotation.yaml
+    │   │   └── ontology_source.yaml
+    │   └── units
+    │       ├── unit.yaml
+    │       └── quantity_value.yaml
+    └── study
+        ├── study.yaml
+        ├── study_design.yaml
+        └── factor.yaml

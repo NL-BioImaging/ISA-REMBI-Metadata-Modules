@@ -1,0 +1,55 @@
+id: https://example.org/schemas/assay/measurement
+name: measurement
+title: JERM measurement
+description: Measurement component for assay outputs, measured values and measurement type.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../shared/mixins/common
+- ../shared/ontology/ontology_annotation
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  Measurement:
+    description: Measurement made in a study or assay.
+    class_uri: isa:measurement
+    extra_slots:
+      allowed: true
+    attributes:
+      measurement_id:
+        description: URI or CURIE identifier for the measurement.
+        required: false
+        range: uriorcurie
+        identifier: true
+      measurement_name:
+        description: Measurement name.
+        required: false
+        range: string
+      measurement_type:
+        description: Measurement type as ontology annotation.
+        required: false
+        range: SharedOntologyAnnotation
+        inlined: true
+      measurement_value:
+        description: Measurement value.
+        required: false
+        range: string
+      measurement_unit:
+        description: Measurement unit.
+        required: false
+        range: string

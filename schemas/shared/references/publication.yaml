@@ -1,122 +1,81 @@
 id: https://example.org/schemas/shared/references/publication
-name: publication_schema
-description: Reusable publication metadata class for shared use across annotation groups
-version: v1.0.0
+name: publication
+description: Publication component aligned with JERM/SEEK publication assets, ISA publications and BIA publication metadata.
+version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
-  - linkml:types
-  - ../agents/person.linkml.yaml
+- linkml:types
+- ../shared/mixins/common
+- agents/person
 default_range: string
-
 prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
   orcid: https://orcid.org/
-
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
 created_by: orcid:0000-0002-4904-3269
-
 annotations:
   created_by_name: Tooba Abbassi-Daloii
-  created_by_affiliation: Amsterdam UMC ; ACDC
-  semantic_scope: JERM Publication + ISA/BIA publication support
-  annotation_group: shared
-  module_name: publication
-  metadata_profile_source: JERM/SEEK + ISA + BIA support fields
-  maintainer_note: Reusable publication class for investigation and study modules
-
+  created_by_affiliation: Amsterdam UMC; ACDC
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
 classes:
   Publication:
-    description: Reusable publication metadata entity
-    slots:
-      - publication_identifier
-      - title
-      - pubmed_id
-      - doi
-      - authors
-      - author_list
-      - journal
-      - publication_date
-      - abstract
-      - citation
-      - publication_url
-      - publication_type
-
-slots:
-  publication_identifier:
-    description: Unique identifier for the publication
-    required: true
-    identifier: true
-    aliases:
-      - identifier
-
-  title:
-    description: Title of the publication
-    required: true
-    aliases:
-      - title
-
-  pubmed_id:
-    description: PubMed identifier of the publication
-    required: false
-    aliases:
-      - pubmed_id
-
-  doi:
-    description: DOI of the publication
-    required: false
-    aliases:
-      - doi
-
-  authors:
-    description: Structured author references
-    required: false
-    multivalued: true
-    range: Person
-    aliases:
-      - authors
-
-  author_list:
-    description: Free-text author list for the publication
-    required: false
-    aliases:
-      - author_list
-
-  journal:
-    description: Journal or venue of the publication
-    required: false
-    aliases:
-      - journal
-
-  publication_date:
-    description: Publication date
-    required: false
-    range: date
-    aliases:
-      - publication_date
-      - year
-
-  abstract:
-    description: Abstract of the publication
-    required: false
-    multiline: true
-    aliases:
-      - abstract
-
-  citation:
-    description: Citation text for the publication
-    required: false
-    multiline: true
-    aliases:
-      - citation
-
-  publication_url:
-    description: URL of the publication
-    required: false
-    range: uri
-    aliases:
-      - url
-
-  publication_type:
-    description: Publication type
-    required: false
-    aliases:
-      - publication_type
-      - status
+    description: Publication associated with an investigation, study, dataset or result.
+    extra_slots:
+      allowed: true
+    attributes:
+      publication_id:
+        description: URI or CURIE identifier for the publication.
+        required: false
+        range: uriorcurie
+        identifier: true
+      publication_title:
+        description: Publication title.
+        required: false
+        range: string
+        aliases:
+        - Publication/title
+        - publication title
+      publication_authors:
+        description: Authors of the publication.
+        required: false
+        range: Person
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        aliases:
+        - Publication/authors
+        - Study/publications
+      publication_doi:
+        description: Digital Object Identifier for the publication.
+        required: false
+        range: string
+        aliases:
+        - Publication/doi
+        - doi
+      publication_year:
+        description: Publication year.
+        required: false
+        range: integer
+        aliases:
+        - Publication/year
+      publication_journal:
+        description: Journal or venue of the publication
+        required: false
+        aliases:
+        - journal 
+      publication_pubmed_id:
+        description: PubMed identifier for the publication.
+        required: false
+        range: string
+        aliases:
+        - Publication/pubmed_id
+        - pubmed_id
+      publication_url:
+        description: URL for the publication.
+        required: false
+        range: uri

@@ -1,0 +1,139 @@
+id: https://example.org/schemas/study/study
+name: study
+description: Study component aligned with JERM/ISA study and REMBI/BIA study-level metadata.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+
+- linkml:types
+- publication
+- study_design
+- factor
+- agents/person
+- agents/organisation
+
+default_range: string
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+
+classes:
+  Study:
+    description: Study within an investigation, with design, publications, contacts and related assays.
+    extra_slots:
+      allowed: true
+    attributes:
+      study_id:
+        description: URI or CURIE identifier for the study.
+        required: false
+        range: uriorcurie
+        identifier: true
+        aliases:
+        - Study internal ID
+      study_title:
+        description: Study title.
+        required: true
+        range: string
+        aliases:
+        - Study Title
+      study_description:
+        description: Study description.
+        required: false
+        range: string
+        aliases:
+        - Study Description
+        - Study/description
+      study_keywords:
+        description: Study keywords.
+        required: false
+        range: string
+        multivalued: true
+        aliases:
+        - Study Key Words
+        - Study/keywords
+      study_type:
+        description: Study type.
+        required: false
+        range: string
+        aliases:
+        - Study/type
+      study_design:
+        description: Study design.
+        required: false
+        range: StudyDesign
+        inlined: true
+      study_factors:
+        description: Study factors.
+        required: false
+        range: Factor
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      study_authors:
+        description: Study authors.
+        required: false
+        range: Person
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        aliases:
+        - Study/authors
+      study_publications:
+        description: Study publications.
+        required: false
+        range: Publication
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        aliases:
+        - Study/publications
+      study_license:
+        description: Study licence/license.
+        required: false
+        range: string
+        aliases:
+        - Study/license
+      study_funding:
+        description: Study funding statement or grant references.
+        required: false
+        range: string
+        multivalued: true
+        aliases:
+        - Study/funding
+        - Funding/funding_statement
+        - Funding/grant_references
+      study_acknowledgements:
+        description: Study acknowledgements.
+        required: false
+        range: string
+        aliases:
+        - Study/acknowledgements
+      study_rembi_version:
+        description: REMBI version used for study metadata, where applicable.
+        required: false
+        range: string
+        aliases:
+        - Study/rembi_version
+      linked_studies:
+        description: Links to related studies.
+        required: false
+        range: string
+        multivalued: true
+        aliases:
+        - Link/link_uri
+        - Link/link_type
+        - Link/link_description

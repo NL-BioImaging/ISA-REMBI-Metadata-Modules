@@ -1,0 +1,67 @@
+id: https://example.org/schemas/assay/data
+name: data
+title: JERM data
+description: Generic data component for digital inputs and outputs.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../shared/mixins/common
+- ../shared/references/external_reference
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  Data:
+    description: Digital data used as input or output of a process.
+    class_uri: schema:Dataset
+    extra_slots:
+      allowed: true
+    attributes:
+      data_id:
+        description: URI or CURIE identifier for the data object.
+        required: false
+        range: uriorcurie
+        identifier: true
+      data_title:
+        description: Title or name of the data object.
+        required: false
+        range: string
+      data_description:
+        description: Description of the data object.
+        required: false
+        range: string
+      data_type:
+        description: Type of data object.
+        required: false
+        range: string
+      data_url:
+        description: URL or location of the data object.
+        required: false
+        range: uri
+        aliases:
+        - Assay data URL
+      data_format:
+        description: Data format.
+        required: false
+        range: string
+      external_references:
+        description: External references associated with the data.
+        required: false
+        range: SharedExternalReference
+        multivalued: true
+        inlined: true
+        inlined_as_list: true

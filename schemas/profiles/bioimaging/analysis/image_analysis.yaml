@@ -1,0 +1,77 @@
+id: https://example.org/schemas/profiles/bioimaging/analysis/image_analysis
+name: imaging_image_analysis
+title: Image analysis
+description: Image analysis metadata aligned with REMBI analysed data and MIHCSME HCS analysis protocol fields.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../../bia/protocols/annotation_method
+- segmentation
+- ../../jerm/data
+- ../../jerm/parameter
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  ImagingImageAnalysis:
+    description: Image analysis workflow, method or output metadata.
+    extra_slots:
+      allowed: true
+    attributes:
+      image_analysis_id:
+        description: URI or CURIE identifier for the image analysis.
+        required: false
+        range: uriorcurie
+        identifier: true
+      image_analysis_name:
+        description: Name of the image analysis.
+        required: false
+        range: string
+      image_analysis_description:
+        description: Description of the image analysis.
+        required: false
+        range: string
+      analysis_protocol:
+        description: Analysis or annotation protocol.
+        required: false
+        range: BIAAnnotationMethod
+        inlined: true
+        aliases:
+        - HCS data analysis protocol
+      analysis_software:
+        description: Software used for image analysis.
+        required: false
+        range: string
+      analysis_parameters:
+        description: Analysis parameters.
+        required: false
+        range: Parameter
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      segmentation:
+        description: Segmentation method or result, if applicable.
+        required: false
+        range: ImagingSegmentation
+        inlined: true
+      analysis_output_data:
+        description: Output data produced by image analysis.
+        required: false
+        range: Data
+        multivalued: true
+        inlined: true
+        inlined_as_list: true

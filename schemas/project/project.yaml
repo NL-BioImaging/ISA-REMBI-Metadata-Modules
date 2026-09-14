@@ -1,0 +1,79 @@
+id: https://example.org/schemas/project/project
+name: project
+title: JERM project
+description: Project component for provenance and grouping of investigations and assets.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- ../shared/mixins/common
+- agents/person
+- agents/organisation
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+classes:
+  Project:
+    description: Project from which an investigation, study or asset originates.
+    class_uri: schema:Project
+    extra_slots:
+      allowed: true
+    attributes:
+      project_id:
+        description: Project identifier.
+        required: false
+        range: uriorcurie
+        identifier: true
+        aliases:
+        - Project ID
+      project_title:
+        description: Project title or name.
+        required: false
+        range: string
+      project_description:
+        description: Project description.
+        required: false
+        range: string
+      project_contacts:
+        description: Project contacts.
+        required: false
+        range: Person
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      project_organisations:
+        description: Organisations associated with the project.
+        required: false
+        range: Organisation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      funding:
+        description: Funding statement or funding information.
+        required: false
+        range: string
+        aliases:
+        - Funding/funding_statement
+        - Study/funding
+      grant_references:
+        description: Grant references associated with the project.
+        required: false
+        range: string
+        multivalued: true
+        aliases:
+        - Funding/grant_references
+        - GrantReference/identifier
+        - GrantReference/funder

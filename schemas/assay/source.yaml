@@ -1,12 +1,12 @@
-id: https://example.org/schemas/references/external_link
-name: external_link
-title: Shared external link
-description: Reusable external link object for identifiers, web pages and persistent records.
+id: https://example.org/schemas/assay/source
+name: source
+title: JERM source material
+description: Source material component aligned with ISA source and BIA biological inputs.
 version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- ../mixins/common
+- material
 default_range: string
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -24,24 +24,28 @@ annotations:
   schema_status: draft
   design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
 classes:
-  SharedExternalReference:
-    description: A reference to an external resource or identifier.
-    mixins:
-    - SharedDescriptionMixin
-    - SharedIdentifierMixin
-    - SharedNamedMixin
+  Source:
+    description: Source material used to generate samples or specimens.
+    is_a: Material
+    class_uri: isa:source
     extra_slots:
       allowed: true
     attributes:
-      reference_label:
-        description: Human-readable label for the external reference.
+      source_id:
+        description: URI or CURIE identifier for the source material.
+        required: false
+        range: uriorcurie
+        identifier: true
+      source_name:
+        description: Source material name.
         required: false
         range: string
-      reference_type:
-        description: Type of external reference, e.g. DOI, ORCID, accession, repository URL.
+      source_description:
+        description: Description of the source material.
         required: false
         range: string
-      reference_url:
-        description: URL where the external reference can be resolved.
+      source_material:
+        description: Underlying material reference.
         required: false
-        range: uri
+        range: Material
+        inlined: true
