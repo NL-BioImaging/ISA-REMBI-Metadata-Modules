@@ -4,13 +4,12 @@ description: Study component aligned with JERM/ISA study and REMBI/BIA study-lev
 version: 0.1.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
-
 - linkml:types
-- publication
+- ../shared/references/publication
 - study_design
 - factor
-- agents/person
-- agents/organisation
+- ../shared/agents/person
+- ../shared/agents/organisation
 
 default_range: string
 
