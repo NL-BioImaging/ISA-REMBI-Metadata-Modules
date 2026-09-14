@@ -53,7 +53,7 @@ classes:
         required: false
         range: uri
         aliases:
-        - Assay data URL
+        - Data URL
       data_format:
         description: Data format.
         required: false
