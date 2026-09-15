@@ -1,0 +1,54 @@
+id: https://w3id.org/mim/core/profile_specific_metadata
+name: mim_core_profile_specific_metadata
+title: MIM profile-specific metadata
+description: >-
+  Explicit attachment point for metadata defined by a named MIM domain
+  profile when that metadata is carried at package level.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+  - linkml:types
+  - common
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: profile_specific_metadata
+  profile: core
+classes:
+  MIMProfileSpecificMetadata:
+    description: >-
+      Open profile-scoped metadata block. The profile_uri identifies the
+      profile that defines the additional fields. Profile-owned fields are
+      permitted through extra_slots and should follow that profile's schema.
+    mixins:
+      - MIMIdentifiedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      profile_uri:
+        description: >-
+          Persistent URI identifying the MIM domain profile that defines the
+          additional fields in this block.
+        range: uri
+        required: true
+        slot_uri: mim:MIMProfileSpecificMetadata_profile_uri
+      profile_version:
+        description: Version of the profile used by this metadata block.
+        range: string
+        slot_uri: mim:MIMProfileSpecificMetadata_profile_version
+      conforms_to:
+        description: URI of the concrete profile schema or specification.
+        range: uri
+        slot_uri: mim:MIMProfileSpecificMetadata_conforms_to
