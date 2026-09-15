@@ -1,0 +1,53 @@
+id: https://w3id.org/mim/core/sample
+name: mim_core_sample
+title: MIM sample
+description: Biological or experimental sample.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- material
+- organism
+- strain
+- sample_characteristic_value
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: sample
+  profile: core
+classes:
+  MIMSample:
+    class_uri: jerm:Sample
+    is_a: MIMMaterial
+    extra_slots:
+      allowed: true
+    attributes:
+      derived_from:
+        range: MIMMaterial
+        slot_uri: mim:MIMSample_derived_from
+        multivalued: true
+      organism:
+        range: MIMOrganism
+        slot_uri: mim:MIMSample_organism
+      strain:
+        range: MIMStrain
+        slot_uri: mim:MIMSample_strain
+      characteristics:
+        range: MIMSampleCharacteristicValue
+        slot_uri: mim:MIMSample_characteristics
+        multivalued: true
+        inlined: true
