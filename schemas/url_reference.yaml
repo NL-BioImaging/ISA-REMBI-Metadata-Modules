@@ -1,0 +1,21 @@
+# DEPRECATED & REDUNDANT - File marked for deletion
+#
+# This file is DUPLICATE of SharedExternalReference in external_link.yaml
+# 
+# REDUNDANCY DETAILS:
+# - url_id           → duplicate of reference_id
+# - url              → duplicate of reference_url  
+# - url_label        → duplicate of reference_label
+# - url_description  → duplicate of description (from mixin)
+# - url_type         → duplicate of reference_type
+# - access_date      → only unique field (rarely needed)
+#
+# SOLUTION: Use SharedExternalReference from external_link.yaml instead
+#
+# If access_date tracking is required, add it to SharedExternalReference
+# in schemas/shared/references/external_link.yaml
+#
+# FOR DETAILS: See REDUNDANCY_ANALYSIS_ADDENDUM.md
+#
+# STATUS: Marked for deletion on 2026-09-14
+# TODO: Delete this file from repository

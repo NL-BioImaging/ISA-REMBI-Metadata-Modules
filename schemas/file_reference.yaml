@@ -1,0 +1,62 @@
+id: https://example.org/schemas/shared/files/file_reference
+name: file_reference
+title: File Reference
+description: Reusable file reference metadata class.
+version: 0.1.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+imports:
+- linkml:types
+- ../mixins/common
+
+default_range: string
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: https://schema.org/
+  isa: http://purl.org/isaterms/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  edam: http://edamontology.org/
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  obo: http://purl.obolibrary.org/obo/
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  design_note: Modular LinkML schema generated from JERM/SEEK, ISA/BIA alignment, REMBI and MIHCSME field inventories.
+
+classes:
+  FileReference:
+    description: Reference to a file or file-like resource.
+    class_uri: schema:DigitalDocument
+    extra_slots:
+      allowed: true
+    attributes:
+      file_id:
+        description: URI or CURIE identifier for the file.
+        required: false
+        range: uriorcurie
+        identifier: true
+      file_name:
+        description: Name of the file.
+        required: false
+        range: string
+      file_description:
+        description: Description of the file.
+        required: false
+        range: string
+      file_url:
+        description: URL or location where the file can be accessed.
+        required: false
+        range: uri
+      file_format:
+        description: Format or type of the file (e.g., CSV, TIFF, XLSX).
+        required: false
+        range: string
+      file_size:
+        description: Size of the file in bytes.
+        required: false
+        range: integer
