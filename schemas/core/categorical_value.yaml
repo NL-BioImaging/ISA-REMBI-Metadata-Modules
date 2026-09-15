@@ -1,0 +1,39 @@
+id: https://w3id.org/mim/core/categorical_value
+name: mim_core_categorical_value
+title: MIM categorical value
+description: Ontology-term value subtype.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- value
+- ontology_term
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: categorical_value
+  profile: core
+classes:
+  MIMCategoricalValue:
+    is_a: MIMValue
+    extra_slots:
+      allowed: true
+    attributes:
+      term_value:
+        range: MIMOntologyTerm
+        slot_uri: mim:MIMCategoricalValue_term_value
+        required: true
