@@ -1,0 +1,57 @@
+id: https://w3id.org/mim/core/research_asset
+name: mim_core_research_asset
+title: MIM research asset
+description: Abstract JERM-aligned research-asset base class.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- common
+- attribution
+- license
+- external_reference
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: research_asset
+  profile: core
+classes:
+  MIMResearchAsset:
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    abstract: true
+    extra_slots:
+      allowed: true
+    attributes:
+      asset_type:
+        range: string
+        slot_uri: mim:MIMResearchAsset_asset_type
+        designates_type: true
+        required: true
+      license:
+        range: MIMLicense
+        slot_uri: mim:MIMResearchAsset_license
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:MIMResearchAsset_external_references
+        multivalued: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:MIMResearchAsset_attribution
+        inlined: true
