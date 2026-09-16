@@ -1,0 +1,51 @@
+id: https://w3id.org/mim/foundation/measurement
+name: mim_foundation_measurement
+title: MIM measurement
+description: Typed measurement recorded during a process.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- common
+- ontology_term
+- value
+- attribution
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: measurement
+  profile: foundation
+classes:
+  MIMMeasurement:
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      measurement_type:
+        range: MIMOntologyTerm
+        slot_uri: mim:MIMMeasurement_measurement_type
+      measured_value:
+        range: MIMValue
+        slot_uri: mim:MIMMeasurement_measured_value
+        inlined: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:MIMMeasurement_attribution
+        inlined: true

@@ -1,0 +1,49 @@
+id: https://w3id.org/mim/foundation/publication
+name: mim_foundation_publication
+title: MIM publication
+description: Publication represented as a JERM research asset.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- person
+- research_asset
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: publication
+  profile: foundation
+classes:
+  MIMPublication:
+    class_uri: jerm:Publication
+    is_a: MIMResearchAsset
+    extra_slots:
+      allowed: true
+    attributes:
+      authors:
+        range: MIMPerson
+        slot_uri: mim:MIMPublication_authors
+        multivalued: true
+      publication_year:
+        range: integer
+        slot_uri: mim:MIMPublication_publication_year
+      journal:
+        range: string
+        slot_uri: mim:MIMPublication_journal
+      web_page:
+        range: uri
+        slot_uri: mim:MIMPublication_web_page

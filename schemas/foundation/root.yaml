@@ -1,0 +1,128 @@
+id: https://w3id.org/mim/foundation/root
+name: mim_foundation_root
+title: MIM metadata package
+description: Tree root containing local definitions and identifier references.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- prefix_association
+- project
+- investigation
+- study
+- assay
+- person
+- institution
+- research_asset
+- sample
+- ontology_source
+- external_reference
+- grant_reference
+- sample_characteristic_definition
+- profile_specific_metadata
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: root
+  profile: foundation
+classes:
+  MIMMetadataPackage:
+    tree_root: true
+    extra_slots:
+      allowed: true
+    attributes:
+      prefixes:
+        range: MIMPrefixAssociation
+        slot_uri: mim:MIMMetadataPackage_prefixes
+        multivalued: true
+        inlined: true
+      projects:
+        range: MIMProject
+        slot_uri: mim:MIMMetadataPackage_projects
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      investigations:
+        range: MIMInvestigation
+        slot_uri: mim:MIMMetadataPackage_investigations
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      studies:
+        range: MIMStudy
+        slot_uri: mim:MIMMetadataPackage_studies
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      assays:
+        range: MIMAssay
+        slot_uri: mim:MIMMetadataPackage_assays
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      people:
+        range: MIMPerson
+        slot_uri: mim:MIMMetadataPackage_people
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      institutions:
+        range: MIMInstitution
+        slot_uri: mim:MIMMetadataPackage_institutions
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      assets:
+        range: MIMResearchAsset
+        slot_uri: mim:MIMMetadataPackage_assets
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      samples:
+        range: MIMSample
+        slot_uri: mim:MIMMetadataPackage_samples
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      ontology_sources:
+        range: MIMOntologySource
+        slot_uri: mim:MIMMetadataPackage_ontology_sources
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:MIMMetadataPackage_external_references
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      grant_references:
+        range: MIMGrantReference
+        slot_uri: mim:MIMMetadataPackage_grant_references
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      sample_characteristic_definitions:
+        range: MIMSampleCharacteristicDefinition
+        slot_uri: mim:MIMMetadataPackage_sample_characteristic_definitions
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      profile_specific_metadata:
+        range: MIMProfileSpecificMetadata
+        slot_uri: mim:MIMMetadataPackage_profile_specific_metadata
+        multivalued: true

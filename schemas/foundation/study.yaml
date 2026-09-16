@@ -1,0 +1,78 @@
+id: https://w3id.org/mim/foundation/study
+name: mim_foundation_study
+title: MIM study
+description: JERM-aligned study with design, assays, assets, funding, and attribution.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- common
+- ontology_term
+- study_design
+- assay
+- publication
+- funding
+- license
+- attribution
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: study
+  profile: foundation
+classes:
+  MIMStudy:
+    class_uri: jerm:Study
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      keywords:
+        range: string
+        slot_uri: mim:MIMStudy_keywords
+        multivalued: true
+      study_type:
+        range: MIMOntologyTerm
+        slot_uri: mim:MIMStudy_study_type
+      design:
+        range: MIMStudyDesign
+        slot_uri: mim:MIMStudy_design
+      assays:
+        range: MIMAssay
+        slot_uri: mim:MIMStudy_assays
+        multivalued: true
+      publications:
+        range: MIMPublication
+        slot_uri: mim:MIMStudy_publications
+        multivalued: true
+      funding:
+        range: MIMFunding
+        slot_uri: mim:MIMStudy_funding
+        multivalued: true
+      license:
+        range: MIMLicense
+        slot_uri: mim:MIMStudy_license
+      related_studies:
+        range: MIMStudy
+        slot_uri: mim:MIMStudy_related_studies
+        multivalued: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:MIMStudy_attribution
+        inlined: true
