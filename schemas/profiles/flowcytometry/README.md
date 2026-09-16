@@ -1,4 +1,4 @@
-# Transcriptomics profile
+# Flowcytometry profile
 
 Flowcytometry-specific metadata profile.
 
