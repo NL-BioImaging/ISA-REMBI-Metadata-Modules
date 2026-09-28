@@ -1,5 +1,5 @@
-id: https://w3id.org/mim/foundation/research_asset
-name: mim_foundation_research_asset
+id: https://w3id.org/mim/foundation/asset
+name: mim_foundation_asset
 title: MIM research asset
 description: Abstract JERM-aligned research-asset base class.
 version: 1.0.0
@@ -27,10 +27,10 @@ annotations:
   namespace_status: provisional
   ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
-  module_name: research_asset
+  module_name: asset
   profile: foundation
 classes:
-  MIMResearchAsset:
+  MIMAsset:
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
@@ -41,17 +41,17 @@ classes:
     attributes:
       asset_type:
         range: string
-        slot_uri: mim:MIMResearchAsset_asset_type
+        slot_uri: mim:MIMAsset_type
         designates_type: true
         required: true
       license:
         range: MIMLicense
-        slot_uri: mim:MIMResearchAsset_license
+        slot_uri: mim:MIMAsset_license
       external_references:
         range: MIMExternalReference
-        slot_uri: mim:MIMResearchAsset_external_references
+        slot_uri: mim:MIMAsset_external_references
         multivalued: true
       attribution:
         range: MIMAttribution
-        slot_uri: mim:MIMResearchAsset_attribution
+        slot_uri: mim:MIMAsset_attribution
         inlined: true

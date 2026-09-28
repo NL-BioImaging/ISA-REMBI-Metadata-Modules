@@ -6,7 +6,7 @@ version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- research_asset
+- asset
 - protocol
 default_prefix: mim
 default_range: string
@@ -30,7 +30,7 @@ annotations:
 classes:
   MIMSOP:
     class_uri: jerm:SOP
-    is_a: MIMResearchAsset
+    is_a: MIMAsset
     extra_slots:
       allowed: true
     attributes:

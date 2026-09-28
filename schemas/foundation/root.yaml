@@ -13,7 +13,7 @@ imports:
 - assay
 - person
 - institution
-- research_asset
+- asset
 - sample
 - ontology_source
 - external_reference
@@ -75,7 +75,7 @@ classes:
         inlined: true
         inlined_as_list: true
       people:
-        range: MIMPerson
+        range: MIMAgent
         slot_uri: mim:MIMMetadataPackage_people
         multivalued: true
         inlined: true
@@ -87,7 +87,7 @@ classes:
         inlined: true
         inlined_as_list: true
       assets:
-        range: MIMResearchAsset
+        range: MIMAsset
         slot_uri: mim:MIMMetadataPackage_assets
         multivalued: true
         inlined: true

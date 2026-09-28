@@ -47,7 +47,7 @@ classes:
         range: MIMProtocol
         slot_uri: mim:MIMProcess_protocol
       performers:
-        range: MIMPerson
+        range: MIMAgent
         slot_uri: mim:MIMProcess_performers
         multivalued: true
       performed_on:

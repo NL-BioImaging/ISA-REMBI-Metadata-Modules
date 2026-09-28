@@ -1,13 +1,13 @@
-id: https://w3id.org/mim/foundation/publication
-name: mim_foundation_publication
-title: MIM publication
-description: Publication represented as a JERM research asset.
+id: https://w3id.org/mim/profiles/bioimaging/imaging_method
+name: mim_bioimaging_imaging_method
+title: MIM bioimaging method
+description: Bioimaging method profile component.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- person
-- asset
+- ../../foundation/common
+- ../../foundation/ontology_term
 default_prefix: mim
 default_range: string
 prefixes:
@@ -25,25 +25,18 @@ annotations:
   namespace_status: provisional
   ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
-  module_name: publication
-  profile: foundation
+  module_name: imaging_method
+  profile: bioimaging
 classes:
-  MIMPublication:
-    class_uri: jerm:Publication
-    is_a: MIMAsset
+  MIMImagingMethod:
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
     extra_slots:
       allowed: true
     attributes:
-      authors:
-        range: MIMAgent
-        slot_uri: mim:MIMPublication_authors
-        multivalued: true
-      publication_year:
-        range: integer
-        slot_uri: mim:MIMPublication_publication_year
-      journal:
-        range: string
-        slot_uri: mim:MIMPublication_journal
-      web_page:
-        range: uri
-        slot_uri: mim:MIMPublication_web_page
+      method_term:
+        range: MIMOntologyTerm
+        slot_uri: mim:MIMImagingMethod_method_term
+        required: true

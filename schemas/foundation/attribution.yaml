@@ -38,11 +38,11 @@ classes:
       allowed: true
     attributes:
       creators:
-        range: MIMPerson
+        range: MIMAgent
         slot_uri: mim:MIMAttribution_creators
         multivalued: true
       contributors:
-        range: MIMPerson
+        range: MIMAgent
         slot_uri: mim:MIMAttribution_contributors
         multivalued: true
       responsible_institutions:

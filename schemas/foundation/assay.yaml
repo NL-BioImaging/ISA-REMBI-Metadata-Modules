@@ -10,7 +10,7 @@ imports:
 - ontology_term
 - process
 - sample
-- research_asset
+- asset
 - attribution
 default_prefix: mim
 default_range: string
@@ -56,7 +56,7 @@ classes:
         slot_uri: mim:MIMAssay_samples
         multivalued: true
       assets:
-        range: MIMResearchAsset
+        range: MIMAsset
         slot_uri: mim:MIMAssay_assets
         multivalued: true
       study_reference:

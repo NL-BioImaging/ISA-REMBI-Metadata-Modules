@@ -29,7 +29,7 @@ annotations:
   module_name: person
   profile: foundation
 classes:
-  MIMPerson:
+  MIMAgent:
     class_uri: jerm:Person
     mixins:
     - MIMIdentifiedMixin
@@ -39,25 +39,26 @@ classes:
     attributes:
       given_name:
         range: string
-        slot_uri: mim:MIMPerson_given_name
+        slot_uri: mim:MIMAgent_given_name
       middle_name:
         range: string
-        slot_uri: mim:MIMPerson_middle_name
+        slot_uri: mim:MIMAgent_middle_name
       family_name:
         range: string
-        slot_uri: mim:MIMPerson_family_name
+        slot_uri: mim:MIMAgent_family_name
         required: true
       orcid:
         range: uriorcurie
-        slot_uri: mim:MIMPerson_orcid
+        slot_uri: mim:MIMAgent_orcid
       email:
         range: string
-        slot_uri: mim:MIMPerson_email
+        slot_uri: mim:MIMAgent_email
       affiliations:
         range: MIMInstitution
-        slot_uri: mim:MIMPerson_affiliations
+        slot_uri: mim:MIMAgent_affiliations
         multivalued: true
       roles:
         range: MIMRole
-        slot_uri: mim:MIMPerson_roles
+        slot_uri: mim:MIMAgent_roles
         multivalued: true
+        required: true

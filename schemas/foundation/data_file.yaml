@@ -6,7 +6,7 @@ version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- research_asset
+- asset
 - file_format
 default_prefix: mim
 default_range: string
@@ -30,7 +30,7 @@ annotations:
 classes:
   MIMDataFile:
     class_uri: jerm:Data
-    is_a: MIMResearchAsset
+    is_a: MIMAsset
     extra_slots:
       allowed: true
     attributes:

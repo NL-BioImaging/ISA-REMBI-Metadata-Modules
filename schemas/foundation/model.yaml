@@ -6,7 +6,7 @@ version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
 - linkml:types
-- research_asset
+- asset
 - file_format
 - data_file
 default_prefix: mim
@@ -31,7 +31,7 @@ annotations:
 classes:
   MIMModel:
     class_uri: jerm:Model
-    is_a: MIMResearchAsset
+    is_a: MIMAsset
     extra_slots:
       allowed: true
     attributes:

@@ -46,7 +46,7 @@ classes:
         slot_uri: mim:MIMProject_institutions
         multivalued: true
       members:
-        range: MIMPerson
+        range: MIMAgent
         slot_uri: mim:MIMProject_members
         multivalued: true
       investigations:
