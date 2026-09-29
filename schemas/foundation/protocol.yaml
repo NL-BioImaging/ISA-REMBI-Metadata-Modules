@@ -38,7 +38,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
-    - MiMVersionedMixin
+    - MIMVersionedMixin
     - MIMCommentedMixin
     extra_slots:
       allowed: true
