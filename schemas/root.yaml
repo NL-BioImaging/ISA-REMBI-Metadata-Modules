@@ -1,4 +1,4 @@
-id: https://w3id.org/mim/foundation/root
+id: https://w3id.org/mim/schemas/foundation/root
 name: mim_foundation_root
 title: MIM metadata package
 description: Tree root containing local definitions and identifier references.
@@ -11,7 +11,7 @@ imports:
 - investigation
 - study
 - assay
-- person
+- agent
 - institution
 - asset
 - sample
@@ -26,16 +26,12 @@ prefixes:
   linkml: https://w3id.org/linkml/
   mim: https://w3id.org/mim/
   jerm: http://jermontology.org/ontology/JERMOntology#
-  sh: http://www.w3.org/ns/shacl#
-  prov: http://www.w3.org/ns/prov#
   orcid: https://orcid.org/
 created_by: orcid:0000-0002-4904-3269
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
   schema_status: draft
-  namespace_status: provisional
-  ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
   module_name: root
   profile: foundation
@@ -47,82 +43,82 @@ classes:
     attributes:
       prefixes:
         range: MIMPrefixAssociation
-        slot_uri: mim:MIMMetadataPackage_prefixes
+        slot_uri: mim:MetadataPackage_prefixes
         multivalued: true
         inlined: true
       projects:
         range: MIMProject
-        slot_uri: mim:MIMMetadataPackage_projects
+        slot_uri: mim:MetadataPackage_projects
         multivalued: true
         inlined: true
         inlined_as_list: true
       investigations:
         range: MIMInvestigation
-        slot_uri: mim:MIMMetadataPackage_investigations
+        slot_uri: mim:MetadataPackage_investigations
         multivalued: true
         inlined: true
         inlined_as_list: true
       studies:
         range: MIMStudy
-        slot_uri: mim:MIMMetadataPackage_studies
+        slot_uri: mim:MetadataPackage_studies
         multivalued: true
         inlined: true
         inlined_as_list: true
       assays:
         range: MIMAssay
-        slot_uri: mim:MIMMetadataPackage_assays
+        slot_uri: mim:MetadataPackage_assays
         multivalued: true
         inlined: true
         inlined_as_list: true
       people:
         range: MIMAgent
-        slot_uri: mim:MIMMetadataPackage_people
+        slot_uri: mim:MetadataPackage_people
         multivalued: true
         inlined: true
         inlined_as_list: true
       institutions:
         range: MIMInstitution
-        slot_uri: mim:MIMMetadataPackage_institutions
+        slot_uri: mim:MetadataPackage_institutions
         multivalued: true
         inlined: true
         inlined_as_list: true
       assets:
         range: MIMAsset
-        slot_uri: mim:MIMMetadataPackage_assets
+        slot_uri: mim:MetadataPackage_assets
         multivalued: true
         inlined: true
         inlined_as_list: true
       samples:
         range: MIMSample
-        slot_uri: mim:MIMMetadataPackage_samples
+        slot_uri: mim:MetadataPackage_samples
         multivalued: true
         inlined: true
         inlined_as_list: true
       ontology_sources:
         range: MIMOntologySource
-        slot_uri: mim:MIMMetadataPackage_ontology_sources
+        slot_uri: mim:MetadataPackage_ontology_sources
         multivalued: true
         inlined: true
         inlined_as_list: true
       external_references:
         range: MIMExternalReference
-        slot_uri: mim:MIMMetadataPackage_external_references
+        slot_uri: mim:MetadataPackage_external_references
         multivalued: true
         inlined: true
         inlined_as_list: true
       grant_references:
         range: MIMGrantReference
-        slot_uri: mim:MIMMetadataPackage_grant_references
+        slot_uri: mim:MetadataPackage_grant_references
         multivalued: true
         inlined: true
         inlined_as_list: true
       sample_characteristic_definitions:
         range: MIMSampleCharacteristicDefinition
-        slot_uri: mim:MIMMetadataPackage_sample_characteristic_definitions
+        slot_uri: mim:MetadataPackage_sample_characteristic_definitions
         multivalued: true
         inlined: true
         inlined_as_list: true
       profile_specific_metadata:
         range: MIMProfileSpecificMetadata
-        slot_uri: mim:MIMMetadataPackage_profile_specific_metadata
+        slot_uri: mim:MetadataPackage_profile_specific_metadata
         multivalued: true
