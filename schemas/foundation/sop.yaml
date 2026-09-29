@@ -1,0 +1,43 @@
+id: https://w3id.org/mim/schemas/foundation/sop
+name: mim_foundation_sop
+title: MIM SOP
+description: SOP research asset linked to a protocol.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- asset
+- protocol
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: sop
+  profile: foundation
+
+classes:
+  MIMSOP:
+    class_uri: jerm:SOP
+    annotations:
+      alignment_status: EXACT_JERM
+      source_class_iri: http://jermontology.org/ontology/JERMOntology#SOP
+      jerm_identifier: JERM:00015
+    is_a: MIMProtocol
+    extra_slots:
+      allowed: true
+    attributes:
+      protocol:
+        range: MIMProtocol
+        slot_uri: mim:SOP_protocol

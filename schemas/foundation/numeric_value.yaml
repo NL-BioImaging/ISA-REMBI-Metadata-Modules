@@ -1,0 +1,33 @@
+id: https://w3id.org/mim/foundation/numeric_value
+name: mim_foundation_numeric_value
+title: MIM numeric value
+description: Compatibility specialization of MIMQuantityValue.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+imports:
+- linkml:types
+- quantity_value
+default_prefix: mim
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  sh: http://www.w3.org/ns/shacl#
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  namespace_status: provisional
+  ecosystem_name: Multiomics and Imaging Metadata (MIM)
+  semantic_basis: JERM
+  module_name: numeric_value
+  profile: foundation
+classes:
+  MIMNumericValue:
+    is_a: MIMQuantityValue
+    extra_slots:
+      allowed: true
