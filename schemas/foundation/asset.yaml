@@ -1,9 +1,16 @@
-id: https://w3id.org/mim/foundation/asset
+id: https://w3id.org/mim/schemas/foundation/asset
 name: mim_foundation_asset
 title: MIM research asset
-description: Abstract JERM-aligned research-asset base class.
+description: Abstract JERM-aligned research-asset.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
 imports:
 - linkml:types
 - common
@@ -12,46 +19,58 @@ imports:
 - external_reference
 default_prefix: mim
 default_range: string
-prefixes:
-  linkml: https://w3id.org/linkml/
-  mim: https://w3id.org/mim/
-  jerm: http://jermontology.org/ontology/JERMOntology#
-  sh: http://www.w3.org/ns/shacl#
-  prov: http://www.w3.org/ns/prov#
-  orcid: https://orcid.org/
+
 created_by: orcid:0000-0002-4904-3269
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
   schema_status: draft
-  namespace_status: provisional
-  ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
   module_name: asset
   profile: foundation
+
 classes:
   MIMAsset:
+    description: all shareable entities in the SEEK are kinds of Assets
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMVersionedMixin
     abstract: true
     extra_slots:
       allowed: true
     attributes:
       asset_type:
-        range: string
-        slot_uri: mim:MIMAsset_type
+        range: AssetTypeEnum
+        slot_uri: mim:Asset_type
         designates_type: true
         required: true
       license:
         range: MIMLicense
-        slot_uri: mim:MIMAsset_license
+        slot_uri: mim:Asset_license
       external_references:
         range: MIMExternalReference
-        slot_uri: mim:MIMAsset_external_references
+        slot_uri: mim:Asset_external_references
         multivalued: true
       attribution:
         range: MIMAttribution
-        slot_uri: mim:MIMAsset_attribution
+        slot_uri: mim:Asset_attribution
         inlined: true
+      assay:
+        range: MIMAssay
+        slot_uri: mim:Asset_assay
+        inlined: true
+
+enums:
+  AssetTypeEnum:
+    permissible_values:
+      data: {}
+      data_file: {}
+      document: {}
+      publication: {}
+      presentation: {}
+      workflow: {}
+      model: {}
+      protocol: {}
+      sop: {}
