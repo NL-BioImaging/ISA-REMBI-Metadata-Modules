@@ -14,10 +14,6 @@ prefixes:
 imports:
 - linkml:types
 - common
-- parameter_specification
-- hardware_component
-- software_component
-- reagent_component
 default_prefix: mim
 default_range: string
 
@@ -47,19 +43,4 @@ classes:
         slot_uri: mim:ProtocolComponent_component_type
         designates_type: true
         required: true
-      parameters:
-        range: MIMParameterSpecification
-        slot_uri: mim:ProtocolComponent_parameters
-        multivalued: true
-      hardware:
-        range: MIMHardwareComponent
-        slot_uri: mim:ProtocolComponent_hardware
-        multivalued: true
-      software:
-        range: MIMSoftwareComponent
-        slot_uri: mim:ProtocolComponent_software
-        multivalued: true
-      reagents:
-        range: MIMReagentComponent
-        slot_uri: mim:ProtocolComponent_reagents
-        multivalued: true
+
