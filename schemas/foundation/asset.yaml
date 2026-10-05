@@ -37,6 +37,7 @@ classes:
     - MIMNamedMixin
     - MIMDescribedMixin
     - MIMVersionedMixin
+    - MIMCommentedMixin
     abstract: true
     extra_slots:
       allowed: true
@@ -53,6 +54,8 @@ classes:
         range: MIMExternalReference
         slot_uri: mim:Asset_external_references
         multivalued: true
+        inlined: true
+        inlined_as_list: true
       attribution:
         range: MIMAttribution
         slot_uri: mim:Asset_attribution
