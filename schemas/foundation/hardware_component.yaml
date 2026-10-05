@@ -31,3 +31,8 @@ classes:
     is_a: MIMProtocolComponent
     extra_slots:
       allowed: true
+    attributes:
+      manufacturer:
+        range: string
+      model_number:
+        range: string
