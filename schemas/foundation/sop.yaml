@@ -38,6 +38,13 @@ classes:
     extra_slots:
       allowed: true
     attributes:
-      protocol:
-        range: MIMProtocol
-        slot_uri: mim:SOP_protocol
+      format:
+        range: MIMFileFormat
+        slot_uri: mim:SOP_format
+      factors_studied:
+        range: MIMFactor
+        slot_uri: mim:SOP_factors_studied
+        multivalued: true
+      assay:
+        range: MIMAssay
+        slot_uri: mim:SOP_assay
