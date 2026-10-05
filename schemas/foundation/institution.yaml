@@ -28,7 +28,6 @@ annotations:
 
 classes:
   MIMInstitution:
-    class_uri: jerm:Institution
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
