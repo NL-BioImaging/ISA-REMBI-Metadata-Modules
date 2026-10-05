@@ -64,6 +64,15 @@ classes:
         range: MIMAssay
         slot_uri: mim:Asset_assay
         inlined: true
+      produced_by_project:
+        range: MIMProject
+        slot_uri: mim:Asset_produced_by_project
+        inlined: true
+      external_id:
+        range: string
+        slot_uri: mim:Asset_external_id
+        description: External identifier for the asset, e.g. seek_id.
+
 
 enums:
   AssetTypeEnum:
