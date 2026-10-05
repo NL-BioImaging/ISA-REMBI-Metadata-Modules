@@ -16,9 +16,6 @@ imports:
 - asset
 - ontology_term
 - protocol_component
-- hardware_component
-- software_component
-- reagent_component
 - parameter_specification
 - attribution
 default_prefix: mim
