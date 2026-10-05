@@ -39,8 +39,18 @@ classes:
       allowed: true
     attributes:
       component_type:
-        range: string #check whether the protocol component type is an ontology term
+        range: ProtocolComponentTypeEnum
         slot_uri: mim:ProtocolComponent_component_type
         designates_type: true
         required: true
 
+enums:
+  ProtocolComponentTypeEnum:
+    description: Type of protocol component.
+    permissible_values:
+      reagent:
+          description: Reagent component used in a protocol.
+      hardware:
+          description: Hardware component used in a protocol.
+      software:
+          description: Software component used in a protocol.

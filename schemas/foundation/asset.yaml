@@ -17,6 +17,8 @@ imports:
 - attribution
 - license
 - external_reference
+- assay
+- project
 default_prefix: mim
 default_range: string
 
@@ -31,6 +33,9 @@ annotations:
 
 classes:
   MIMAsset:
+    class_uri: jerm:Asset
+    annotations:
+      alignment_status: JERM_aligned_with_mim_extensions
     description: all shareable entities in the SEEK are kinds of Assets
     mixins:
     - MIMIdentifiedMixin
@@ -63,15 +68,12 @@ classes:
       assay:
         range: MIMAssay
         slot_uri: mim:Asset_assay
-        inlined: true
       produced_by_project:
         range: MIMProject
         slot_uri: mim:Asset_produced_by_project
-        inlined: true
-      external_id:
-        range: string
-        slot_uri: mim:Asset_external_id
-        description: External identifier for the asset, e.g. seek_id.
+      seek_id:
+        range: uriorcurie
+        slot_uri: mim:Asset_seek_id
 
 
 enums:

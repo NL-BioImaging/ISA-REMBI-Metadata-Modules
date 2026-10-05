@@ -32,7 +32,11 @@ classes:
     extra_slots:
       allowed: true
     attributes:
+      component_type:
+        equals_string: "hardware"
       manufacturer:
         range: string
+        slot_uri: mim:HardwareComponent_manufacturer
       model_number:
         range: string
+        slot_uri: mim:HardwareComponent_model_number

@@ -15,6 +15,7 @@ imports:
 - linkml:types
 - common
 - institution
+- ontology_term
 default_prefix: mim
 default_range: string
 

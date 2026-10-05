@@ -15,6 +15,9 @@ imports:
 - linkml:types
 - asset
 - protocol
+- file_format
+- factor
+- assay
 default_prefix: mim
 default_range: string
 
@@ -31,13 +34,15 @@ classes:
   MIMSOP:
     class_uri: jerm:SOP
     annotations:
-      alignment_status: EXACT_JERM
-      source_class_iri: http://jermontology.org/ontology/JERMOntology#SOP
-      jerm_identifier: JERM:00015
+      alignment_status: JERM_aligned_with_mim_extensions
     is_a: MIMProtocol
     extra_slots:
       allowed: true
     attributes:
+      asset_type:
+        range: AssetTypeEnum
+        slot_uri: mim:SOP_asset_type
+        equals_string: "sop"
       format:
         range: MIMFileFormat
         slot_uri: mim:SOP_format

@@ -14,7 +14,6 @@ prefixes:
 imports:
 - linkml:types
 - protocol_component
-- common
 default_prefix: mim
 default_range: string
 
@@ -32,7 +31,13 @@ classes:
     is_a: MIMProtocolComponent
     extra_slots:
       allowed: true
-    mixins:
-    - MIMIdentifiedMixin
-    - MIMNamedMixin
-    - MIMVersionedMixin
+    attributes:
+      component_type:
+        equals_string: "software"
+        slot_uri: mim:SoftwareComponent_component_type
+      manufacturer:
+        range: string
+        slot_uri: mim:SoftwareComponent_manufacturer
+      repository_url:
+        range: uriorcurie
+        slot_uri: mim:SoftwareComponent_repository_url

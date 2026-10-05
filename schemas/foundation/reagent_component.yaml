@@ -41,3 +41,5 @@ classes:
       lot_number:
         range: string
         slot_uri: mim:ReagentComponent_lot_number
+      component_type:
+        equals_string: "reagent"
