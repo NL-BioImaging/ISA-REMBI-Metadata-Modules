@@ -41,14 +41,20 @@ classes:
         range: MIMAgent
         slot_uri: mim:Attribution_creators
         multivalued: true
+        inlined: true
+        inlined_as_list: true
       contributors:
         range: MIMAgent
         slot_uri: mim:Attribution_contributors
         multivalued: true
+        inlined: true
+        inlined_as_list: true
       responsible_institutions:
         range: MIMInstitution
         slot_uri: mim:Attribution_responsible_institutions
         multivalued: true
+        inlined: true
+        inlined_as_list: true
       created_on:
         range: datetime
         slot_uri: mim:Attribution_created_on
