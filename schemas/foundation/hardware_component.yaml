@@ -29,11 +29,12 @@ annotations:
 classes:
   MIMHardwareComponent:
     is_a: MIMProtocolComponent
+    slot_usage:
+      component_type:
+        equals_string: hardware
     extra_slots:
       allowed: true
     attributes:
-      component_type:
-        equals_string: "hardware"
       manufacturer:
         range: string
         slot_uri: mim:HardwareComponent_manufacturer

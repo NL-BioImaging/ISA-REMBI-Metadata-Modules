@@ -14,11 +14,10 @@ prefixes:
 imports:
 - linkml:types
 - common
+- agent
 - attribution
 - license
 - external_reference
-- assay
-- project
 default_prefix: mim
 default_range: string
 
@@ -35,7 +34,7 @@ classes:
   MIMAsset:
     class_uri: jerm:Asset
     annotations:
-      alignment_status: JERM_aligned_with_mim_extensions
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
     description: all shareable entities in the SEEK are kinds of Assets
     mixins:
     - MIMIdentifiedMixin
@@ -65,15 +64,28 @@ classes:
         range: MIMAttribution
         slot_uri: mim:Asset_attribution
         inlined: true
-      assay:
-        range: MIMAssay
-        slot_uri: mim:Asset_assay
-      produced_by_project:
-        range: MIMProject
-        slot_uri: mim:Asset_produced_by_project
-      seek_id:
+      contributors:
+        range: MIMAgent
+        slot_uri: jerm:hasContributor
+        multivalued: true
+        annotations:
+          jerm_range: jerm:Person
+          mim_range_adaptation: MIMAgent
+      assay_reference:
         range: uriorcurie
-        slot_uri: mim:Asset_seek_id
+        slot_uri: jerm:isPartOf
+        annotations:
+          referenced_class: MIMAssay
+          jerm_range: jerm:Assay
+      produced_by_project_reference:
+        range: uriorcurie
+        slot_uri: jerm:itemProducedBy
+        annotations:
+          referenced_class: MIMProject
+          jerm_range: jerm:Project
+      seek_id:
+        range: uri
+        slot_uri: jerm:seekID
 
 
 enums:

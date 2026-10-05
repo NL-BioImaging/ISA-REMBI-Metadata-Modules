@@ -29,6 +29,9 @@ annotations:
 classes:
   MIMReagentComponent:
     is_a: MIMProtocolComponent
+    slot_usage:
+      component_type:
+        equals_string: reagent
     extra_slots:
       allowed: true
     attributes:
@@ -41,5 +44,3 @@ classes:
       lot_number:
         range: string
         slot_uri: mim:ReagentComponent_lot_number
-      component_type:
-        equals_string: "reagent"

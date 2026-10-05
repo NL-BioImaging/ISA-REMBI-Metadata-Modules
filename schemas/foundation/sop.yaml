@@ -13,7 +13,6 @@ prefixes:
 
 imports:
 - linkml:types
-- asset
 - protocol
 - file_format
 - factor
@@ -34,22 +33,29 @@ classes:
   MIMSOP:
     class_uri: jerm:SOP
     annotations:
-      alignment_status: JERM_aligned_with_mim_extensions
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
     is_a: MIMProtocol
+    slot_usage:
+      asset_type:
+        equals_string: sop
     extra_slots:
       allowed: true
     attributes:
-      asset_type:
-        range: AssetTypeEnum
-        slot_uri: mim:SOP_asset_type
-        equals_string: "sop"
       format:
         range: MIMFileFormat
-        slot_uri: mim:SOP_format
+        slot_uri: jerm:hasFormat
+        annotations:
+          jerm_range: jerm:SOP_file_format
+          mim_range_adaptation: MIMFileFormat
       factors_studied:
         range: MIMFactor
-        slot_uri: mim:SOP_factors_studied
+        slot_uri: jerm:hasPart
         multivalued: true
+        annotations:
+          jerm_range: jerm:Factors_studied
+          mim_range_adaptation: MIMFactor
       assay:
         range: MIMAssay
-        slot_uri: mim:SOP_assay
+        slot_uri: jerm:isPartOf
+        annotations:
+          jerm_range: jerm:Assay

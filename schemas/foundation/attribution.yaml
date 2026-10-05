@@ -1,8 +1,7 @@
 id: https://w3id.org/mim/schemas/foundation/attribution
 name: mim_foundation_attribution
 title: MIM attribution
-description: Structured creators, contributors, institutions, roles, and lifecycle
-  metadata.
+description: Structured creators, responsible institutions, and lifecycle metadata.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 
@@ -39,10 +38,6 @@ classes:
       creators:
         range: MIMAgent
         slot_uri: mim:Attribution_creators
-        multivalued: true
-      contributors:
-        range: MIMAgent
-        slot_uri: mim:Attribution_contributors
         multivalued: true
       responsible_institutions:
         range: MIMInstitution

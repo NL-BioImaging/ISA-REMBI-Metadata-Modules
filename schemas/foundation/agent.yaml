@@ -32,6 +32,7 @@ classes:
   MIMAgent:
     mixins:
     - MIMIdentifiedMixin
+    - MIMNamedMixin
     - MIMDescribedMixin
     - MIMCommentedMixin
     extra_slots:

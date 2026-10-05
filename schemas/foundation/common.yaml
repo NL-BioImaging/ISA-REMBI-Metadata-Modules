@@ -49,8 +49,9 @@ classes:
   MIMCommentedMixin:
     mixin: true
     attributes:
-      comment:
+      comments:
         range: string
+        multivalued: true
         slot_uri: mim:CommentedMixin_comment
   MIMVersionedMixin:
     mixin: true

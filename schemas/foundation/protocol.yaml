@@ -17,7 +17,6 @@ imports:
 - ontology_term
 - protocol_component
 - parameter_specification
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -33,13 +32,15 @@ annotations:
 classes:
   MIMProtocol:
     class_uri: jerm:Protocol
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
     is_a: MIMAsset
+    slot_usage:
+      asset_type:
+        equals_string: protocol
     extra_slots:
       allowed: true
     attributes:
-      asset_type:
-        range: AssetTypeEnum
-        equals_string: "protocol"
       protocol_type:
         range: MIMOntologyTerm #check whether the protocol type is an ontology term
         slot_uri: mim:Protocol_protocol_type

@@ -29,15 +29,15 @@ annotations:
 classes:
   MIMSoftwareComponent:
     is_a: MIMProtocolComponent
+    slot_usage:
+      component_type:
+        equals_string: software
     extra_slots:
       allowed: true
     attributes:
-      component_type:
-        equals_string: "software"
-        slot_uri: mim:SoftwareComponent_component_type
       manufacturer:
         range: string
         slot_uri: mim:SoftwareComponent_manufacturer
       repository_url:
-        range: uriorcurie
+        range: uri
         slot_uri: mim:SoftwareComponent_repository_url
