@@ -14,6 +14,7 @@ prefixes:
 imports:
 - linkml:types
 - protocol_component
+- common
 default_prefix: mim
 default_range: string
 
@@ -31,4 +32,7 @@ classes:
     is_a: MIMProtocolComponent
     extra_slots:
       allowed: true
-      
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMVersionedMixin
