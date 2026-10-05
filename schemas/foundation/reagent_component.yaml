@@ -31,3 +31,13 @@ classes:
     is_a: MIMProtocolComponent
     extra_slots:
       allowed: true
+    attributes:
+      catalog_number:
+        range: string
+        slot_uri: mim:ReagentComponent_catalog_number
+      supplier:
+        range: string
+        slot_uri: mim:ReagentComponent_supplier
+      lot_number:
+        range: string
+        slot_uri: mim:ReagentComponent_lot_number
