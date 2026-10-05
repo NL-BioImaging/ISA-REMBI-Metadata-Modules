@@ -17,7 +17,6 @@ imports:
 - common
 - agent
 - institution
-- role
 default_prefix: mim
 default_range: string
 

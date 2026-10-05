@@ -15,7 +15,6 @@ imports:
 - linkml:types
 - common
 - institution
-- role
 default_prefix: mim
 default_range: string
 
