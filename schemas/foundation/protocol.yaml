@@ -13,9 +13,12 @@ prefixes:
 
 imports:
 - linkml:types
-- common
+- asset
 - ontology_term
 - protocol_component
+- hardware_component
+- software_component
+- reagent_component
 - parameter_specification
 - attribution
 default_prefix: mim
@@ -34,15 +37,12 @@ classes:
   MIMProtocol:
     class_uri: jerm:Protocol
     is_a: MIMAsset
-    mixins:
-    - MIMIdentifiedMixin
-    - MIMNamedMixin
-    - MIMDescribedMixin
-    - MIMVersionedMixin
-    - MIMCommentedMixin
     extra_slots:
       allowed: true
     attributes:
+      asset_type:
+        range: AssetTypeEnum
+        equals_string: "protocol"
       protocol_type:
         range: MIMOntologyTerm #check whether the protocol type is an ontology term
         slot_uri: mim:Protocol_protocol_type
@@ -50,6 +50,14 @@ classes:
         range: MIMProtocolComponent
         slot_uri: mim:Protocol_components
         multivalued: true
+        inlined: true
+        inlined_as_list: true
+      parameters:
+        range: MIMParameterSpecification
+        slot_uri: mim:Protocol_parameters
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
       attribution:
         range: MIMAttribution
         slot_uri: mim:Protocol_attribution
