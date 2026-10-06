@@ -36,7 +36,6 @@ classes:
     class_uri: jerm:Assay
     annotations:
       alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
-    is_a: MIMProcess
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
@@ -45,11 +44,19 @@ classes:
       allowed: true
     attributes:
       assay_type:
+        description: ontology term describing the type of assay.
         range: MIMOntologyTerm
         slot_uri: mim:Assay_assay_type
+        annotations:
+          jerm_source_property: jerm:hasType
+          jerm_range: jerm:Assay_type
       technology_type:
+        description: ontology term describing the technology type used in the assay.
         range: MIMOntologyTerm
         slot_uri: mim:Assay_technology_type
+        annotations:
+          jerm_source_property: jerm:hasType
+          jerm_range: jerm:Technology_type
       processes:
         range: MIMProcess
         slot_uri: mim:Assay_processes
@@ -59,11 +66,13 @@ classes:
         slot_uri: mim:Assay_samples
         multivalued: true
       study_reference:
+        description: Reference to the study that this assay is part of.
         range: uriorcurie
         slot_uri: mim:Assay_study_reference
-        annotation:
+        annotations:
           referenced_class: MIMStudy
-          slot_uri: jerm:isPartOf
+          jerm_source_property: jerm:isPartOf
+          jerm_range: jerm:Study
       external_references:
         range: MIMExternalReference
         slot_uri: mim:Assay_external_references
