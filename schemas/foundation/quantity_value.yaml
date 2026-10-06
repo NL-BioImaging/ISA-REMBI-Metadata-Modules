@@ -43,4 +43,3 @@ classes:
       unit:
         range: MIMOntologyTerm
         slot_uri: mim:QuantityValue_unit
-        required: true
