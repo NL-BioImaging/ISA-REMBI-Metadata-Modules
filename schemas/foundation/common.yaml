@@ -52,7 +52,7 @@ classes:
       comments:
         range: string
         multivalued: true
-        slot_uri: mim:CommentedMixin_comment
+        slot_uri: mim:CommentedMixin_comments
   MIMVersionedMixin:
     mixin: true
     attributes:
