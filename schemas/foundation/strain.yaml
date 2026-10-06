@@ -15,7 +15,7 @@ imports:
 - linkml:types
 - common
 - organism
-- attribution
+- ontology_term
 default_prefix: mim
 default_range: string
 
