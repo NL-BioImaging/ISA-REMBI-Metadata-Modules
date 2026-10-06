@@ -40,7 +40,6 @@ classes:
       funder:
         range: MIMInstitution
         slot_uri: mim:Funding_funder
-        inlined: true
       award_number:
         range: string
         slot_uri: mim:Funding_award_number
