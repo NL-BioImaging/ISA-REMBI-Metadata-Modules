@@ -29,6 +29,7 @@ annotations:
 classes:
   MIMLicense:
     mixins:
+    - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
     extra_slots:
