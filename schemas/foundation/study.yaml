@@ -1,9 +1,16 @@
-id: https://w3id.org/mim/foundation/study
+id: https://w3id.org/mim/schemas/foundation/study
 name: mim_foundation_study
 title: MIM study
 description: JERM-aligned study with design, assays, assets, funding, and attribution.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
 imports:
 - linkml:types
 - common
@@ -16,26 +23,21 @@ imports:
 - attribution
 default_prefix: mim
 default_range: string
-prefixes:
-  linkml: https://w3id.org/linkml/
-  mim: https://w3id.org/mim/
-  jerm: http://jermontology.org/ontology/JERMOntology#
-  sh: http://www.w3.org/ns/shacl#
-  prov: http://www.w3.org/ns/prov#
-  orcid: https://orcid.org/
+
 created_by: orcid:0000-0002-4904-3269
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
   schema_status: draft
-  namespace_status: provisional
-  ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
   module_name: study
   profile: foundation
+
 classes:
   MIMStudy:
     class_uri: jerm:Study
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
@@ -45,34 +47,34 @@ classes:
     attributes:
       keywords:
         range: string
-        slot_uri: mim:MIMStudy_keywords
+        slot_uri: mim:Study_keywords
         multivalued: true
       study_type:
         range: MIMOntologyTerm
-        slot_uri: mim:MIMStudy_study_type
+        slot_uri: mim:Study_study_type
       design:
         range: MIMStudyDesign
-        slot_uri: mim:MIMStudy_design
+        slot_uri: mim:Study_design
       assays:
         range: MIMAssay
-        slot_uri: mim:MIMStudy_assays
+        slot_uri: mim:Study_assays
         multivalued: true
       publications:
         range: MIMPublication
-        slot_uri: mim:MIMStudy_publications
+        slot_uri: mim:Study_publications
         multivalued: true
       funding:
         range: MIMFunding
-        slot_uri: mim:MIMStudy_funding
+        slot_uri: mim:Study_funding
         multivalued: true
       license:
         range: MIMLicense
-        slot_uri: mim:MIMStudy_license
+        slot_uri: mim:Study_license
       related_studies:
         range: MIMStudy
-        slot_uri: mim:MIMStudy_related_studies
+        slot_uri: mim:Study_related_studies
         multivalued: true
       attribution:
         range: MIMAttribution
-        slot_uri: mim:MIMStudy_attribution
+        slot_uri: mim:Study_attribution
         inlined: true
