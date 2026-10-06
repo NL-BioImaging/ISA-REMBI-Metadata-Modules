@@ -30,6 +30,9 @@ annotations:
 classes:
   MIMCategoricalValue:
     is_a: MIMValue
+    slot_usage:
+      value_type:
+        equals_string: MIMCategoricalValue
     extra_slots:
       allowed: true
     attributes:

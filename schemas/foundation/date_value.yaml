@@ -29,6 +29,9 @@ annotations:
 classes:
   MIMDateValue:
     is_a: MIMValue
+    slot_usage:
+      value_type:
+        equals_string: MIMDateValue
     extra_slots:
       allowed: true
     attributes:

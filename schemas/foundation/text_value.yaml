@@ -29,6 +29,9 @@ annotations:
 classes:
   MIMTextValue:
     is_a: MIMValue
+    slot_usage:
+      value_type:
+        equals_string: MIMTextValue
     extra_slots:
       allowed: true
     attributes:
