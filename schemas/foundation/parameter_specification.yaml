@@ -39,6 +39,6 @@ classes:
       parameter_term:
         range: MIMOntologyTerm #check whether the parameter term is an ontology term
         slot_uri: mim:ParameterSpecification_parameter_term
-      unit:
-        range: MIMOntologyTerm #check whether the unit is an ontology term
-        slot_uri: mim:ParameterSpecification_unit
+      # unit: # Expected / Permitted Unit (protocol constraint)
+      #   range: MIMOntologyTerm #check whether the unit is an ontology term
+      #   slot_uri: mim:ParameterSpecification_unit
