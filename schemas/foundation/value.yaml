@@ -36,10 +36,18 @@ classes:
       allowed: true
     attributes:
       value_type:
-        range: string
+        range: MIMValueTypeEnum
         slot_uri: mim:Value_value_type
         designates_type: true
         required: true
       unit: # Actual Observed Unit (recorded data)
         range: MIMOntologyTerm
         slot_uri: mim:Value_unit
+
+enums:
+  MIMValueTypeEnum:
+    permissible_values:
+      MIMQuantityValue:
+      MIMCategoricalValue:
+      MIMDateValue:
+      MIMTextValue:
