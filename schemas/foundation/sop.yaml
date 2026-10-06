@@ -37,7 +37,7 @@ classes:
     is_a: MIMProtocol
     slot_usage:
       asset_type:
-        equals_string: sop
+        equals_string: MIMSOP
     extra_slots:
       allowed: true
     attributes:

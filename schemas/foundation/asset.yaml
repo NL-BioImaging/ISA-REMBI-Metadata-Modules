@@ -91,12 +91,11 @@ classes:
 enums:
   MIMAssetTypeEnum:
     permissible_values:
-      data: {}
-      data_file: {}
-      document: {}
-      publication: {}
-      presentation: {}
-      workflow: {}
-      model: {}
-      protocol: {}
-      sop: {}
+      MIMDataFile: {}
+      MIMDocument: {}
+      MIMPublication: {}
+      MIMPresentation: {}
+      MIMWorkflow: {}
+      MIMModel: {}
+      MIMProtocol: {}
+      MIMSOP: {}

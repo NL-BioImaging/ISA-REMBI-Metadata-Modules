@@ -48,9 +48,9 @@ enums:
   MIMProtocolComponentTypeEnum:
     description: Type of protocol component.
     permissible_values:
-      reagent:
+      MIMReagentComponent:
           description: Reagent component used in a protocol.
-      hardware:
+      MIMHardwareComponent:
           description: Hardware component used in a protocol.
-      software:
+      MIMSoftwareComponent:
           description: Software component used in a protocol.

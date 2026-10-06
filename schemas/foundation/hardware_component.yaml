@@ -31,7 +31,7 @@ classes:
     is_a: MIMProtocolComponent
     slot_usage:
       component_type:
-        equals_string: hardware
+        equals_string: MIMHardwareComponent
     extra_slots:
       allowed: true
     attributes:

@@ -32,7 +32,7 @@ classes:
     is_a: MIMAsset
     slot_usage:
       asset_type:
-        equals_string: document
+        equals_string: MIMDocument
     extra_slots:
       allowed: true
     attributes:

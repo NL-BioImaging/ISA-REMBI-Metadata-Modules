@@ -35,7 +35,7 @@ classes:
     is_a: MIMAsset
     slot_usage:
       asset_type:
-        equals_string: data_file
+        equals_string: MIMDataFile
     extra_slots:
       allowed: true
     attributes:

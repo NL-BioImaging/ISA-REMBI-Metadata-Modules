@@ -32,7 +32,7 @@ classes:
     is_a: MIMAsset
     slot_usage:
       asset_type:
-        equals_string: presentation
+        equals_string: MIMPresentation
     extra_slots:
       allowed: true
     attributes:

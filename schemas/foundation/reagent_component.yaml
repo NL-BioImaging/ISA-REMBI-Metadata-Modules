@@ -31,7 +31,7 @@ classes:
     is_a: MIMProtocolComponent
     slot_usage:
       component_type:
-        equals_string: reagent
+        equals_string: MIMReagentComponent
     extra_slots:
       allowed: true
     attributes:

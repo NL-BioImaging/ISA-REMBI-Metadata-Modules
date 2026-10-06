@@ -31,7 +31,7 @@ classes:
     is_a: MIMProtocolComponent
     slot_usage:
       component_type:
-        equals_string: software
+        equals_string: MIMSoftwareComponent
     extra_slots:
       allowed: true
     attributes:

@@ -36,7 +36,7 @@ classes:
     is_a: MIMAsset
     slot_usage:
       asset_type:
-        equals_string: model
+        equals_string: MIMModel
     extra_slots:
       allowed: true
     attributes:

@@ -37,7 +37,7 @@ classes:
     is_a: MIMAsset
     slot_usage:
       asset_type:
-        equals_string: protocol
+        equals_string: MIMProtocol
     extra_slots:
       allowed: true
     attributes:
