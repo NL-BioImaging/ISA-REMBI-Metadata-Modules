@@ -32,7 +32,7 @@ classes:
   MIMFactor:
     annotations:
       alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
-      broad_mapping: jerm:Experimental_factor
+      broad_mapping: jerm:Experimental_factors
       related_mapping: jerm:Factors_studied
     mixins:
     - MIMIdentifiedMixin
