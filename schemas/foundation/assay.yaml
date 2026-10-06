@@ -1,39 +1,42 @@
-id: https://w3id.org/mim/foundation/assay
+id: https://w3id.org/mim/schemas/foundation/assay
 name: mim_foundation_assay
 title: MIM assay
-description: JERM-aligned assay linked to study, processes, samples, and assets.
+description: JERM-aligned assay linked to study, processes, and samples.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
 imports:
 - linkml:types
 - common
 - ontology_term
 - process
 - sample
-- asset
 - attribution
+- external_reference
 default_prefix: mim
 default_range: string
-prefixes:
-  linkml: https://w3id.org/linkml/
-  mim: https://w3id.org/mim/
-  jerm: http://jermontology.org/ontology/JERMOntology#
-  sh: http://www.w3.org/ns/shacl#
-  prov: http://www.w3.org/ns/prov#
-  orcid: https://orcid.org/
+
 created_by: orcid:0000-0002-4904-3269
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
   schema_status: draft
-  namespace_status: provisional
-  ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
   module_name: assay
   profile: foundation
+
 classes:
   MIMAssay:
     class_uri: jerm:Assay
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
+    is_a: MIMProcess
     mixins:
     - MIMIdentifiedMixin
     - MIMNamedMixin
@@ -43,26 +46,31 @@ classes:
     attributes:
       assay_type:
         range: MIMOntologyTerm
-        slot_uri: mim:MIMAssay_assay_type
+        slot_uri: mim:Assay_assay_type
       technology_type:
         range: MIMOntologyTerm
-        slot_uri: mim:MIMAssay_technology_type
+        slot_uri: mim:Assay_technology_type
       processes:
         range: MIMProcess
-        slot_uri: mim:MIMAssay_processes
+        slot_uri: mim:Assay_processes
         multivalued: true
       samples:
         range: MIMSample
-        slot_uri: mim:MIMAssay_samples
-        multivalued: true
-      assets:
-        range: MIMAsset
-        slot_uri: mim:MIMAssay_assets
+        slot_uri: mim:Assay_samples
         multivalued: true
       study_reference:
         range: uriorcurie
-        slot_uri: mim:MIMAssay_study_reference
+        slot_uri: mim:Assay_study_reference
+        annotation:
+          referenced_class: MIMStudy
+          slot_uri: jerm:isPartOf
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:Assay_external_references
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
       attribution:
         range: MIMAttribution
-        slot_uri: mim:MIMAssay_attribution
+        slot_uri: mim:Assay_attribution
         inlined: true
