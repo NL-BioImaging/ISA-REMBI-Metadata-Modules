@@ -47,7 +47,7 @@ classes:
       allowed: true
     attributes:
       asset_type:
-        range: AssetTypeEnum
+        range: MIMAssetTypeEnum
         slot_uri: mim:Asset_type
         designates_type: true
         required: true
@@ -89,7 +89,7 @@ classes:
 
 
 enums:
-  AssetTypeEnum:
+  MIMAssetTypeEnum:
     permissible_values:
       data: {}
       data_file: {}

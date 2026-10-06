@@ -39,7 +39,7 @@ classes:
       allowed: true
     attributes:
       agent_type:
-        range: AgentTypeEnum
+        range: MIMAgentTypeEnum
         slot_uri: mim:Agent_agent_type
         required: true
       first_name:
@@ -69,7 +69,7 @@ classes:
         required: true
 
 enums:
-  AgentTypeEnum:
+  MIMAgentTypeEnum:
     permissible_values:
       person: {}
       organization: {}

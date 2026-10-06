@@ -39,13 +39,13 @@ classes:
       allowed: true
     attributes:
       component_type:
-        range: ProtocolComponentTypeEnum
+        range: MIMProtocolComponentTypeEnum
         slot_uri: mim:ProtocolComponent_component_type
         designates_type: true
         required: true
 
 enums:
-  ProtocolComponentTypeEnum:
+  MIMProtocolComponentTypeEnum:
     description: Type of protocol component.
     permissible_values:
       reagent:
