@@ -42,9 +42,6 @@ classes:
         range: MIMMaterial
         slot_uri: jerm:isDerivedFrom
         multivalued: true
-      organism:
-        range: MIMOrganism
-        slot_uri: mim:Sample_organism
       strain:
         range: MIMStrain
         slot_uri: mim:Sample_strain
