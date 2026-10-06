@@ -1,41 +1,49 @@
-id: https://w3id.org/mim/foundation/prefix_association
+id: https://w3id.org/mim/schemas/foundation/prefix_association
 name: mim_foundation_prefix_association
 title: MIM prefix association
-description: Closed CURIE-prefix table entry.
+description: >
+  Associates a CURIE prefix name with the corresponding URI prefix
+  in serialized MIM metadata.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
-imports:
-- linkml:types
-default_prefix: mim
-default_range: string
+
 prefixes:
   linkml: https://w3id.org/linkml/
   mim: https://w3id.org/mim/
   jerm: http://jermontology.org/ontology/JERMOntology#
-  sh: http://www.w3.org/ns/shacl#
-  prov: http://www.w3.org/ns/prov#
   orcid: https://orcid.org/
+  sh: http://www.w3.org/ns/shacl#
+
+imports:
+- linkml:types
+default_prefix: mim
+default_range: string
+
 created_by: orcid:0000-0002-4904-3269
 annotations:
   created_by_name: Tooba Abbassi-Daloii
   created_by_affiliation: Amsterdam UMC; ACDC
   schema_status: draft
-  namespace_status: provisional
-  ecosystem_name: Multiomics and Imaging Metadata (MIM)
   semantic_basis: JERM
   module_name: prefix_association
   profile: foundation
+
 classes:
   MIMPrefixAssociation:
+    description: >
+      Entry in a prefix table associating a CURIE prefix name with
+      a URI prefix
     extra_slots:
       allowed: false
     attributes:
       prefix_name:
+        description: Prefix name used in CURIEs.
         range: ncname
         key: true
         required: true
         slot_uri: sh:prefix
       uri_prefix:
+        description: URI prefix associated with the CURIE prefix name.
         range: uri
         required: true
         slot_uri: sh:namespace
