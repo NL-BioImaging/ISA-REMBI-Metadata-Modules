@@ -35,9 +35,9 @@ classes:
     extra_slots:
       allowed: true
     attributes:
-      manufacturer:
+      developer:
         range: string
-        slot_uri: mim:SoftwareComponent_manufacturer
+        slot_uri: mim:SoftwareComponent_developer
       repository_url:
         range: uri
         slot_uri: mim:SoftwareComponent_repository_url
