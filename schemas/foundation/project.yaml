@@ -1,0 +1,72 @@
+id: https://w3id.org/mim/schemas/foundation/project
+name: mim_foundation_project
+title: MIM project
+description: JERM-aligned project grouping investigations.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- common
+- institution
+- agent
+- investigation
+- funding
+- attribution
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: project
+  profile: foundation
+
+classes:
+  MIMProject:
+    class_uri: jerm:Project
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      institutions:
+        range: MIMInstitution
+        slot_uri: mim:Project_institutions
+        multivalued: true
+      members:
+        range: MIMAgent
+        slot_uri: mim:Project_members
+        multivalued: true
+      investigations:
+        range: MIMInvestigation
+        slot_uri: mim:Project_investigations
+        multivalued: true
+      funding:
+        range: MIMFunding
+        slot_uri: mim:Project_funding
+        multivalued: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:Project_attribution
+        inlined: true
+      seek_id:
+        range: uri
+        slot_uri: jerm:seekID
+      web_link:
+        range: uri
+        slot_uri: jerm:webLink
+      

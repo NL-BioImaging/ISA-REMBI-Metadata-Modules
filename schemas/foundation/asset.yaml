@@ -1,0 +1,101 @@
+id: https://w3id.org/mim/schemas/foundation/asset
+name: mim_foundation_asset
+title: MIM research asset
+description: Abstract JERM-aligned research-asset.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- common
+- agent
+- attribution
+- license
+- external_reference
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: asset
+  profile: foundation
+
+classes:
+  MIMAsset:
+    class_uri: jerm:Asset
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
+    description: all shareable entities in the SEEK are kinds of Assets
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    - MIMVersionedMixin
+    - MIMCommentedMixin
+    abstract: true
+    extra_slots:
+      allowed: true
+    attributes:
+      asset_type:
+        range: MIMAssetTypeEnum
+        slot_uri: mim:Asset_type
+        designates_type: true
+        required: true
+      license:
+        range: MIMLicense
+        slot_uri: mim:Asset_license
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:Asset_external_references
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:Asset_attribution
+        inlined: true
+      contributors:
+        range: MIMAgent
+        slot_uri: jerm:hasContributor
+        multivalued: true
+        annotations:
+          jerm_range: jerm:Person
+          mim_range_adaptation: MIMAgent
+      assay_reference:
+        range: uriorcurie
+        slot_uri: jerm:isPartOf
+        annotations:
+          referenced_class: MIMAssay
+          jerm_range: jerm:Assay
+      produced_by_project_reference:
+        range: uriorcurie
+        slot_uri: jerm:itemProducedBy
+        annotations:
+          referenced_class: MIMProject
+          jerm_range: jerm:Project
+      seek_id:
+        range: uri
+        slot_uri: jerm:seekID
+
+
+enums:
+  MIMAssetTypeEnum:
+    permissible_values:
+      MIMDataFile: {}
+      MIMDocument: {}
+      MIMPublication: {}
+      MIMPresentation: {}
+      MIMWorkflow: {}
+      MIMModel: {}
+      MIMProtocol: {}
+      MIMSOP: {}

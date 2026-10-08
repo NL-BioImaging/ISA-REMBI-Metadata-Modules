@@ -1,0 +1,85 @@
+id: https://w3id.org/mim/schemas/foundation/assay
+name: mim_foundation_assay
+title: MIM assay
+description: JERM-aligned assay linked to study, processes, and samples.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- common
+- ontology_term
+- process
+- sample
+- attribution
+- external_reference
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: assay
+  profile: foundation
+
+classes:
+  MIMAssay:
+    class_uri: jerm:Assay
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      assay_type:
+        description: ontology term describing the type of assay.
+        range: MIMOntologyTerm
+        slot_uri: mim:Assay_assay_type
+        annotations:
+          jerm_source_property: jerm:hasType
+          jerm_range: jerm:Assay_type
+      technology_type:
+        description: ontology term describing the technology type used in the assay.
+        range: MIMOntologyTerm
+        slot_uri: mim:Assay_technology_type
+        annotations:
+          jerm_source_property: jerm:hasType
+          jerm_range: jerm:Technology_type
+      processes:
+        range: MIMProcess
+        slot_uri: mim:Assay_processes
+        multivalued: true
+      samples:
+        range: MIMSample
+        slot_uri: mim:Assay_samples
+        multivalued: true
+      study_reference:
+        description: Reference to the study that this assay is part of.
+        range: uriorcurie
+        slot_uri: mim:Assay_study_reference
+        annotations:
+          referenced_class: MIMStudy
+          jerm_source_property: jerm:isPartOf
+          jerm_range: jerm:Study
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:Assay_external_references
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      attribution:
+        range: MIMAttribution
+        slot_uri: mim:Assay_attribution
+        inlined: true

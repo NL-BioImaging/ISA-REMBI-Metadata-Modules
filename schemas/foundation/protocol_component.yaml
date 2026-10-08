@@ -1,0 +1,56 @@
+id: https://w3id.org/mim/schemas/foundation/protocol_component
+name: mim_foundation_protocol_component
+title: MIM protocol component
+description: Abstract type-designated protocol component.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- common
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: protocol_component
+  profile: foundation
+
+classes:
+  MIMProtocolComponent:
+    mixins:
+    - MIMIdentifiedMixin
+    - MIMNamedMixin
+    - MIMDescribedMixin
+    - MIMVersionedMixin
+    - MIMCommentedMixin
+    abstract: true
+    extra_slots:
+      allowed: true
+    attributes:
+      component_type:
+        range: MIMProtocolComponentTypeEnum
+        slot_uri: mim:ProtocolComponent_component_type
+        designates_type: true
+        required: true
+
+enums:
+  MIMProtocolComponentTypeEnum:
+    description: Type of protocol component.
+    permissible_values:
+      MIMReagentComponent:
+          description: Reagent component used in a protocol.
+      MIMHardwareComponent:
+          description: Hardware component used in a protocol.
+      MIMSoftwareComponent:
+          description: Software component used in a protocol.
