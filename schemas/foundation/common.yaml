@@ -13,7 +13,6 @@ prefixes:
 
 imports:
 - linkml:types
-- agent
 default_prefix: mim
 default_range: string
 

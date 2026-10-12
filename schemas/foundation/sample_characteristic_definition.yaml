@@ -42,3 +42,4 @@ classes:
       unit:
         range: MIMOntologyTerm
         slot_uri: mim:SampleCharacteristicDefinition_unit
+        required: false

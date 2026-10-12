@@ -80,8 +80,8 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-      attribution:
+      contributors:
         range: MIMAgent
-        slot_uri: mim:Assay_attribution
+        slot_uri: mim:Assay_contributors
         multivalued: true
         inlined: true
