@@ -16,6 +16,7 @@ imports:
 - common
 - ontology_term
 - value
+- agent
 default_prefix: mim
 default_range: string
 
@@ -45,3 +46,7 @@ classes:
         range: MIMValue
         slot_uri: mim:Measurement_measured_value
         inlined: true
+      attribution:
+        range: MIMAgent
+        slot_uri: mim:Measurement_attribution
+        multivalued: true

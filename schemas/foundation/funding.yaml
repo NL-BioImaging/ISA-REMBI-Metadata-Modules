@@ -15,6 +15,7 @@ imports:
 - linkml:types
 - common
 - institution
+- agent
 default_prefix: mim
 default_range: string
 
@@ -46,3 +47,7 @@ classes:
       award_url:
         range: uri
         slot_uri: mim:Funding_award_url
+      applicants:
+        range: MIMAgent
+        slot_uri: mim:Funding_applicants
+        multivalued: true

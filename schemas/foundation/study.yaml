@@ -20,6 +20,7 @@ imports:
 - publication
 - funding
 - license
+- agent
 default_prefix: mim
 default_range: string
 
@@ -74,4 +75,8 @@ classes:
         range: MIMStudy
         slot_uri: mim:Study_related_studies
         multivalued: true
-
+      contributors:
+        range: MIMAgent
+        slot_uri: mim:Study_contributors
+        inlined: true
+        multivalued: true

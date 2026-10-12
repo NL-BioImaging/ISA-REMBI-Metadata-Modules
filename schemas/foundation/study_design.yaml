@@ -16,6 +16,7 @@ imports:
 - common
 - ontology_term
 - factor
+- agent
 default_prefix: mim
 default_range: string
 
@@ -44,4 +45,9 @@ classes:
       factors:
         range: MIMFactor
         slot_uri: mim:StudyDesign_factors
+        multivalued: true
+      contributors:
+        range: MIMAgent
+        slot_uri: mim:StudyDesign_contributors
+        inlined: true
         multivalued: true

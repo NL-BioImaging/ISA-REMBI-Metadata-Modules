@@ -17,6 +17,7 @@ imports:
 - study
 - publication
 - funding
+- agent
 default_prefix: mim
 default_range: string
 
@@ -53,4 +54,11 @@ classes:
       funding:
         range: MIMFunding
         slot_uri: mim:Investigation_funding
+        multivalued: true
+      contact_person:
+        range: MIMAgent
+        slot_uri: mim:Investigation_contact_person
+      contributors:
+        range: MIMAgent
+        slot_uri: mim:Investigation_contributors
         multivalued: true

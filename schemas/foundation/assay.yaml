@@ -18,6 +18,7 @@ imports:
 - process
 - sample
 - external_reference
+- agent
 default_prefix: mim
 default_range: string
 
@@ -79,3 +80,8 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
+      attribution:
+        range: MIMAgent
+        slot_uri: mim:Assay_attribution
+        multivalued: true
+        inlined: true

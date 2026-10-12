@@ -29,14 +29,17 @@ annotations:
 classes:
   MIMProvenanceMixin:
     mixin: true
+    extra_slots:
+      allowed: true
     attributes:
-      creators:
-        range: MIMAgent
-        multivalued: true
       created_on:
+        description: Date and time when the metadata record was created.
         range: datetime
+        slot_uri: mim:ProvenanceMixin_created_on
       modified_on:
+        description: Date and time when the metadata record was last modified.
         range: datetime
+        slot_uri: mim:ProvenanceMixin_modified_on
   MIMIdentifiedMixin:
     mixin: true
     attributes:
