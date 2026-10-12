@@ -1,0 +1,59 @@
+id: https://w3id.org/mim/schemas/foundation/treatment
+name: mim_foundation_treatment
+title: MIM treatment
+description: Specialized process representing an experimental intervention or treatment applied to a sample.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+- linkml:types
+- process
+- ontology_term
+- value
+- reagent_component
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: treatment
+  profile: foundation
+
+classes:
+  MIMTreatment:
+    class_uri: jerm:treatment
+    annotations:
+      alignment_status: JERM_ALIGNED_WITH_MIM_EXTENSIONS
+    is_a: MIMProcess
+    extra_slots:
+      allowed: true
+    attributes:
+      treatment_type:
+        description: Ontology term describing the intervention type (e.g., compound treatment, heat shock).
+        range: MIMOntologyTerm
+        slot_uri: mim:Treatment_treatment_type
+      reagent:
+        description: Optional chemical compound, drug, or biological agent used in the treatment.
+        range: MIMReagentComponent
+        slot_uri: mim:Treatment_reagent
+        inlined: true
+      dose:
+        description: Quantity/concentration of the agent administered.
+        range: MIMValue
+        slot_uri: mim:Treatment_dose
+        inlined: true
+      duration:
+        description: Exposure duration for the treatment.
+        range: MIMValue
+        slot_uri: mim:Treatment_duration
+        inlined: true
