@@ -17,7 +17,6 @@ imports:
 - ontology_term
 - process
 - sample
-- attribution
 - external_reference
 default_prefix: mim
 default_range: string
@@ -40,6 +39,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
@@ -79,7 +79,3 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Assay_attribution
-        inlined: true

@@ -16,7 +16,6 @@ imports:
 - common
 - ontology_term
 - factor
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -35,6 +34,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
@@ -45,7 +45,3 @@ classes:
         range: MIMFactor
         slot_uri: mim:StudyDesign_factors
         multivalued: true
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:StudyDesign_attribution
-        inlined: true

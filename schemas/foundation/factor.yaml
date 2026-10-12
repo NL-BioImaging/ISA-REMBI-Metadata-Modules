@@ -15,7 +15,6 @@ imports:
 - linkml:types
 - common
 - ontology_term
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -38,13 +37,10 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
       factor_type:
         range: MIMOntologyTerm
         slot_uri: mim:Factor_factor_type
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Factor_attribution
-        inlined: true

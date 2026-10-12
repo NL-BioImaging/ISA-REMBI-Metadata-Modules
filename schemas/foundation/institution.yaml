@@ -1,7 +1,7 @@
 id: https://w3id.org/mim/schemas/foundation/institution
 name: mim_foundation_institution
 title: MIM institution
-description: Institution participating in a project or attribution.
+description: Institution participating in a project, investigation, or study.
 version: 1.0.0
 license: https://creativecommons.org/licenses/by/4.0/
 

@@ -15,7 +15,6 @@ imports:
 - linkml:types
 - common
 - institution
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -34,6 +33,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
@@ -46,7 +46,3 @@ classes:
       award_url:
         range: uri
         slot_uri: mim:Funding_award_url
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Funding_attribution
-        inlined: true

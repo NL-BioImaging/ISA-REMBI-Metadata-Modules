@@ -21,7 +21,6 @@ imports:
 - data_file
 - parameter_value
 - measurement
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -40,6 +39,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
@@ -78,8 +78,4 @@ classes:
         range: MIMMeasurement
         slot_uri: mim:Process_measurements
         multivalued: true
-        inlined: true
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Process_attribution
         inlined: true

@@ -17,7 +17,6 @@ imports:
 - study
 - publication
 - funding
-- attribution
 default_prefix: mim
 default_range: string
 
@@ -39,6 +38,7 @@ classes:
     - MIMIdentifiedMixin
     - MIMNamedMixin
     - MIMDescribedMixin
+    - MIMProvenanceMixin
     extra_slots:
       allowed: true
     attributes:
@@ -54,7 +54,3 @@ classes:
         range: MIMFunding
         slot_uri: mim:Investigation_funding
         multivalued: true
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Investigation_attribution
-        inlined: true

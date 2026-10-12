@@ -15,7 +15,6 @@ imports:
 - linkml:types
 - common
 - agent
-- attribution
 - license
 - external_reference
 default_prefix: mim
@@ -42,6 +41,7 @@ classes:
     - MIMDescribedMixin
     - MIMVersionedMixin
     - MIMCommentedMixin
+    - MIMProvenanceMixin
     abstract: true
     extra_slots:
       allowed: true
@@ -60,10 +60,6 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-      attribution:
-        range: MIMAttribution
-        slot_uri: mim:Asset_attribution
-        inlined: true
       contributors:
         range: MIMAgent
         slot_uri: jerm:hasContributor

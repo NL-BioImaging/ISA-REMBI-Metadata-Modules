@@ -13,6 +13,7 @@ prefixes:
 
 imports:
 - linkml:types
+- agent
 default_prefix: mim
 default_range: string
 
@@ -26,6 +27,16 @@ annotations:
   profile: foundation
 
 classes:
+  MIMProvenanceMixin:
+    mixin: true
+    attributes:
+      agents:
+        range: MIMAgent
+        multivalued: true
+      created_on:
+        range: datetime
+      modified_on:
+        range: datetime
   MIMIdentifiedMixin:
     mixin: true
     attributes:
