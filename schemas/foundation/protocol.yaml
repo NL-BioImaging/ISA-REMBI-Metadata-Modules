@@ -42,7 +42,7 @@ classes:
       allowed: true
     attributes:
       protocol_type:
-        range: MIMOntologyTerm #check whether the protocol type is an ontology term
+        range: MIMOntologyTerm
         slot_uri: mim:Protocol_protocol_type
       components:
         range: MIMProtocolComponent

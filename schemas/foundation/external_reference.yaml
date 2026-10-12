@@ -37,5 +37,5 @@ classes:
       allowed: true
     attributes:
       reference_type:
-        range: MIMOntologyTerm #check whether the reference type is an ontology term
+        range: MIMOntologyTerm
         slot_uri: mim:ExternalReference_reference_type
