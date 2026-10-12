@@ -30,7 +30,7 @@ classes:
   MIMProvenanceMixin:
     mixin: true
     attributes:
-      agents:
+      creators:
         range: MIMAgent
         multivalued: true
       created_on:
