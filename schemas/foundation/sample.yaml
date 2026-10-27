@@ -15,7 +15,6 @@ imports:
 - linkml:types
 - material
 - organism
-- strain
 - sample_characteristic_value
 default_prefix: mim
 default_range: string
@@ -39,13 +38,16 @@ classes:
       allowed: true
     attributes:
       derived_from:
+        description: Material from which the sample was derived.
         range: MIMMaterial
         slot_uri: jerm:isDerivedFrom
         multivalued: true
-      strain:
-        range: MIMStrain
-        slot_uri: mim:Sample_strain
+      organism:
+        description: Organism associated with the sample.
+        range: MIMOrganism
+        slot_uri: mim:Sample_organism
       characteristics:
+        description: Characteristic values recorded for the sample.
         range: MIMSampleCharacteristicValue
         slot_uri: mim:Sample_characteristics
         multivalued: true

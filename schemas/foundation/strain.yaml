@@ -14,7 +14,6 @@ prefixes:
 imports:
 - linkml:types
 - common
-- organism
 - ontology_term
 default_prefix: mim
 default_range: string
@@ -41,13 +40,11 @@ classes:
     extra_slots:
       allowed: true
     attributes:
-      organism:
-        range: MIMOrganism
-        slot_uri: mim:Strain_organism
-        required: true
       phenotype:
+        description: Ontology-backed phenotype associated with the strain.
         range: MIMOntologyTerm
         slot_uri: mim:Strain_phenotype
       genotype:
+        description: Ontology-backed genotype associated with the strain.
         range: MIMOntologyTerm
         slot_uri: mim:Strain_genotype

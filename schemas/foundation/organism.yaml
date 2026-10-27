@@ -40,5 +40,11 @@ classes:
       allowed: true
     attributes:
       taxon:
+        description: Ontology-backed taxonomic concept for the organism.
         range: MIMOntologyTerm
         slot_uri: mim:Organism_taxon
+      strains:
+        description: Strains associated with the organism, when applicable.
+        range: MIMStrain
+        slot_uri: mim:Organism_strains
+        multivalued: true
