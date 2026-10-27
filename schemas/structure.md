@@ -46,8 +46,8 @@ MIM-schema
 │   │   └── sample.yaml                                        (checked)
 │   │       ├── sample_characteristic_definition.yaml          (checked)
 │   │       └── sample_characteristic_value.yaml               (checked)
-│   ├── organism.yaml                                          (checked) 
-│   └── strain.yaml                                            (checked) 
+│   └── organism.yaml                                          (checked) 
+│       └── strain.yaml                                        (checked) 
 │
 ├── Measurement Layer
 │   │
