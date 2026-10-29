@@ -49,6 +49,6 @@ classes:
       journal:
         range: string
         slot_uri: mim:Publication_journal
-      web_page:
+      doi:
         range: uri
-        slot_uri: mim:Publication_web_page
+        slot_uri: mim:Publication_doi
