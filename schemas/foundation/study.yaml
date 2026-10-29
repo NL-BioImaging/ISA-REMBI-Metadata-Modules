@@ -21,6 +21,7 @@ imports:
 - funding
 - license
 - agent
+- external_reference
 default_prefix: mim
 default_range: string
 
@@ -46,6 +47,12 @@ classes:
     extra_slots:
       allowed: true
     attributes:
+      submission_accession_number:
+        range: string
+        slot_uri: mim:Study_submission_accession_number
+      submission_doi:
+        range: uri
+        slot_uri: mim:Study_submission_doi
       keywords:
         range: string
         slot_uri: mim:Study_keywords
@@ -79,4 +86,8 @@ classes:
         range: MIMAgent
         slot_uri: mim:Study_contributors
         inlined: true
+        multivalued: true
+      external_references:
+        range: MIMExternalReference
+        slot_uri: mim:Study_external_references
         multivalued: true
