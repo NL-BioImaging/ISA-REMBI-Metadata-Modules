@@ -19,6 +19,7 @@ imports:
 - sample
 - external_reference
 - agent
+- license
 default_prefix: mim
 default_range: string
 
@@ -85,3 +86,6 @@ classes:
         slot_uri: mim:Assay_contributors
         multivalued: true
         inlined: true
+      license:
+        range: MIMLicense
+        slot_uri: mim:Assay_license
