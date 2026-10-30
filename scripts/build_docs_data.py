@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build script for ISA-REMBI Metadata Modules (MIM).
+Build script for Multi-omics and (bio)Imaging Metadata (MIM).
 Parses modular LinkML YAML schemas across schemas/foundation and schemas/profiles,
 resolves mixins and inheritance (is_a), and outputs model.json and details.json.
 """
