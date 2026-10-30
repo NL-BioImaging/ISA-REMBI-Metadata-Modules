@@ -1,0 +1,5569 @@
+{
+  "summary": {
+    "classes_count": 59,
+    "enums_count": 5,
+    "total_fields": 472
+  },
+  "classes": [
+    {
+      "class": "MIMAgent",
+      "description": "",
+      "module": "agent",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMCommentedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMAgent.affiliations",
+          "name": "affiliations",
+          "range": "MIMInstitution",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.agent_type",
+          "name": "agent_type",
+          "range": "MIMAgentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMAgent.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.email",
+          "name": "email",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.first_name",
+          "name": "first_name",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.last_name",
+          "name": "last_name",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.middle_name",
+          "name": "middle_name",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.orcid",
+          "name": "orcid",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.roles",
+          "name": "roles",
+          "range": "MIMOntologyTerm",
+          "required": true,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAgent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAgent.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMAssay",
+      "description": "",
+      "module": "assay",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMAssay.assay_type",
+          "name": "assay_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.processes",
+          "name": "processes",
+          "range": "MIMProcess",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.samples",
+          "name": "samples",
+          "range": "MIMSample",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.study_reference",
+          "name": "study_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.technology_type",
+          "name": "technology_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAssay",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAssay.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMAsset",
+      "description": "all shareable entities in the SEEK are kinds of Assets",
+      "module": "asset",
+      "profile": "foundation",
+      "abstract": true,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMVersionedMixin",
+        "MIMCommentedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMAsset.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMAsset.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMAsset.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMCategoricalValue",
+      "description": "",
+      "module": "categorical_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMValue",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMCategoricalValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMCategoricalValue.term_value",
+          "name": "term_value",
+          "range": "MIMOntologyTerm",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMCategoricalValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMCategoricalValue.value_type",
+          "name": "value_type",
+          "range": "MIMValueTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMValue",
+          "is_enum": true
+        }
+      ]
+    },
+    {
+      "class": "MIMCommentedMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMCommentedMixin.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMDataFile",
+      "description": "",
+      "module": "data_file",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMDataFile.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMDataFile.checksum",
+          "name": "checksum",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDataFile",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.file_format",
+          "name": "file_format",
+          "range": "MIMFileFormat",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDataFile",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.location",
+          "name": "location",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDataFile",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDataFile.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMDateValue",
+      "description": "",
+      "module": "date_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMValue",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMDateValue.date_value",
+          "name": "date_value",
+          "range": "date",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDateValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDateValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDateValue.value_type",
+          "name": "value_type",
+          "range": "MIMValueTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMValue",
+          "is_enum": true
+        }
+      ]
+    },
+    {
+      "class": "MIMDescribedMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMDescribedMixin.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMDocument",
+      "description": "",
+      "module": "document",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMDocument.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMDocument.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.file",
+          "name": "file",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDocument",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMDocument.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMExternalReference",
+      "description": "",
+      "module": "external_reference",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMExternalReference.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMExternalReference.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMExternalReference.reference_type",
+          "name": "reference_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMExternalReference",
+          "is_enum": false
+        },
+        {
+          "path": "MIMExternalReference.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMFactor",
+      "description": "",
+      "module": "factor",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMFactor.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFactor.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFactor.factor_type",
+          "name": "factor_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFactor",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFactor.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFactor.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFactor.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMFileFormat",
+      "description": "",
+      "module": "file_format",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMFileFormat.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFileFormat.file_extension",
+          "name": "file_extension",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMFileFormat",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFileFormat.format_term",
+          "name": "format_term",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFileFormat",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFileFormat.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFileFormat.media_type",
+          "name": "media_type",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFileFormat",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFileFormat.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMFunding",
+      "description": "",
+      "module": "funding",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMFunding.applicants",
+          "name": "applicants",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMFunding",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.award_number",
+          "name": "award_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFunding",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.award_url",
+          "name": "award_url",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFunding",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.funder",
+          "name": "funder",
+          "range": "MIMInstitution",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMFunding",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMFunding.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMHardwareComponent",
+      "description": "",
+      "module": "hardware_component",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMProtocolComponent",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMHardwareComponent.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.component_type",
+          "name": "component_type",
+          "range": "MIMProtocolComponentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocolComponent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMHardwareComponent.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.manufacturer",
+          "name": "manufacturer",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMHardwareComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.model_number",
+          "name": "model_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMHardwareComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMHardwareComponent.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMIdentifiedMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMIdentifiedMixin.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImageAcquisitionProcess",
+      "description": "",
+      "module": "image_acquisition",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": "MIMProcess",
+      "mixins": [
+        "MIMImageAcquisitionProcessMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMImageAcquisitionProcess.channels",
+          "name": "channels",
+          "range": "MIMImagingChannel",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.imaging_instrument",
+          "name": "imaging_instrument",
+          "range": "MIMImagingInstrument",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.imaging_method",
+          "name": "imaging_method",
+          "range": "MIMImagingMethod",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.input_data",
+          "name": "input_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.input_materials",
+          "name": "input_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.measurements",
+          "name": "measurements",
+          "range": "MIMMeasurement",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.output_data",
+          "name": "output_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.output_materials",
+          "name": "output_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.parameter_values",
+          "name": "parameter_values",
+          "range": "MIMParameterValue",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.performed_on",
+          "name": "performed_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.performers",
+          "name": "performers",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.protocol",
+          "name": "protocol",
+          "range": "MIMProtocol",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcess.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImageAcquisitionProcessMixin",
+      "description": "",
+      "module": "image_acquisition",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMImageAcquisitionProcessMixin.channels",
+          "name": "channels",
+          "range": "MIMImagingChannel",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcessMixin.imaging_instrument",
+          "name": "imaging_instrument",
+          "range": "MIMImagingInstrument",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAcquisitionProcessMixin.imaging_method",
+          "name": "imaging_method",
+          "range": "MIMImagingMethod",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImageAcquisitionProcessMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImageAnalysisProcess",
+      "description": "",
+      "module": "image_analysis",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": "MIMProcess",
+      "mixins": [
+        "MIMImageAnalysisProcessMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMImageAnalysisProcess.analysis_software",
+          "name": "analysis_software",
+          "range": "MIMSoftwareComponent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAnalysisProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.input_data",
+          "name": "input_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.input_materials",
+          "name": "input_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.measurements",
+          "name": "measurements",
+          "range": "MIMMeasurement",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.output_data",
+          "name": "output_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.output_materials",
+          "name": "output_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.parameter_values",
+          "name": "parameter_values",
+          "range": "MIMParameterValue",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.performed_on",
+          "name": "performed_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.performers",
+          "name": "performers",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.protocol",
+          "name": "protocol",
+          "range": "MIMProtocol",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.segmentation_outputs",
+          "name": "segmentation_outputs",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAnalysisProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcess.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImageAnalysisProcessMixin",
+      "description": "",
+      "module": "image_analysis",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMImageAnalysisProcessMixin.analysis_software",
+          "name": "analysis_software",
+          "range": "MIMSoftwareComponent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAnalysisProcessMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImageAnalysisProcessMixin.segmentation_outputs",
+          "name": "segmentation_outputs",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImageAnalysisProcessMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImagingChannel",
+      "description": "",
+      "module": "imaging_channel",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMImagingChannel.channel_index",
+          "name": "channel_index",
+          "range": "integer",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingChannel",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingChannel.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingChannel.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingChannel.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingChannel.visualisation_method",
+          "name": "visualisation_method",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingChannel",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingChannel.visualised_entity",
+          "name": "visualised_entity",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingChannel",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImagingInstrument",
+      "description": "",
+      "module": "imaging_instrument",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": "MIMHardwareComponent",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMImagingInstrument.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.component_type",
+          "name": "component_type",
+          "range": "MIMProtocolComponentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocolComponent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMImagingInstrument.components",
+          "name": "components",
+          "range": "MIMHardwareComponent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMImagingInstrument",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.manufacturer",
+          "name": "manufacturer",
+          "range": "MIMInstitution",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingInstrument",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.model",
+          "name": "model",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingInstrument",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.model_number",
+          "name": "model_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMHardwareComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingInstrument.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMImagingMethod",
+      "description": "",
+      "module": "imaging_method",
+      "profile": "bioimaging",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMImagingMethod.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingMethod.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingMethod.method_term",
+          "name": "method_term",
+          "range": "MIMOntologyTerm",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMImagingMethod",
+          "is_enum": false
+        },
+        {
+          "path": "MIMImagingMethod.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMInstitution",
+      "description": "",
+      "module": "institution",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMInstitution.address",
+          "name": "address",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMInstitution",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInstitution.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInstitution.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInstitution.ror",
+          "name": "ror",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMInstitution",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInstitution.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInstitution.web_page",
+          "name": "web_page",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMInstitution",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMInvestigation",
+      "description": "",
+      "module": "investigation",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMInvestigation.contact_person",
+          "name": "contact_person",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMInvestigation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMInvestigation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.funding",
+          "name": "funding",
+          "range": "MIMFunding",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMInvestigation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.publications",
+          "name": "publications",
+          "range": "MIMPublication",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMInvestigation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.studies",
+          "name": "studies",
+          "range": "MIMStudy",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMInvestigation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMInvestigation.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMLicense",
+      "description": "",
+      "module": "license",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMLicense.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMLicense.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMLicense.license_url",
+          "name": "license_url",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMLicense",
+          "is_enum": false
+        },
+        {
+          "path": "MIMLicense.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMMaterial",
+      "description": "",
+      "module": "material",
+      "profile": "foundation",
+      "abstract": true,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMMaterial.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMaterial.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMaterial.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMaterial.material_type",
+          "name": "material_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMMaterial",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMaterial.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMaterial.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMMeasurement",
+      "description": "",
+      "module": "measurement",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMMeasurement.attribution",
+          "name": "attribution",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMMeasurement",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.measured_value",
+          "name": "measured_value",
+          "range": "MIMValue",
+          "required": false,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMMeasurement",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.measurement_type",
+          "name": "measurement_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMMeasurement",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMeasurement.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMMetadataPackage",
+      "description": "",
+      "module": "root",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMMetadataPackage.assays",
+          "name": "assays",
+          "range": "MIMAssay",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.assets",
+          "name": "assets",
+          "range": "MIMAsset",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.grant_references",
+          "name": "grant_references",
+          "range": "MIMGrantReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.institutions",
+          "name": "institutions",
+          "range": "MIMInstitution",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.investigations",
+          "name": "investigations",
+          "range": "MIMInvestigation",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.ontology_sources",
+          "name": "ontology_sources",
+          "range": "MIMOntologySource",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.people",
+          "name": "people",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.prefixes",
+          "name": "prefixes",
+          "range": "MIMPrefixAssociation",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.profile_specific_metadata",
+          "name": "profile_specific_metadata",
+          "range": "MIMProfileSpecificMetadata",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.projects",
+          "name": "projects",
+          "range": "MIMProject",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.sample_characteristic_definitions",
+          "name": "sample_characteristic_definitions",
+          "range": "MIMSampleCharacteristicDefinition",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.samples",
+          "name": "samples",
+          "range": "MIMSample",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        },
+        {
+          "path": "MIMMetadataPackage.studies",
+          "name": "studies",
+          "range": "MIMStudy",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMMetadataPackage",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMModel",
+      "description": "",
+      "module": "model",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMModel.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMModel.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.model_format",
+          "name": "model_format",
+          "range": "MIMFileFormat",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMModel",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.source_files",
+          "name": "source_files",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMModel",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMModel.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMNamedMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMNamedMixin.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMOntologySource",
+      "description": "Identifiable ontology or controlled-vocabulary release.",
+      "module": "ontology_source",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMVersionedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMOntologySource.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologySource.homepage",
+          "name": "homepage",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMOntologySource",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologySource.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologySource.release_date",
+          "name": "release_date",
+          "range": "date",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMOntologySource",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologySource.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologySource.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMOntologyTerm",
+      "description": "Reference to a concept defined by an ontology or controlled vocabulary. The inherited identifier stores the concept URI or CURIE.",
+      "module": "ontology_term",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMOntologyTerm.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologyTerm.label",
+          "name": "label",
+          "range": "string",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMOntologyTerm",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOntologyTerm.source",
+          "name": "source",
+          "range": "MIMOntologySource",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMOntologyTerm",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMOrganism",
+      "description": "",
+      "module": "organism",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMOrganism.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOrganism.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOrganism.strains",
+          "name": "strains",
+          "range": "MIMStrain",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMOrganism",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOrganism.taxon",
+          "name": "taxon",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMOrganism",
+          "is_enum": false
+        },
+        {
+          "path": "MIMOrganism.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMParameterSpecification",
+      "description": "",
+      "module": "parameter_specification",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMParameterSpecification.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMParameterSpecification.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMParameterSpecification.parameter_term",
+          "name": "parameter_term",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMParameterSpecification",
+          "is_enum": false
+        },
+        {
+          "path": "MIMParameterSpecification.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMParameterValue",
+      "description": "",
+      "module": "parameter_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMParameterValue.assigned_value",
+          "name": "assigned_value",
+          "range": "MIMValue",
+          "required": true,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMParameterValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMParameterValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMParameterValue.specification",
+          "name": "specification",
+          "range": "MIMParameterSpecification",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMParameterValue",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMPresentation",
+      "description": "",
+      "module": "presentation",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMPresentation.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMPresentation.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.file",
+          "name": "file",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMPresentation",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPresentation.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProcess",
+      "description": "",
+      "module": "process",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMProcess.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.input_data",
+          "name": "input_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.input_materials",
+          "name": "input_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.measurements",
+          "name": "measurements",
+          "range": "MIMMeasurement",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.output_data",
+          "name": "output_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.output_materials",
+          "name": "output_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.parameter_values",
+          "name": "parameter_values",
+          "range": "MIMParameterValue",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.performed_on",
+          "name": "performed_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.performers",
+          "name": "performers",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.protocol",
+          "name": "protocol",
+          "range": "MIMProtocol",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProcess.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProfileSpecificMetadata",
+      "description": "Open profile-scoped metadata block. The profile_uri identifies the profile that defines the additional fields. Profile-owned fields are permitted through extra_slots and should follow that profile's schema.",
+      "module": "profile_specific_metadata",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMProfileSpecificMetadata.conforms_to",
+          "name": "conforms_to",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProfileSpecificMetadata",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProfileSpecificMetadata.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProfileSpecificMetadata.profile_uri",
+          "name": "profile_uri",
+          "range": "uri",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProfileSpecificMetadata",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProfileSpecificMetadata.profile_version",
+          "name": "profile_version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProfileSpecificMetadata",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProject",
+      "description": "",
+      "module": "project",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMProject.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.funding",
+          "name": "funding",
+          "range": "MIMFunding",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.institutions",
+          "name": "institutions",
+          "range": "MIMInstitution",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.investigations",
+          "name": "investigations",
+          "range": "MIMInvestigation",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.members",
+          "name": "members",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProject.web_link",
+          "name": "web_link",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProject",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProtocol",
+      "description": "",
+      "module": "protocol",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMProtocol.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMProtocol.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.components",
+          "name": "components",
+          "range": "MIMProtocolComponent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.parameters",
+          "name": "parameters",
+          "range": "MIMParameterSpecification",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.protocol_type",
+          "name": "protocol_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocol.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProtocolComponent",
+      "description": "",
+      "module": "protocol_component",
+      "profile": "foundation",
+      "abstract": true,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMVersionedMixin",
+        "MIMCommentedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMProtocolComponent.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocolComponent.component_type",
+          "name": "component_type",
+          "range": "MIMProtocolComponentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocolComponent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMProtocolComponent.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocolComponent.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocolComponent.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProtocolComponent.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMProvenanceMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMProvenanceMixin.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMProvenanceMixin.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMPublication",
+      "description": "",
+      "module": "publication",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMPublication.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMPublication.authors",
+          "name": "authors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMPublication",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.doi",
+          "name": "doi",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMPublication",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.journal",
+          "name": "journal",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMPublication",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.publication_year",
+          "name": "publication_year",
+          "range": "integer",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMPublication",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMPublication.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMQuantityValue",
+      "description": "",
+      "module": "quantity_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMValue",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMQuantityValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMQuantityValue.numeric_value",
+          "name": "numeric_value",
+          "range": "double",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMQuantityValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMQuantityValue.unit",
+          "name": "unit",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMQuantityValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMQuantityValue.value_type",
+          "name": "value_type",
+          "range": "MIMValueTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMValue",
+          "is_enum": true
+        }
+      ]
+    },
+    {
+      "class": "MIMReagentComponent",
+      "description": "",
+      "module": "reagent_component",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMProtocolComponent",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMReagentComponent.catalog_number",
+          "name": "catalog_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMReagentComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.component_type",
+          "name": "component_type",
+          "range": "MIMProtocolComponentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocolComponent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMReagentComponent.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.lot_number",
+          "name": "lot_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMReagentComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.supplier",
+          "name": "supplier",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMReagentComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMReagentComponent.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMSOP",
+      "description": "",
+      "module": "sop",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMProtocol",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMSOP.assay",
+          "name": "assay",
+          "range": "MIMAssay",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSOP",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMSOP.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.components",
+          "name": "components",
+          "range": "MIMProtocolComponent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.factors_studied",
+          "name": "factors_studied",
+          "range": "MIMFactor",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMSOP",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.format",
+          "name": "format",
+          "range": "MIMFileFormat",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSOP",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.parameters",
+          "name": "parameters",
+          "range": "MIMParameterSpecification",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.protocol_type",
+          "name": "protocol_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocol",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSOP.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMSample",
+      "description": "",
+      "module": "sample",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMMaterial",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMSample.characteristics",
+          "name": "characteristics",
+          "range": "MIMSampleCharacteristicValue",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMSample",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.derived_from",
+          "name": "derived_from",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMSample",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.material_type",
+          "name": "material_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMMaterial",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.organism",
+          "name": "organism",
+          "range": "MIMOrganism",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSample",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSample.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMSampleCharacteristicDefinition",
+      "description": "",
+      "module": "sample_characteristic_definition",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMSampleCharacteristicDefinition.characteristic_term",
+          "name": "characteristic_term",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSampleCharacteristicDefinition",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicDefinition.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicDefinition.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicDefinition.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicDefinition.unit",
+          "name": "unit",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSampleCharacteristicDefinition",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMSampleCharacteristicValue",
+      "description": "",
+      "module": "sample_characteristic_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMSampleCharacteristicValue.assigned_value",
+          "name": "assigned_value",
+          "range": "MIMValue",
+          "required": true,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMSampleCharacteristicValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicValue.definition",
+          "name": "definition",
+          "range": "MIMSampleCharacteristicDefinition",
+          "required": true,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMSampleCharacteristicValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSampleCharacteristicValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMSoftwareComponent",
+      "description": "",
+      "module": "software_component",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMProtocolComponent",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMSoftwareComponent.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.component_type",
+          "name": "component_type",
+          "range": "MIMProtocolComponentTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProtocolComponent",
+          "is_enum": true
+        },
+        {
+          "path": "MIMSoftwareComponent.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.developer",
+          "name": "developer",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSoftwareComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.repository_url",
+          "name": "repository_url",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMSoftwareComponent",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMSoftwareComponent.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMStrain",
+      "description": "",
+      "module": "strain",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMCommentedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMStrain.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStrain.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStrain.genotype",
+          "name": "genotype",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStrain",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStrain.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStrain.phenotype",
+          "name": "phenotype",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStrain",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStrain.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMStudy",
+      "description": "",
+      "module": "study",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMStudy.assays",
+          "name": "assays",
+          "range": "MIMAssay",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.design",
+          "name": "design",
+          "range": "MIMStudyDesign",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.funding",
+          "name": "funding",
+          "range": "MIMFunding",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.keywords",
+          "name": "keywords",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.publications",
+          "name": "publications",
+          "range": "MIMPublication",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.related_studies",
+          "name": "related_studies",
+          "range": "MIMStudy",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.study_type",
+          "name": "study_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.submission_accession_number",
+          "name": "submission_accession_number",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.submission_doi",
+          "name": "submission_doi",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudy",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudy.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMStudyDesign",
+      "description": "",
+      "module": "study_design",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin",
+        "MIMNamedMixin",
+        "MIMDescribedMixin",
+        "MIMProvenanceMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMStudyDesign.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMStudyDesign",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.design_type",
+          "name": "design_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMStudyDesign",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.factors",
+          "name": "factors",
+          "range": "MIMFactor",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMStudyDesign",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMStudyDesign.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMTextValue",
+      "description": "",
+      "module": "text_value",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMValue",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMTextValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTextValue.text_value",
+          "name": "text_value",
+          "range": "string",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMTextValue",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTextValue.value_type",
+          "name": "value_type",
+          "range": "MIMValueTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMValue",
+          "is_enum": true
+        }
+      ]
+    },
+    {
+      "class": "MIMTreatment",
+      "description": "",
+      "module": "treatment",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMProcess",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMTreatment.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.dose",
+          "name": "dose",
+          "range": "MIMValue",
+          "required": false,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMTreatment",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.duration",
+          "name": "duration",
+          "range": "MIMValue",
+          "required": false,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMTreatment",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.input_data",
+          "name": "input_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.input_materials",
+          "name": "input_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.measurements",
+          "name": "measurements",
+          "range": "MIMMeasurement",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.output_data",
+          "name": "output_data",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.output_materials",
+          "name": "output_materials",
+          "range": "MIMMaterial",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.parameter_values",
+          "name": "parameter_values",
+          "range": "MIMParameterValue",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.performed_on",
+          "name": "performed_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.performers",
+          "name": "performers",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.protocol",
+          "name": "protocol",
+          "range": "MIMProtocol",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProcess",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.reagent",
+          "name": "reagent",
+          "range": "MIMReagentComponent",
+          "required": false,
+          "multivalued": false,
+          "inlined": true,
+          "declared_in": "MIMTreatment",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMTreatment.treatment_type",
+          "name": "treatment_type",
+          "range": "MIMOntologyTerm",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMTreatment",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMValue",
+      "description": "",
+      "module": "value",
+      "profile": "foundation",
+      "abstract": true,
+      "is_a": null,
+      "mixins": [
+        "MIMIdentifiedMixin"
+      ],
+      "fields": [
+        {
+          "path": "MIMValue.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMValue.value_type",
+          "name": "value_type",
+          "range": "MIMValueTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMValue",
+          "is_enum": true
+        }
+      ]
+    },
+    {
+      "class": "MIMVersionedMixin",
+      "description": "",
+      "module": "common",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMVersionedMixin.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "MIMWorkflow",
+      "description": "",
+      "module": "workflow",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": "MIMAsset",
+      "mixins": [],
+      "fields": [
+        {
+          "path": "MIMWorkflow.assay_reference",
+          "name": "assay_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.asset_type",
+          "name": "asset_type",
+          "range": "MIMAssetTypeEnum",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": true
+        },
+        {
+          "path": "MIMWorkflow.comments",
+          "name": "comments",
+          "range": "string",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMCommentedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.contributors",
+          "name": "contributors",
+          "range": "MIMAgent",
+          "required": false,
+          "multivalued": true,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.created_on",
+          "name": "created_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.description",
+          "name": "description",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMDescribedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.external_references",
+          "name": "external_references",
+          "range": "MIMExternalReference",
+          "required": false,
+          "multivalued": true,
+          "inlined": true,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.id",
+          "name": "id",
+          "range": "uriorcurie",
+          "required": true,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMIdentifiedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.license",
+          "name": "license",
+          "range": "MIMLicense",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.modified_on",
+          "name": "modified_on",
+          "range": "datetime",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMProvenanceMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.produced_by_project_reference",
+          "name": "produced_by_project_reference",
+          "range": "uriorcurie",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.seek_id",
+          "name": "seek_id",
+          "range": "uri",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMAsset",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.title",
+          "name": "title",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMNamedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.version",
+          "name": "version",
+          "range": "string",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMVersionedMixin",
+          "is_enum": false
+        },
+        {
+          "path": "MIMWorkflow.workflow_file",
+          "name": "workflow_file",
+          "range": "MIMDataFile",
+          "required": false,
+          "multivalued": false,
+          "inlined": false,
+          "declared_in": "MIMWorkflow",
+          "is_enum": false
+        }
+      ]
+    },
+    {
+      "class": "REMBI_BiosampleModule",
+      "description": "The actual schema for this REMBI_Biosample metadata collection form",
+      "module": "general",
+      "profile": "foundation",
+      "abstract": false,
+      "is_a": null,
+      "mixins": [],
+      "fields": []
+    }
+  ],
+  "enums": {
+    "nameEnum": {
+      "name": "nameEnum",
+      "permissible_values": [
+        "ISA_Investigation",
+        "ISA_Study",
+        "ISA_Assay",
+        "ISA_BiologicalMaterial",
+        "ISA_Sample",
+        "REMBI_Study",
+        "REMBI_StudyComponent",
+        "REMBI_Biosample",
+        "REMBI_Specimen",
+        "REMBI_ImageAcquisition",
+        "REMBI_ImageData",
+        "REMBI_ImageCorrelation",
+        "REMBI_AnalyzedData"
+      ],
+      "description": ""
+    },
+    "MIMAgentTypeEnum": {
+      "name": "MIMAgentTypeEnum",
+      "permissible_values": [
+        "person",
+        "organization",
+        "group",
+        "software"
+      ],
+      "description": ""
+    },
+    "MIMAssetTypeEnum": {
+      "name": "MIMAssetTypeEnum",
+      "permissible_values": [
+        "MIMDataFile",
+        "MIMDocument",
+        "MIMPublication",
+        "MIMPresentation",
+        "MIMWorkflow",
+        "MIMModel",
+        "MIMProtocol",
+        "MIMSOP"
+      ],
+      "description": ""
+    },
+    "MIMValueTypeEnum": {
+      "name": "MIMValueTypeEnum",
+      "permissible_values": [
+        "MIMQuantityValue",
+        "MIMCategoricalValue",
+        "MIMDateValue",
+        "MIMTextValue"
+      ],
+      "description": ""
+    },
+    "MIMProtocolComponentTypeEnum": {
+      "name": "MIMProtocolComponentTypeEnum",
+      "permissible_values": [
+        "MIMReagentComponent",
+        "MIMHardwareComponent",
+        "MIMSoftwareComponent"
+      ],
+      "description": "Type of protocol component."
+    }
+  }
+}
