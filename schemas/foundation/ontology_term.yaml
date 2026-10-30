@@ -1,0 +1,51 @@
+id: https://w3id.org/mim/schemas/foundation/ontology_term
+name: mim_foundation_ontology_term
+title: MIM ontology term
+description: Ontology-backed concept annotation.
+version: 1.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mim: https://w3id.org/mim/
+  jerm: http://jermontology.org/ontology/JERMOntology#
+  orcid: https://orcid.org/
+
+imports:
+  - linkml:types
+  - common
+  - ontology_source
+
+default_prefix: mim
+default_range: string
+
+created_by: orcid:0000-0002-4904-3269
+
+annotations:
+  created_by_name: Tooba Abbassi-Daloii
+  created_by_affiliation: Amsterdam UMC; ACDC
+  schema_status: draft
+  semantic_basis: JERM
+  module_name: ontology_term
+  profile: foundation
+
+classes:
+  MIMOntologyTerm:
+    description: >-
+      Reference to a concept defined by an ontology or controlled vocabulary.
+      The inherited identifier stores the concept URI or CURIE.
+    mixins:
+      - MIMIdentifiedMixin
+    extra_slots:
+      allowed: true
+    attributes:
+      label:
+        description: Human-readable label of the ontology concept.
+        range: string
+        slot_uri: mim:OntologyTerm_label
+        required: true
+
+      source:
+        description: Ontology or controlled vocabulary that defines the concept.
+        range: MIMOntologySource
+        slot_uri: mim:OntologyTerm_source
